@@ -11,7 +11,7 @@ export default function Construction_And_Contracting() {
       <Header />
 
       <Banner
-        heading="CONSTRUCTION AND CONTRACTING MANAGEMENT"
+        heading="CONSTRUCTION AND CONTRACTING MANAGEMENT 1561"
         sub_heading="Solution Founder’s Construction Management is designed to manage all Operational activities. Give full visibility of business and allow you to grow in controlled and secure manner."
         icon="construction-and-contracting.png"
       />

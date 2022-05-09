@@ -33,7 +33,7 @@ Manage and track production part approval process (PPAP) submissions. Configure 
           <Cardnew title="3pl Management" icon="sales.png" />
           <Cardnew title="Documents Management" icon="sales.png" />
           <Cardnew
-            title="Terminal And Storage Area Management"
+            title="Terminal And Storage Area Management 123"
             icon="sales.png"
           />
         </div>

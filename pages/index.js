@@ -14,7 +14,7 @@ export default function Home() {
 
       <Banner
         heading="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
-        sub_heading="Increase business ability get profitable growth. Enjoy freedom of open source. 123"
+        sub_heading="Increase business ability get profitable growth. Enjoy freedom of open source. 123456"
         icon="home-banner-img.png"
       />
 

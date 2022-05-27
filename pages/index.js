@@ -86,6 +86,7 @@ export default function Home({ posts }) {
           <p>{story.node.title}</p>
         </div>
       ))}
+      
       <Footer />
     </>
   );

@@ -7,9 +7,9 @@ import TeamSection from './components/team_section';
 import CTA from './components/cta';
 // importing images
 import AwardWinner from '../public/images/Award-winner.png';
-import LatestSuccessStories from './components/Latest-success-stories';
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
+import IndexSuccessStories from './components/indexSuccesStories';
 
 
 
@@ -81,7 +81,7 @@ export default function Home({ posts }) {
 
       <CTA />
 
-      <LatestSuccessStories data={posts}/>
+      <IndexSuccessStories data={posts}/>
 
       <Footer />
     </>

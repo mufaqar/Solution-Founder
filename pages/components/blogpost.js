@@ -5,7 +5,7 @@ export default function BlogPost({ posts }) {
   console.warn(posts);
   return (
     <>
-      {posts.map((data, index) => (
+      {/* {posts.map((data, index) => (
         <div key={index}>
           <div className="relative flex flex-col w-full bg-white rounded-md shadow-sh hover:shadow-shl">
             <Image
@@ -34,7 +34,7 @@ export default function BlogPost({ posts }) {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
     </>
   );
 }

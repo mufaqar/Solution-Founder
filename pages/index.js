@@ -1,20 +1,19 @@
-import Banner from "./components/banner";
-import Footer from "./components/footer";
-import Header from "./components/header";
-import Card from "./components/card";
-import ImageBox from "./components/image-box";
-import TeamSection from "./components/team_section";
-import CTA from "./components/cta";
+import Banner from './components/banner';
+import Footer from './components/footer';
+import Header from './components/header';
+import Card from './components/card';
+import ImageBox from './components/image-box';
+import TeamSection from './components/team_section';
+import CTA from './components/cta';
 // importing images
-import AwardWinner from "../public/images/Award-winner.png";
-import { gql } from "@apollo/client";
-import { client } from "../lib/apollo";
-import Link from 'next/link';
-import Image from 'next/image';
+import AwardWinner from '../public/images/Award-winner.png';
+import { gql } from '@apollo/client';
+import { client } from '../lib/apollo';
 
 
 
 export default function Home({ posts }) {
+  console.log('index', posts);
   return (
     <>
       <Header />
@@ -81,23 +80,21 @@ export default function Home({ posts }) {
 
       <CTA />
 
-      <section className="py-28 px-7">
-        <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
-          OUR SUCCESS STORIES
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
-          {posts?.map((story, index) => (
-            <div key={index} className="flex flex-col">
-              {story.node.title}
-            </div>
-          ))}
+      <h2>Lates Success Stories</h2>
+      {posts?.map((story, index) => (
+        <div key={index}>
+          <p>{story.node.title}</p>
         </div>
-      </section>
+      ))}
+
       <Footer />
     </>
   );
 }
+
+
+
+
 
 export async function getStaticProps() {
   const GET_POSTS = gql`

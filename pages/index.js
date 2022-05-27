@@ -14,7 +14,7 @@ import { client } from '../lib/apollo';
 
 
 export default function Home({ posts }) {
-  console.log('index', posts)
+  // console.log('index', posts);
   return (
     <>
       <Header />
@@ -81,7 +81,7 @@ export default function Home({ posts }) {
 
       <CTA />
 
-      <LatestSuccessStories/>
+      <LatestSuccessStories data={posts}/>
 
       <Footer />
     </>

@@ -4,9 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 
-export default function LatestSuccessStories() {
+export default function LatestSuccessStories({data}) {
 
-  // console.log('LatestSuccessStories', posts);
+  // console.log('LatestSuccessStories', data);
 
   // const [querydata, setQueryData] = useState();
 
@@ -53,9 +53,9 @@ export default function LatestSuccessStories() {
           OUR SUCCESS STORIES
         </h2>
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
             {
-              posts.map((item, index) => (
+              data.map((item, index) => (
                 <div key={index} className='flex flex-col'>
                   <Image
                     src={item.node.featuredImage.node.mediaItemUrl}
@@ -87,7 +87,7 @@ export default function LatestSuccessStories() {
                 </div>
               ))
             }
-          </div> */}
+          </div>
 
       </section>
     </>

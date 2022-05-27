@@ -9,12 +9,11 @@ import CTA from './components/cta';
 import AwardWinner from '../public/images/Award-winner.png';
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
-import IndexSuccessStories from './components/indexSuccesStories';
 
 
 
 export default function Home({ posts }) {
-  // console.log('index', posts);
+  console.log('index', posts);
   return (
     <>
       <Header />
@@ -80,8 +79,12 @@ export default function Home({ posts }) {
       <TeamSection />
 
       <CTA />
-
-      <IndexSuccessStories data={posts}/>
+      <h2>Lates Success Stories {posts[0].node.title}</h2>
+      {posts.map((story, index) => (
+        <div key={index}>
+          <p>{story.node.title}</p>
+        </div>
+      ))}
 
       <Footer />
     </>

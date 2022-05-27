@@ -1,9 +1,10 @@
 import Banner from '../components/banner';
-import BlogPost from '../components/blogpost';
 import Footer from '../components/footer';
 import Header from '../components/header';
 import { client } from '../../lib/apollo';
 import { gql } from '@apollo/client';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function News_updates({ posts }) {
   return (
@@ -13,7 +14,7 @@ export default function News_updates({ posts }) {
 
       <section className="py-20 px-7">
         <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
-          News & Update
+          News And Update
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1200px] mx-auto mb-8">
           {posts?.map((data, index) => (

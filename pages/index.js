@@ -81,7 +81,7 @@ export default function Home({ posts }) {
       <CTA />
 
       <h2>Lates Success Stories</h2>
-      {posts.map((story, index) => (
+      {posts?.map((story, index) => (
         <div key={index}>
           <p>{story.node.title}</p>
         </div>

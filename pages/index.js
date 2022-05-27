@@ -79,7 +79,8 @@ export default function Home({ posts }) {
       <TeamSection />
 
       <CTA />
-      <h2>Lates Success Stories {posts[0].node.title}</h2>
+
+      <h2>Lates Success Stories</h2>
       {posts.map((story, index) => (
         <div key={index}>
           <p>{story.node.title}</p>

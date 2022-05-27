@@ -9,6 +9,8 @@ import CTA from './components/cta';
 import AwardWinner from '../public/images/Award-winner.png';
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
+import Link from 'next/link';
+import Image from 'next/image';
 
 
 
@@ -80,12 +82,49 @@ export default function Home({ posts }) {
 
       <CTA />
 
-      <h2>Lates Success Stories</h2>
-      {posts?.map((story, index) => (
-        <div key={index}>
-          <p>{story.node.title}</p>
-        </div>
-      ))}
+  
+      <section className="py-28 px-7">
+        <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
+          OUR SUCCESS STORIES
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
+            {
+              posts.map((item, index) => (
+                <div key={index} className='flex flex-col'>
+                  <Image
+                    src={item.node.featuredImage.node.mediaItemUrl}
+                    alt={item.node.title}
+                    width={500}
+                    height={350}
+                  />
+                  <div className='relative p-1 shadow-sm'>
+                    <div className="p-5 space-y-1">
+                      <h3 className="box-title">
+                        <Link href={item.node.uri}>{item.node.title}</Link>
+                      </h3>
+                      <p className="text-base font-medium text-[#535353]">
+                        {item.node.successStoryExtra.shortInfo}
+                      </p>
+                    </div>
+                    <div className="absolute bottom-0 right-0 flex justify-end">
+                      <figure className="max-h-[18px]">
+                        <Image
+                          src="/images/color-bar-light.jpg"
+                          alt="images/color-bar-light.jpg"
+                          className="w-[55%] h-[10px]"
+                          width={155}
+                          height={8}
+                        />
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+
+      </section>
       
       <Footer />
     </>

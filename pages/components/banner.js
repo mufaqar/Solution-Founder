@@ -7,11 +7,11 @@ export default function Banner(props) {
 
   const [formPopup, setFormPopup] = useState(false);
   
-  if(formPopup === true){
-    document.body.style.overflowY = 'hidden';
-  }else{
-    document.body.style.overflowY = 'scroll';
-  }
+  // if(formPopup === true){
+  //   document.body.style.overflowY = 'hidden';
+  // }else{
+  //   document.querySelector(body).remove
+  // }
 
 
   return (

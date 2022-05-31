@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 
 export default function SlugPage({ post, successStories }) {
-  console.log('story Banner', successStories);
+  // console.log('story Banner', successStories);
 
   return (
     <div>

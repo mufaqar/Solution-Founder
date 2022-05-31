@@ -1,3 +1,7 @@
-export default function LatestSuccessStories() {
-  return <></>;
+import React from 'react'
+
+export default function Latestsuccessstories() {
+  return (
+    <div>Latest-success-stories</div>
+  )
 }

@@ -1,5 +1,25 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
+import {
+  hrmAndPayroll,
+  transportation,
+  retail,
+  manufacturing,
+  constructionAndcontracting,
+  tradingDistribution,
+  customClearanceAndFreightForwarding,
+  financialManagement,
+  financialPlanning,
+  recruitment,
+  appraisals,
+  sales,
+  crm,
+  inventoryWarehouseManagement,
+  qualityManagement,
+  purchaseManagement,
+  hospitalManagement,
+} from "../../public/megaMenuLinks";
+
 
 export default function Mega_Menu() {
   return (
@@ -18,27 +38,27 @@ export default function Mega_Menu() {
             </h2>
             <ol className="space-y-2 list-disc list-inside">
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/transportation">Transportation</Link>
+                <Link href={transportation}>Transportation</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/retail">Retail</Link>
+                <Link href={retail}>Retail</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/manufacturing">Manufacturing</Link>
+                <Link href={manufacturing}>Manufacturing</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/construction-and-contracting">
+                <Link href={constructionAndcontracting}>
                   Construction And Contracting
                 </Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/trading-distribution">Trading Distribution</Link>
+                <Link href={tradingDistribution}>Trading Distribution</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/hospital-management">Hospital Management</Link>
+                <Link href={hospitalManagement}>Hospital Management</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/custom-clearance-and-freight-forwarding">
+                <Link href={customClearanceAndFreightForwarding}>
                   Custom Clearance And Freight
                 </Link>
               </li>
@@ -56,13 +76,13 @@ export default function Mega_Menu() {
             </h2>
             <ol className="space-y-2 list-disc list-inside">
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/hrm-and-payroll">Hrm And Payroll</Link>
+                <Link href={hrmAndPayroll}>Hrm And Payroll</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/recruitment">Recruitment</Link>
+                <Link href={recruitment}>Recruitment</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/appraisals">APPRAISALS</Link>
+                <Link href={appraisals}>APPRAISALS</Link>
               </li>
             </ol>
           </div>
@@ -78,15 +98,15 @@ export default function Mega_Menu() {
             </h2>
             <ol className="space-y-2 list-disc list-inside">
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/inventory-warehouse-management">
+                <Link href={inventoryWarehouseManagement}>
                   Inventory & Warehouse Management System
                 </Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/quality-management">Quality Management</Link>
+                <Link href={qualityManagement}>Quality Management</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/purchase-management">Purchase Management​</Link>
+                <Link href={purchaseManagement}>Purchase Management​</Link>
               </li>
             </ol>
           </div>
@@ -104,10 +124,10 @@ export default function Mega_Menu() {
             </h2>
             <ol className="space-y-2 list-disc list-inside">
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/financial-management">Financial Management</Link>
+                <Link href={financialManagement}>Financial Management</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/financial-planning">Financial Planning</Link>
+                <Link href={financialPlanning}>Financial Planning</Link>
               </li>
             </ol>
           </div>
@@ -123,10 +143,10 @@ export default function Mega_Menu() {
             </h2>
             <ol className="space-y-2 list-disc list-inside">
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/sales">Sales</Link>
+                <Link href={sales}>Sales</Link>
               </li>
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
-                <Link href="/crm">crm</Link>
+                <Link href={crm}>crm</Link>
               </li>
             </ol>
           </div>

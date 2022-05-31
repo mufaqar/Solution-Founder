@@ -8,7 +8,6 @@ export default function Cardnew(props) {
     <>
       {
         features ?
-
         features.map((feature, index) => (
           <>
             <div key={index} className="relative flex flex-col items-center px-6 space-y-4 bg-white rounded-md justify-items-center py-11 shadow-sh hover:shadow-shl">
@@ -17,8 +16,8 @@ export default function Cardnew(props) {
                 src="/images/F.png"
                 alt="F.png"
                 className="absolute top-0 left-0 rounded-md"
-                width={55}
-                height={55}
+                width={50}
+                height={50}
               />
               </figure>
               <Image
@@ -38,8 +37,8 @@ export default function Cardnew(props) {
                 src="/images/F.png"
                 alt="F.png"
                 // className="absolute top-0 left-0 rounded-md"
-                width={50}
-                height={50}
+                width={45}
+                height={40}
               />
             </figure>
             <Image

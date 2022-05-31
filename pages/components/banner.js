@@ -9,6 +9,8 @@ export default function Banner(props) {
   
   if(formPopup === true){
     document.body.style.overflowY = 'hidden';
+  }else{
+    document.body.style.overflowY = 'scroll';
   }
 
 

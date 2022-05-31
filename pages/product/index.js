@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Products({ products }) {
-  console.log('product single', products)
+  // console.log('product single', products)
   return (
     <>
       <Header />

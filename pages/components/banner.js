@@ -1,9 +1,17 @@
 import Image from 'next/image';
-
-
+import { useState } from 'react';
+import Form from '../form/form';
+import { AiOutlineClose } from "react-icons/ai";
 
 export default function Banner(props) {
+
+  const [formPopup, setFormPopup] = useState(false);
   
+  if(formPopup === true){
+    document.body.style.overflowY = 'hidden';
+  }
+
+
   return (
     <>
       <section className="bg-bottom bg-cover bg-page-banner">
@@ -16,7 +24,7 @@ export default function Banner(props) {
             {props.bannerURL ? (
               ''
             ) : (
-              <button className="main-button hover:bg-[#302E2E] items-center">
+              <button className="main-button hover:bg-[#302E2E] items-center" onClick={()=>setFormPopup(!formPopup)}>
                 Get in Touch
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +53,18 @@ export default function Banner(props) {
             />
           </div>
         </div>
+        
       </section>
+      {
+        formPopup && <div className='fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-80'>
+            <div className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
+              <Form/>
+            </div>
+            <div className='fixed inline-block bg-white cursor-pointer right-6 top-6 close bg-opacity-80' onClick={()=>setFormPopup(false)} >
+              <AiOutlineClose size={30}/>
+            </div>
+        </div>
+      }
     </>
   );
 }

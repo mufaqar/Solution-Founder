@@ -211,7 +211,7 @@ export default function Form() {
 
   return (
     <>
-      <div className="w-[760px] mx-auto bg-white shadow-lg p-[2%]">
+      <div className="lg:w-[760px] mx-auto w-full bg-white shadow-lg p-[2%]">
         <div className="signup_form">
           <div className="p-2">
             <ul className="flex items-center justify-center mb-8 progressbar">

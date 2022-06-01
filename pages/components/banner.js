@@ -55,7 +55,7 @@ export default function Banner(props) {
         
       </section>
       {
-        formPopup && <div className='fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-80'>
+        formPopup && <div className='fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-80' >
             <div className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
               <Form/>
             </div>

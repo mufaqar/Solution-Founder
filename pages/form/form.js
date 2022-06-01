@@ -1,21 +1,17 @@
-import { FaUserAlt } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { FaEnvelope } from "react-icons/fa";
-import { BiBuilding } from "react-icons/bi";
-import { MdLocationOn } from "react-icons/md";
-import { TiWorld } from "react-icons/ti";
-import { FaRegSun } from "react-icons/fa";
-import { FaUsers } from "react-icons/fa";
-import { FaRetweet } from "react-icons/fa";
-import { BsCheckLg } from "react-icons/bs";
-import { useState } from "react";
+import { FaUserAlt } from 'react-icons/fa';
+import { BsFillTelephoneFill } from 'react-icons/bs';
+import { FaEnvelope } from 'react-icons/fa';
+import { BiBuilding } from 'react-icons/bi';
+import { MdLocationOn } from 'react-icons/md';
+import { TiWorld } from 'react-icons/ti';
+import { FaRegSun } from 'react-icons/fa';
+import { FaUsers } from 'react-icons/fa';
+import { FaRetweet } from 'react-icons/fa';
+import { BsCheckLg } from 'react-icons/bs';
+import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-
-
 export default function Form() {
-
-
   const [step1, setStep1] = useState(true);
   const [step2, setStep2] = useState(false);
   const [step3, setStep3] = useState(false);
@@ -30,19 +26,19 @@ export default function Form() {
   const [progress, setProgress] = useState('11%');
 
   const [formFiels, setFormField] = useState({
-    firstName: "",
-    phone: "",
-    email: "",
-    company_name: "",
-    website: "",
-    city: "",
-    country: "",
-    industryselect: "",
-    businessneed: "",
-    users:"",
-    erpsystem:"",
-    speak:"",
-    team: "",
+    firstName: '',
+    phone: '',
+    email: '',
+    company_name: '',
+    website: '',
+    city: '',
+    country: '',
+    industryselect: '',
+    businessneed: '',
+    users: '',
+    erpsystem: '',
+    speak: '',
+    team: '',
   });
 
   const handleChange = (e) => {
@@ -51,11 +47,11 @@ export default function Form() {
     setFormField({ ...formFiels, [name]: value });
   };
 
-  const handleStepOneNext =()=>{
-    if(formFiels.firstName === ""){
+  const handleStepOneNext = () => {
+    if (formFiels.firstName === '') {
       alert('Your Name is Missing');
       setFormPopup(false);
-    }else{
+    } else {
       setStep1(false);
       setStep2(true);
       setProgress('20%');
@@ -147,8 +143,8 @@ export default function Form() {
     setProgress('60%');
   };
 
-  const handleStepSevenNext=()=>{
-    if(formFiels.businessneed === ""){
+  const handleStepSevenNext = () => {
+    if (formFiels.businessneed === '') {
       alert('Select Business');
     } else {
       setStep8(true);
@@ -196,18 +192,23 @@ export default function Form() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_g051vgf', 'template_cd3ge7a', e.target, 'jkkvmNtffF78Bsse7')
-      .then((result) => {
+    emailjs
+      .sendForm(
+        'service_gvt30vq',
+        'template_c7nv8ra',
+        e.target,
+        'jkkvmNtffF78Bsse7'
+      )
+      .then(
+        (result) => {
           console.log(result.text);
           alert('Message Successfully Transfer');
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
-
+        }
+      );
   };
-
-
-  
 
   return (
     <>
@@ -326,7 +327,7 @@ export default function Form() {
                 <p className="mr-2 text-white">{progress}</p>
               </div>
             </div>
-                        
+
             <form onSubmit={sendEmail}>
               {/* step 1 */}
               <div id="fieldset1" className={step1 ? 'block' : 'hidden'}>
@@ -345,7 +346,10 @@ export default function Form() {
                   ></input>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepOneNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepOneNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -367,10 +371,16 @@ export default function Form() {
                   ></input>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepTwoPrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepTwoPrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepTwoNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepTwoNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -392,10 +402,16 @@ export default function Form() {
                   ></input>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepThreePrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepThreePrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepThreeNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepThreeNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -433,10 +449,16 @@ export default function Form() {
                   </div>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepFourPrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepFourPrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepFourNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepFourNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -474,10 +496,16 @@ export default function Form() {
                   </div>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepFivePrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepFivePrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepFiveNext} className="bg-[#8DC63F] text-center hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepFiveNext}
+                    className="bg-[#8DC63F] text-center hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -681,10 +709,16 @@ export default function Form() {
                   </ul>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepSixPrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepSixPrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepSixNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepSixNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -704,7 +738,10 @@ export default function Form() {
                         name="businessneed"
                         value="Full ERP"
                       ></input>
-                      <label htmlFor="full_erp" className="text-base font-medium">
+                      <label
+                        htmlFor="full_erp"
+                        className="text-base font-medium"
+                      >
                         Full ERP
                       </label>
                     </li>
@@ -795,10 +832,16 @@ export default function Form() {
                   </ul>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepSevenPrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepSevenPrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepSevenNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepSevenNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -820,10 +863,16 @@ export default function Form() {
                   ></input>
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepEightPrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepEightPrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepEightNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepEightNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
@@ -843,7 +892,10 @@ export default function Form() {
                         onChange={handleChange}
                         value="Yes"
                       ></input>
-                      <label htmlFor="yes_erp" className="text-base font-medium">
+                      <label
+                        htmlFor="yes_erp"
+                        className="text-base font-medium"
+                      >
                         Yes
                       </label>
                     </li>
@@ -930,106 +982,111 @@ export default function Form() {
                       </label>
                     </li>
                   </ul>
-                  
                 </div>
                 <div className="flex justify-end space-x-1">
-                  <a onClick={handleStepNinePrevious} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepNinePrevious}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Previous
                   </a>
-                  <a onClick={handleStepNineNext} className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center">
+                  <a
+                    onClick={handleStepNineNext}
+                    className="text-center bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                  >
                     Next
                   </a>
                 </div>
               </div>
               {/* step 10 */}
               <div id="fieldset10" className={step10 ? 'block' : 'hidden'}>
-                  <div className="grid mb-8 form-group">
-                    <input type="hidden" id="p_fname" name="fname"></input>
-                    <input type="hidden" id="p_phone" name="phone"></input>
-                    <input type="hidden" id="p_email" name="email"></input>
-                    <input
-                      type="hidden"
-                      id="p_company_name"
-                      name="company_name"
-                    ></input>
-                    <input type="hidden" id="p_website" name="website"></input>
-                    <input type="hidden" id="p_city" name="city"></input>
-                    <input type="hidden" id="p_country" name="country"></input>
-                    <input
-                      type="hidden"
-                      id="p_industryselect"
-                      name="industryselect"
-                    ></input>
-                    <input
-                      type="hidden"
-                      id="p_businessneed"
-                      name="businessneed"
-                    ></input>
-                    <input type="hidden" id="p_users" name="users"></input>
-                    <input
-                      type="hidden"
-                      id="p_erpsystem"
-                      name="erpsystem"
-                    ></input>
-                    <input type="hidden" id="p_speak" name="speak"></input>
-                    <input type="hidden" id="p_team" name="team"></input>
-                    <h2 className="text-[#302E2E] text-3xl font-semibold py-5">
-                      You Want to submit this form with this data ?
-                    </h2>
-                    <ul>
-                      <li>
-                        Your Name : <span>{formFiels.firstName}</span>
-                      </li>
-                      <li>
-                        Your Number : <span>{formFiels.phone}</span>
-                      </li>
-                      <li>
-                        Email : <span>{formFiels.email}</span>
-                      </li>
-                      <li>
-                        Company Name : <span>{formFiels.company_name}</span>
-                      </li>
-                      <li>
-                        Website : <span>{formFiels.website}</span>
-                      </li>
-                      <li>
-                        City : <span>{formFiels.city}</span>
-                      </li>
-                      <li>
-                        Country : <span>{formFiels.country}</span>
-                      </li>
-                      <li>
-                        Your Industry is: <span>{formFiels.industryselect}</span>
-                      </li>
-                      <li>
-                        Your Buinsess Need is : <span>{formFiels.businessneed}</span>
-                      </li>
-                      <li>
-                        How many users you need : <span>{formFiels.users}</span>
-                      </li>
-                      <li>
-                        Have you worked on ERP system before? :
-                        <span>{formFiels.erpsystem}</span>
-                      </li>
-                      <li>
-                        Your Key People Can Speak English? : <span>{formFiels.speak}</span>
-                      </li>
-                      <li>
-                        Do You Have an It Team? : <span>{formFiels.team}</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="">
-                    <input
-                      type="submit"
-                      className="bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
-                      value="Submit"
-                    >
-                    </input>
-                  </div>
+                <div className="grid mb-8 form-group">
+                  <input type="hidden" id="p_fname" name="fname"></input>
+                  <input type="hidden" id="p_phone" name="phone"></input>
+                  <input type="hidden" id="p_email" name="email"></input>
+                  <input
+                    type="hidden"
+                    id="p_company_name"
+                    name="company_name"
+                  ></input>
+                  <input type="hidden" id="p_website" name="website"></input>
+                  <input type="hidden" id="p_city" name="city"></input>
+                  <input type="hidden" id="p_country" name="country"></input>
+                  <input
+                    type="hidden"
+                    id="p_industryselect"
+                    name="industryselect"
+                  ></input>
+                  <input
+                    type="hidden"
+                    id="p_businessneed"
+                    name="businessneed"
+                  ></input>
+                  <input type="hidden" id="p_users" name="users"></input>
+                  <input
+                    type="hidden"
+                    id="p_erpsystem"
+                    name="erpsystem"
+                  ></input>
+                  <input type="hidden" id="p_speak" name="speak"></input>
+                  <input type="hidden" id="p_team" name="team"></input>
+                  <h2 className="text-[#302E2E] text-3xl font-semibold py-5">
+                    You Want to submit this form with this data ?
+                  </h2>
+                  <ul>
+                    <li>
+                      Your Name : <span>{formFiels.firstName}</span>
+                    </li>
+                    <li>
+                      Your Number : <span>{formFiels.phone}</span>
+                    </li>
+                    <li>
+                      Email : <span>{formFiels.email}</span>
+                    </li>
+                    <li>
+                      Company Name : <span>{formFiels.company_name}</span>
+                    </li>
+                    <li>
+                      Website : <span>{formFiels.website}</span>
+                    </li>
+                    <li>
+                      City : <span>{formFiels.city}</span>
+                    </li>
+                    <li>
+                      Country : <span>{formFiels.country}</span>
+                    </li>
+                    <li>
+                      Your Industry is: <span>{formFiels.industryselect}</span>
+                    </li>
+                    <li>
+                      Your Buinsess Need is :{' '}
+                      <span>{formFiels.businessneed}</span>
+                    </li>
+                    <li>
+                      How many users you need : <span>{formFiels.users}</span>
+                    </li>
+                    <li>
+                      Have you worked on ERP system before? :
+                      <span>{formFiels.erpsystem}</span>
+                    </li>
+                    <li>
+                      Your Key People Can Speak English? :{' '}
+                      <span>{formFiels.speak}</span>
+                    </li>
+                    <li>
+                      Do You Have an It Team? : <span>{formFiels.team}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="">
+                  <input
+                    type="submit"
+                    className="bg-[#8DC63F] hover:bg-[#302E2E] text-xs font-bold text-white py-3 w-24 items-center"
+                    value="Submit"
+                  ></input>
+                </div>
               </div>
             </form>
-            
           </div>
         </div>
       </div>

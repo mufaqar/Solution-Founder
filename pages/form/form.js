@@ -58,145 +58,140 @@ export default function Form() {
     }else{
       setStep1(false);
       setStep2(true);
-      setProgress("20%");
+      setProgress('20%');
     }
-    
-  }
-  const handleStepTwoPrevious=()=>{
-      setStep1(true);
-      setStep2(false);
-      setProgress("10%");
-  }
+  };
+  const handleStepTwoPrevious = () => {
+    setStep1(true);
+    setStep2(false);
+    setProgress('10%');
+  };
 
-  const handleStepTwoNext=()=>{
-    if(formFiels.phone === ""){
+  const handleStepTwoNext = () => {
+    if (formFiels.phone === '') {
       alert('Your Phone is Missing');
-    }else{
+    } else {
       setStep3(true);
       setStep2(false);
-      setProgress("30%");
-      
+      setProgress('30%');
     }
-  }
+  };
 
-  const handleStepThreePrevious=()=>{
+  const handleStepThreePrevious = () => {
     setStep3(false);
     setStep2(true);
-    setProgress("20%");
-    
-  }
-  
-  const handleStepThreeNext=()=>{
-    if(formFiels.email === ""){
+    setProgress('20%');
+  };
+
+  const handleStepThreeNext = () => {
+    if (formFiels.email === '') {
       alert('Your Email is Missing');
-    }else{
+    } else {
       setStep3(false);
       setStep4(true);
-      setProgress("40%");
+      setProgress('40%');
     }
-    
-  }
+  };
 
-  const handleStepFourPrevious=()=>{
+  const handleStepFourPrevious = () => {
     setStep3(true);
     setStep4(false);
-    setProgress("30%");
-  }
+    setProgress('30%');
+  };
 
-  const handleStepFourNext=()=>{
-    if(formFiels.company_name === "" || formFiels.website === ""){
+  const handleStepFourNext = () => {
+    if (formFiels.company_name === '' || formFiels.website === '') {
       alert('Your Data is Missing');
-    }else{
+    } else {
       setStep4(false);
       setStep5(true);
-      setProgress("50%");
+      setProgress('50%');
     }
-    
-  }
+  };
 
-  const handleStepFivePrevious=()=>{
+  const handleStepFivePrevious = () => {
     setStep4(true);
     setStep5(false);
-    setProgress("40%");
-  }
+    setProgress('40%');
+  };
 
-  const handleStepFiveNext=()=>{
-    if(formFiels.city === "" || formFiels.country === ""){
+  const handleStepFiveNext = () => {
+    if (formFiels.city === '' || formFiels.country === '') {
       alert('Your City & Country is Missing');
-    }else{
+    } else {
       setStep5(false);
       setStep6(true);
-      setProgress("60%");
+      setProgress('60%');
     }
-  }
+  };
 
-  const handleStepSixPrevious=()=>{
+  const handleStepSixPrevious = () => {
     setStep5(true);
     setStep6(false);
-    setProgress("50%");
-  }
+    setProgress('50%');
+  };
 
-  const handleStepSixNext=()=>{
-    if(formFiels.industryselect === ""){
+  const handleStepSixNext = () => {
+    if (formFiels.industryselect === '') {
       alert('Select Industry');
-    }else{
+    } else {
       setStep7(true);
       setStep6(false);
-      setProgress("70%");
+      setProgress('70%');
     }
-    
-  }
+  };
 
-  const handleStepSevenPrevious=()=>{
+  const handleStepSevenPrevious = () => {
     setStep6(true);
     setStep7(false);
-    setProgress("60%");
-  }
+    setProgress('60%');
+  };
 
   const handleStepSevenNext=()=>{
     if(formFiels.businessneed === ""){
       alert('Select Business');
-    }else{
+    } else {
       setStep8(true);
       setStep7(false);
-      setProgress("80%");
+      setProgress('80%');
     }
-  }
+  };
 
-  const handleStepEightPrevious=()=>{
+  const handleStepEightPrevious = () => {
     setStep7(true);
     setStep8(false);
-    setProgress("70%");
-  }
+    setProgress('70%');
+  };
 
-  const handleStepEightNext=()=>{
-    if(formFiels.users === ""){
+  const handleStepEightNext = () => {
+    if (formFiels.users === '') {
       alert('Data Missing');
-    }else{
+    } else {
       setStep9(true);
       setStep8(false);
-      setProgress("90%");
+      setProgress('90%');
     }
-    
-  }
+  };
 
-  const handleStepNinePrevious=()=>{
+  const handleStepNinePrevious = () => {
     setStep8(true);
     setStep9(false);
-    setProgress("80%");
-  }
+    setProgress('80%');
+  };
 
-  const handleStepNineNext=()=>{
-    
-    if(formFiels.erpsystem === "" || formFiels.speak === "" || formFiels.team === ""){
+  const handleStepNineNext = () => {
+    if (
+      formFiels.erpsystem === '' ||
+      formFiels.speak === '' ||
+      formFiels.team === ''
+    ) {
       alert('Data Missing');
-    }else{
+    } else {
       setStep10(true);
       setStep9(false);
-      setProgress("100%");
+      setProgress('100%');
     }
-  }
-
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -221,70 +216,113 @@ export default function Form() {
           <div className="p-2">
             <ul className="flex items-center justify-center mb-8 progressbar">
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step1 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step1 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <FaUserAlt />
                 </span>
                 1
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step2 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step2 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <BsFillTelephoneFill />
                 </span>
                 2
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step3 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step3 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <FaEnvelope />
                 </span>
                 3
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step4 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step4 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <BiBuilding />
                 </span>
                 4
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step5 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step5 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <MdLocationOn />
                 </span>
                 5
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step6 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step6 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <TiWorld />
                 </span>
                 6
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step7 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step7 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <FaRegSun />
                 </span>
                 7
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step8 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step8 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <FaUsers />
                 </span>
                 8
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step9 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step9 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <FaRetweet />
                 </span>
                 9
               </li>
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
-                <span className={`p-2 mb-2 text-white rounded-full ${step10 ? 'bg-[#8DC63F]' : 'bg-gray-200'}`}>
+                <span
+                  className={`p-2 mb-2 text-white rounded-full ${
+                    step10 ? 'bg-[#8DC63F]' : 'bg-gray-200'
+                  }`}
+                >
                   <BsCheckLg />
                 </span>
                 10
               </li>
             </ul>
-            
+
             {/* progress bar  */}
             <div className="w-full h-6 rounded-[4px] bg-slate-200">
-              <div className={`flex rounded-[4px] justify-end h-6 bg-[#8DC63F] transition-all duration-500 progressBar`} style = {{ width: progress }}>
+              <div
+                className={`flex rounded-[4px] justify-end h-6 bg-[#8DC63F] transition-all duration-500 progressBar`}
+                style={{ width: progress }}
+              >
                 <p className="mr-2 text-white">{progress}</p>
               </div>
             </div>

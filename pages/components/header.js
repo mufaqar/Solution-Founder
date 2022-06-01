@@ -84,7 +84,7 @@ export default function Header() {
                     <AiOutlineDown />
                   </span>
                   <ul
-                    className={`fixed z-20 w-full h-screen overflow-scroll lg:h-auto lg:overflow-hidden transition-all left-1/2 transform -translate-x-1/2 lg:-z-20 ${
+                    className={`fixed z-20 w-full h-[500px] overflow-scroll lg:h-auto lg:overflow-hidden transition-all left-1/2 transform -translate-x-1/2 lg:-z-20 ${
                       megaMenu ? '-top-[110%]' : 'top-[86px]'
                     }`}
                   >

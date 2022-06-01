@@ -364,7 +364,7 @@ export default function Form() {
                     type="number"
                     id="phone"
                     name="phone"
-                    placeholder="Enter Your Phone "
+                    placeholder="Enter Your Phone ! "
                     value={formFiels.phone}
                     onChange={handleChange}
                     className="py-2 px-4 border border-[#ccc] focus:outline-none focus:border-[#8DC63F] bg-[#eceff1] text-lg font-semibold text-[#302E2E]"

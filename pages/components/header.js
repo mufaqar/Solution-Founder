@@ -9,6 +9,7 @@ import Image from 'next/image';
 export default function Header() {
   const [megaMenu, setMegaMenu] = useState(true);
   const [CompMegaMenu, setCompMegaMenu] = useState(true);
+  const [ismobile, setisMobile] = useState(false);
 
   const HandleMegaMenu = () => {
     setMegaMenu(!megaMenu);
@@ -67,13 +68,13 @@ export default function Header() {
               />
             </Link>
           </div>
-          <div className="hidden w-auto md:block">
-            <ul className="flex items-center justify-center space-x-12">
-              <li className="inline text-base font-semibold text-white">
+          <div className={`fixed lg:w-auto md:block lg:relative bg-[#133C6D] lg:bg-transparent left-0 transition-all duration-300 right-0 lg:top-0 lg:right-0 ${ismobile ? 'top-[89px]' : '-top-full'}`}>
+            <ul className="flex flex-col items-start justify-center pt-0 pb-10 space-x-12 space-y-6 lg:pb-0 lg:-mt-8 lg:items-baseline lg:flex-row">
+              <li className="inline pl-12 mt-10 text-xl font-semibold text-white ml:mt-0 lg:text-base lg:pl-0">
                 <Link href="/">Home</Link>
               </li>
               <li
-                className="inline text-base font-semibold text-white cursor-pointer"
+                className="inline text-xl font-semibold text-white cursor-pointer lg:text-base"
                 onClick={HandleMegaMenu}
               >
                 <span className="flex items-center ">
@@ -90,17 +91,17 @@ export default function Header() {
                   </ul>
                 </span>
               </li>
-              <li className="inline text-base font-semibold text-white">
+              <li className="inline text-xl font-semibold text-white lg:text-base">
                 <Link href="/industries-solution">Industries Solution</Link>
               </li>
-              <li className="inline text-base font-semibold text-white">
+              <li className="inline text-xl font-semibold text-white lg:text-base">
                 <Link href="/success-stories">Success Stories</Link>
               </li>
-              <li className="inline text-base font-semibold text-white">
+              <li className="inline text-xl font-semibold text-white lg:text-base">
                 <Link href="/news-updates">News & Updates</Link>
               </li>
               <li
-                className="inline text-base font-semibold text-white cursor-pointer"
+                className="inline text-xl font-semibold text-white cursor-pointer lg:text-base"
                 onClick={HandleComp_MegaMenu}
               >
                 <span className="relative flex items-center hover-trigger">
@@ -120,14 +121,15 @@ export default function Header() {
             </ul>
           </div>
           <div className="items-center block w-auto md:hidden">
-            <button className="px-1 py-2 bg-white rounded-sm shadow-md">
-              <svg
-                className="text-gray-900 fill-current"
+            <button className="px-2 py-2 bg-[#8DC63F] rounded-sm  shadow-md" onClick={()=> setisMobile(!ismobile)}>
+            
+            <svg
+                className="text-white fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
-              >
+              > 
                 <title>menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
               </svg>

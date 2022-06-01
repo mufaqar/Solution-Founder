@@ -6,14 +6,11 @@ import { AiOutlineClose } from "react-icons/ai";
 export default function Banner(props) {
 
   const [formPopup, setFormPopup] = useState(false);
-  
-  // if(formPopup === true){
-  //   document.body.style.overflowY = 'hidden';
-  // }else{
-  //   document.querySelector(body).remove
-  // }
 
-
+  if (typeof window !== 'undefined') {
+    formPopup ?  document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'scroll'
+  }
+ 
   return (
     <>
       <section className="bg-bottom bg-cover bg-page-banner">

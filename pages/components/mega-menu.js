@@ -23,9 +23,9 @@ import {
 
 export default function Mega_Menu() {
   return (
-    <div className="flex flex-wrap w-[1200px] mx-auto bg-white shadow-lg z-0">
-      <div className="w-[78%] grid gap-5 p-10 pb-6">
-        <div className="grid grid-cols-3 gap-7">
+    <div className="flex flex-wrap w-full lg:w-[1190px] mx-auto bg-white shadow-lg z-0">
+      <div className="lg:w-[78%] w-full grid gap-5 p-10 pb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7">
           <div className="items-center w-full space-y-3">
             <Image
               src="/images/products.png"
@@ -36,7 +36,7 @@ export default function Mega_Menu() {
             <h2 className="text-[#0261A3] text-base font-bold flex items-center">
               ERP Solutions
             </h2>
-            <ol className="space-y-2 list-disc list-inside">
+            <ol className="space-y-2 list-disc list-inside whitespace-nowrap">
               <li className="text-black hover:text-[#8DC63F] text-sm uppercase font-normal">
                 <Link href={transportation}>Transportation</Link>
               </li>
@@ -111,7 +111,7 @@ export default function Mega_Menu() {
             </ol>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           <div className="items-center w-full space-y-3">
             <Image
               src="/images/products.png"
@@ -152,7 +152,10 @@ export default function Mega_Menu() {
           </div>
         </div>
       </div>
-      <div className="w-[22%] py-12 px-5 bg-megaBg bg-cover bg-center items-center flex flex-wrap justify-center">
+
+
+
+      <div className="w-[22%] py-12 px-5 bg-megaBg bg-cover bg-center items-center lg:flex hidden flex-wrap justify-center">
         <div className="grid items-center w-full gap-5 p-2 ">
           <h2 className="flex items-center text-base font-bold text-white">
             WE ARE THE INFORMATION TECHNOLOGY COMPANY

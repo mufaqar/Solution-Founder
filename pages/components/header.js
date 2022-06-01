@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { AiOutlineDown } from 'react-icons/ai';
+import { AiOutlineClose } from "react-icons/ai";
 import Link from 'next/link';
 import Mega_Menu from './mega-menu';
 import { useState } from 'react';
@@ -68,8 +69,8 @@ export default function Header() {
               />
             </Link>
           </div>
-          <div className={`fixed lg:w-auto md:block lg:relative bg-[#133C6D] lg:bg-transparent left-0 transition-all duration-300 right-0 lg:top-0 lg:right-0 ${ismobile ? 'top-[89px]' : '-top-full'}`}>
-            <ul className="flex flex-col items-start justify-center pt-0 pb-10 space-x-12 space-y-6 lg:pb-0 lg:-mt-8 lg:items-baseline lg:flex-row">
+          <div className={`fixed lg:w-auto md:block lg:relative bg-[#133C6D] lg:bg-transparent left-0 transition-all duration-300 right-0 lg:top-0 lg:right-0 ${ismobile ? 'top-[85px]' : '-top-full'}`}>
+            <ul className="flex flex-col items-start justify-center bg-[#133C6D] pt-0 pb-10 space-x-12 space-y-6 lg:pb-0 lg:-mt-8 lg:items-baseline lg:flex-row">
               <li className="inline pl-12 mt-10 text-xl font-semibold text-white ml:mt-0 lg:text-base lg:pl-0">
                 <Link href="/">Home</Link>
               </li>
@@ -83,11 +84,14 @@ export default function Header() {
                     <AiOutlineDown />
                   </span>
                   <ul
-                    className={`fixed transition-all left-1/2 transform -translate-x-1/2 -z-20 ${
-                      megaMenu ? '-top-[500px]' : 'top-[87px]'
+                    className={`fixed z-20 w-full h-screen overflow-scroll lg:h-auto lg:overflow-hidden transition-all left-1/2 transform -translate-x-1/2 lg:-z-20 ${
+                      megaMenu ? '-top-[110%]' : 'top-[86px]'
                     }`}
                   >
                     <Mega_Menu />
+                    <div className='absolute bg-[#8DC63F] block lg:hidden top-4 right-4' onClick={()=>setMegaMenu(false)}>
+                      <AiOutlineClose size={25}/>
+                    </div>
                   </ul>
                 </span>
               </li>

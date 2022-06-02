@@ -32,7 +32,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/freight.svg"
+                      src="/images/logistics.svg"
                       alt="Logistics & Transportation"
                       width={45}
                       height={45}
@@ -67,7 +67,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/F.png"
+                      src="/images/freight.svg"
                       alt="Freight Forwarding"
                       width={45}
                       height={45}
@@ -100,7 +100,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/F.png"
+                      src="/images/manufacturing.svg"
                       alt="setting.png"
                       width={45}
                       height={45}
@@ -133,7 +133,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/F.png"
+                      src="/images/distribution.svg"
                       alt="Distribution"
                       width={45}
                       height={45}
@@ -166,7 +166,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/F.png"
+                      src="/images/construction.svg"
                       alt="Construction & Real Estate"
                       width={45}
                       height={45}
@@ -201,7 +201,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/F.png"
+                      src="/images/retail.svg"
                       alt="Retail"
                       width={45}
                       height={45}

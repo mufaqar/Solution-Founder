@@ -1,13 +1,12 @@
-import { useState } from "react";
-import Image from "next/image";
-import LogisticsTransportation from "../../public/images/logistics.svg";
-import FreightForwarding from "../../public/images/freight.svg";
-import Manufacturing from "../../public/images/manufacturing.svg";
-import Distribution from "../../public/images/distribution.svg";
-import Construction from "../../public/images/construction.svg";
-import Retail from "../../public/images/retail.svg";
-import Link from 'next/link'
-
+import { useState } from 'react';
+import Image from 'next/image';
+import logistics from '../../public/images/logistics.svg';
+import freight from '../../public/images/freight.svg';
+import manufacturing from '../../public/images/manufacturing.svg';
+import distribution from '../../public/images/distribution.svg';
+import construction from '../../public/images/construction.svg';
+import retail from '../../public/images/retail.svg';
+import Link from 'next/link';
 
 export default function TabsSection() {
   const [tab, setTab] = useState(1);
@@ -33,7 +32,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={LogisticsTransportation}
+                      src={logistics}
                       alt="Logistics & Transportation"
                       width={45}
                       height={45}
@@ -45,7 +44,7 @@ export default function TabsSection() {
                 </div>
               </a>
               <figure
-                className={`w-full -mt-2 h-2 ${tab === 1 ? "block" : "hidden"}`}
+                className={`w-full -mt-2 h-2 ${tab === 1 ? 'block' : 'hidden'}`}
               >
                 <Image
                   src="/images/color-bar.jpg"
@@ -68,7 +67,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={FreightForwarding}
+                      src={freight}
                       alt="Freight Forwarding"
                       width={45}
                       height={45}
@@ -78,7 +77,7 @@ export default function TabsSection() {
                 </div>
               </a>
               <figure
-                className={`w-full -mt-2 h-2 ${tab === 2 ? "block" : "hidden"}`}
+                className={`w-full -mt-2 h-2 ${tab === 2 ? 'block' : 'hidden'}`}
               >
                 <Image
                   src="/images/color-bar.jpg"
@@ -101,7 +100,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={Manufacturing}
+                      src={manufacturing}
                       alt="setting.png"
                       width={45}
                       height={45}
@@ -111,7 +110,7 @@ export default function TabsSection() {
                 </div>
               </a>
               <figure
-                className={`w-full -mt-2 h-2 ${tab === 3 ? "block" : "hidden"}`}
+                className={`w-full -mt-2 h-2 ${tab === 3 ? 'block' : 'hidden'}`}
               >
                 <Image
                   src="/images/color-bar.jpg"
@@ -134,7 +133,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={Distribution}
+                      src={distribution}
                       alt="Distribution"
                       width={45}
                       height={45}
@@ -144,7 +143,7 @@ export default function TabsSection() {
                 </div>
               </a>
               <figure
-                className={`w-full -mt-2 h-2 ${tab === 4 ? "block" : "hidden"}`}
+                className={`w-full -mt-2 h-2 ${tab === 4 ? 'block' : 'hidden'}`}
               >
                 <Image
                   src="/images/color-bar.jpg"
@@ -167,7 +166,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={Construction}
+                      src={construction}
                       alt="Construction & Real Estate"
                       width={45}
                       height={45}
@@ -179,7 +178,7 @@ export default function TabsSection() {
                 </div>
               </a>
               <figure
-                className={`w-full -mt-2 h-2 ${tab === 5 ? "block" : "hidden"}`}
+                className={`w-full -mt-2 h-2 ${tab === 5 ? 'block' : 'hidden'}`}
               >
                 <Image
                   src="/images/color-bar.jpg"
@@ -201,13 +200,13 @@ export default function TabsSection() {
                     />
                   </figure>
                   <figure>
-                    <Image src={Retail} alt="Retail" width={45} height={45} />
+                    <Image src={retail} alt="Retail" width={45} height={45} />
                   </figure>
                   <h3 className="text-sm text-center">Retail</h3>
                 </div>
               </a>
               <figure
-                className={`w-full -mt-2 h-2 ${tab === 6 ? "block" : "hidden"}`}
+                className={`w-full -mt-2 h-2 ${tab === 6 ? 'block' : 'hidden'}`}
               >
                 <Image
                   src="/images/color-bar.jpg"
@@ -223,7 +222,7 @@ export default function TabsSection() {
             <div
               id="first"
               className={`border-t border-black ${
-                tab === 1 ? "block" : "hidden"
+                tab === 1 ? 'block' : 'hidden'
               }`}
             >
               <div className="flex flex-col items-center pt-5 space-y-2 md:flex-row md:space-y-0">
@@ -234,31 +233,34 @@ export default function TabsSection() {
                   Insights linked to your financial results.
                 </p>
                 <div className="flex justify-center w-full md:w-1/5 md:justify-end">
-                  <Link href="/product/transportation" className="items-center main-button">
-                <a className='bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white'>
-                  LEARN MORE
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block w-4 h-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <Link
+                    href="/product/transportation"
+                    className="items-center main-button"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </a>
-              </Link>
+                    <a className="bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white">
+                      LEARN MORE
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="inline-block w-4 h-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div
               className={`border-t border-black ${
-                tab === 2 ? "block" : "hidden"
+                tab === 2 ? 'block' : 'hidden'
               }`}
             >
               <div className="flex flex-col items-center pt-5 space-y-2 md:flex-row md:space-y-0">
@@ -269,32 +271,35 @@ export default function TabsSection() {
                   insight linked to your financial results.
                 </p>
                 <div className="flex justify-center w-full md:w-1/5 md:justify-end">
-                  <Link href="/product/custom-clearance-and-freight" className="items-center main-button">
-                <a className='bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white'>
-                  LEARN MORE
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block w-4 h-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <Link
+                    href="/product/custom-clearance-and-freight"
+                    className="items-center main-button"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </a>
-              </Link>
+                    <a className="bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white">
+                      LEARN MORE
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="inline-block w-4 h-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div
               id="third"
               className={`border-t border-black ${
-                tab === 3 ? "block" : "hidden"
+                tab === 3 ? 'block' : 'hidden'
               }`}
             >
               <div className="flex flex-col items-center pt-5 space-y-2 md:flex-row md:space-y-0">
@@ -306,32 +311,35 @@ export default function TabsSection() {
                   demographics, are shaping this new business model.
                 </p>
                 <div className="flex justify-center w-full md:w-1/5 md:justify-end">
-                  <Link href="/product/manufacturing" className="items-center main-button">
-                <a className='bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white'>
-                  LEARN MORE
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block w-4 h-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <Link
+                    href="/product/manufacturing"
+                    className="items-center main-button"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </a>
-              </Link>
+                    <a className="bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white">
+                      LEARN MORE
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="inline-block w-4 h-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div
               id="fourth"
               className={`border-t border-black ${
-                tab === 4 ? "block" : "hidden"
+                tab === 4 ? 'block' : 'hidden'
               }`}
             >
               <div className="flex flex-col items-center pt-5 space-y-2 md:flex-row md:space-y-0">
@@ -344,32 +352,35 @@ export default function TabsSection() {
                   value chain disruptions.
                 </p>
                 <div className="flex justify-center w-full md:w-1/5 md:justify-end">
-                  <Link href="/product/trading-distribution" className="items-center main-button">
-                <a className='bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white'>
-                  LEARN MORE
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block w-4 h-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <Link
+                    href="/product/trading-distribution"
+                    className="items-center main-button"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </a>
-              </Link>
+                    <a className="bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white">
+                      LEARN MORE
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="inline-block w-4 h-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div
               id="fifth"
               className={`border-t border-black ${
-                tab === 5 ? "block" : "hidden"
+                tab === 5 ? 'block' : 'hidden'
               }`}
             >
               <div className="flex flex-col items-center pt-5 space-y-2 md:flex-row md:space-y-0">
@@ -381,32 +392,35 @@ export default function TabsSection() {
                   Estate industry.
                 </p>
                 <div className="flex justify-center w-full md:w-1/5 md:justify-end">
-                  <Link href="/product/construction-and-contracting" className="items-center main-button">
-                <a className='bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white'>
-                  LEARN MORE
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block w-4 h-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <Link
+                    href="/product/construction-and-contracting"
+                    className="items-center main-button"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </a>
-              </Link>
+                    <a className="bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white">
+                      LEARN MORE
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="inline-block w-4 h-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <div
               id="sixth"
               className={`border-t border-black ${
-                tab === 6 ? "block" : "hidden"
+                tab === 6 ? 'block' : 'hidden'
               }`}
             >
               <div className="flex flex-col items-center pt-5 space-y-2 md:flex-row md:space-y-0">
@@ -417,25 +431,28 @@ export default function TabsSection() {
                   supporting businesses like yours.
                 </p>
                 <div className="flex justify-center w-full md:w-1/5 md:justify-end">
-                  <Link href="/product/retail" className="items-center main-button">
-                <a className='bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white'>
-                  LEARN MORE
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="inline-block w-4 h-4 ml-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <Link
+                    href="/product/retail"
+                    className="items-center main-button"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </a>
-              </Link>
+                    <a className="bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white">
+                      LEARN MORE
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="inline-block w-4 h-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="3"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>

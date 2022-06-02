@@ -2,7 +2,6 @@ import Banner from './components/banner';
 import Footer from './components/footer';
 import Header from './components/header';
 import TabsSection from './components/tabs';
-import LatestSuccessStories from './components/Latest-success-stories';
 import IntrustedDepartment from './components/intrusted-department';
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';

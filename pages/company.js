@@ -16,7 +16,7 @@ import microsoft from '../public/images/micro-dark.png';
 
 
 export default function Company({ team, posts }) {
-  
+
     const [tab, setTab] = React.useState(1);
 
 
@@ -132,23 +132,25 @@ export default function Company({ team, posts }) {
                         <p className="text-base font-medium tracking-normal text-white">
                             To be the right technology enabler for world.
                         </p>
-                        <button className="main-button hover:bg-[#302E2E] items-center">
-                            Lets Started
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="inline-block w-4 h-4 ml-2"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="3"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                ></path>
-                            </svg>
-                        </button>
+                        <Link href="/contact-us" className="items-center main-button">
+                            <a className='bg-[#8DC63F] hover:bg-black px-5 font-bold inline-block py-4 rounded-md text-white'>
+                                LEARN MORE
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="inline-block w-4 h-4 ml-2"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="3"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </Link>
                     </div>
                     <div className="w-full md:w-1/2"></div>
                 </div>
@@ -399,46 +401,46 @@ export default function Company({ team, posts }) {
             </section>
 
             <section className="py-28 px-7">
-        <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
-          OUR SUCCESS STORIES
-        </h2>
+                <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
+                    OUR SUCCESS STORIES
+                </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
-            {
-              posts.map((item, index) => (
-                <div key={index} className='flex flex-col'>
-                  <Image
-                    src={item.node.featuredImage.node.mediaItemUrl}
-                    alt={item.node.title}
-                    width={500}
-                    height={350}
-                  />
-                  <div className='relative p-1 shadow-sm'>
-                    <div className="p-5 space-y-1">
-                      <h3 className="box-title">
-                        <Link href={item.node.uri}>{item.node.title}</Link>
-                      </h3>
-                      <p className="text-base font-medium text-[#535353]">
-                        {item.node.successStoryExtra.shortInfo}
-                      </p>
-                    </div>
-                    <div className="absolute bottom-0 right-0 flex justify-end">
-                      <figure className="max-h-[18px]">
-                        <Image
-                          src="/images/color-bar-light.jpg"
-                          alt="images/color-bar-light.jpg"
-                          className="w-[55%] h-[10px]"
-                          width={155}
-                          height={8}
-                        />
-                      </figure>
-                    </div>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
+                    {
+                        posts.map((item, index) => (
+                            <div key={index} className='flex flex-col'>
+                                <Image
+                                    src={item.node.featuredImage.node.mediaItemUrl}
+                                    alt={item.node.title}
+                                    width={500}
+                                    height={350}
+                                />
+                                <div className='relative p-1 shadow-sm'>
+                                    <div className="p-5 space-y-1">
+                                        <h3 className="box-title">
+                                            <Link href={item.node.uri}>{item.node.title}</Link>
+                                        </h3>
+                                        <p className="text-base font-medium text-[#535353]">
+                                            {item.node.successStoryExtra.shortInfo}
+                                        </p>
+                                    </div>
+                                    <div className="absolute bottom-0 right-0 flex justify-end">
+                                        <figure className="max-h-[18px]">
+                                            <Image
+                                                src="/images/color-bar-light.jpg"
+                                                alt="images/color-bar-light.jpg"
+                                                className="w-[55%] h-[10px]"
+                                                width={155}
+                                                height={8}
+                                            />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
                 </div>
-              ))
-            }
-          </div>
-      </section>
+            </section>
 
             <Footer />
         </>

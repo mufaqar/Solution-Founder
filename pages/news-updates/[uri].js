@@ -17,7 +17,6 @@ export default function SlugPage({ post, posts }) {
         <link rel="icon" href="favicon.ico"></link>
       </Head>
       <Header />
-
       <Banner
         heading={post.postExtra.subHeading}
         bannerURL={post.postExtra.bannerImage.mediaItemUrl}

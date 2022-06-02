@@ -11,7 +11,8 @@ import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
 import Link from 'next/link';
 import Image from 'next/image';
-
+import GlobalReach from '../public/images/Global-Reach.svg'
+import TrustedSecurity from '../public/images/Trusted-Security.svg'
 
 
 export default function Home({ posts }) {
@@ -53,12 +54,12 @@ export default function Home({ posts }) {
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />
           <ImageBox
-            icon={AwardWinner}
+            icon={GlobalReach}
             title="Global Reach"
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />
           <ImageBox
-            icon={AwardWinner}
+            icon={TrustedSecurity}
             title="Trusted Security"
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />

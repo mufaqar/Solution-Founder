@@ -83,22 +83,22 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="about-us">
+                <Link passHref href="/about-us">
                   About us
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="career">
+                <Link passHref href="/career">
                   Career
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="success-stories">
+                <Link passHref href="/success-stories">
                   Success Stories
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="news-updates">
+                <Link passHref href="/news-updates">
                   News & Updates
                 </Link>
               </li>
@@ -113,32 +113,32 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="retail">
+                <Link passHref href="/retail">
                   Retail
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="manufacturing">
+                <Link passHref href="/manufacturing">
                   Manufacturing
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="trading-distribution">
+                <Link passHref href="/trading-distribution">
                   Trading Distribution
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="custom-clearance-and-freight-forwarding">
+                <Link passHref href="/custom-clearance-and-freight-forwarding">
                   Freight Forwarding
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="transportation">
+                <Link passHref href="/transportation">
                   Logistics & Transportation
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="construction-and-contracting">
+                <Link passHref href="/construction-and-contracting">
                   Construction & Real Estate
                 </Link>
               </li>

@@ -169,7 +169,7 @@ export default function Company({ team, posts }) {
                 </div>
             </section>
 
-            <section className="py-14 px-7 bg-[#eff1f4]">
+            <section id="team" className="py-14 px-7 bg-[#eff1f4]">
                 <div className="max-w-[1200px] mx-auto">
                     <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
                         OUR TEAM

@@ -1,4 +1,6 @@
-import Image from 'next/image'; 
+import Image from 'next/image';
+import Link from 'next/link'
+
 
 export default function TeamSection() {
   return (
@@ -13,24 +15,25 @@ export default function TeamSection() {
               Our team draws on board vast industry experience to make best
               outcomes for our clients
             </p>
-            <button className="text-[#133C6D] hover:text-white border border-[#133C6D] hover:bg-[#133C6D] text-sm font-bold py-4 px-5 rounded-md items-center">
-              Meet The Team
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block w-4 h-4 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="3"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </button>
+            <Link href="/company/#team" className="items-center main-button">
+              <a className='border-[1px] border-[rgb(19,60,109)] hover:bg-[rgb(19,60,109)] hover:text-white px-5 font-bold inline-block py-4 rounded-md text-[rgb(19,60,109)]'>
+                Meat The Team
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="inline-block w-4 h-4 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="3"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  ></path>
+                </svg>
+              </a>
+            </Link>
           </div>
           <div className="items-baseline w-full md:w-1/2">
             <Image

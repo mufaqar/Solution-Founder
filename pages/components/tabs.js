@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import logistics from '../../public/images/logistics.svg';
-import freight from '../../public/images/freight.svg';
-import manufacturing from '../../public/images/manufacturing.svg';
-import distribution from '../../public/images/distribution.svg';
-import construction from '../../public/images/construction.svg';
-import retail from '../../public/images/retail.svg';
+// import logistics from '../../public/images/logistics.svg';
+// import freight from '../../public/images/freight.svg';
+// import manufacturing from '../../public/images/manufacturing.svg';
+// import distribution from '../../public/images/distribution.svg';
+// import construction from '../../public/images/construction.svg';
+// import retail from '../../public/images/retail.svg';
 import Link from 'next/link';
 
 export default function TabsSection() {
@@ -67,7 +67,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={freight}
+                      src="/images/F.png"
                       alt="Freight Forwarding"
                       width={45}
                       height={45}
@@ -100,7 +100,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={manufacturing}
+                      src="/images/F.png"
                       alt="setting.png"
                       width={45}
                       height={45}
@@ -133,7 +133,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={distribution}
+                      src="/images/F.png"
                       alt="Distribution"
                       width={45}
                       height={45}
@@ -166,7 +166,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={construction}
+                      src="/images/F.png"
                       alt="Construction & Real Estate"
                       width={45}
                       height={45}
@@ -200,7 +200,12 @@ export default function TabsSection() {
                     />
                   </figure>
                   <figure>
-                    <Image src={retail} alt="Retail" width={45} height={45} />
+                    <Image
+                      src="/images/F.png"
+                      alt="Retail"
+                      width={45}
+                      height={45}
+                    />
                   </figure>
                   <h3 className="text-sm text-center">Retail</h3>
                 </div>

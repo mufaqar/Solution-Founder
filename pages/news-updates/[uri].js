@@ -10,13 +10,14 @@ import Footer from "../components/footer";
 
 
 export default function SlugPage({ post, posts }) {
-  console.log("banner", post.postExtra.bannerImage.mediaItemUrl);
+  console.log("banner", post);
   return (
     <div>
       <Head>
         <link rel="icon" href="favicon.ico"></link>
       </Head>
       <Header />
+
       <Banner
         heading={post.postExtra.subHeading}
         bannerURL={post.postExtra.bannerImage.mediaItemUrl}
@@ -26,7 +27,7 @@ export default function SlugPage({ post, posts }) {
               <h2 className="mb-4 text-4xl font-bold">{post.title}</h2>
               <p className="text-xl ">{post.postExtra.shortContent}</p>
           </div>
-          
+          <div></div>
       </main>
 
       <section className="py-20 px-7">
@@ -44,10 +45,9 @@ export default function SlugPage({ post, posts }) {
                   width={500}
                   height={350}
                 />
-
                 <div className="p-5 space-y-1">
                   <h3 className="box-title">
-                    <Link href={`news-updates/${data.uri}`}>{data.title}</Link>
+                    <Link href={`/news-updates/${data.uri}/`}>{data.title}</Link>
                   </h3>
                 </div>
                 <div className="absolute bottom-0 right-0 flex justify-end">
@@ -66,8 +66,9 @@ export default function SlugPage({ post, posts }) {
           ))}
         </div>
       </section>
-
+      
       <Footer/>
+
     </div>
   );
 }

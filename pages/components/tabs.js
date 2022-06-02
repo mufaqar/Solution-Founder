@@ -32,7 +32,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src={logistics}
+                      src="/images/freight.svg"
                       alt="Logistics & Transportation"
                       width={45}
                       height={45}

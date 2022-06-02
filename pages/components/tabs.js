@@ -67,7 +67,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/freight.svg"
+                      src="/images/Freight.svg"
                       alt="Freight Forwarding"
                       width={45}
                       height={45}
@@ -100,7 +100,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/manufacturing.svg"
+                      src="/images/Manufacturing.svg"
                       alt="setting.png"
                       width={45}
                       height={45}
@@ -133,7 +133,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/distribution.svg"
+                      src="/images/Distribution.svg"
                       alt="Distribution"
                       width={45}
                       height={45}
@@ -166,7 +166,7 @@ export default function TabsSection() {
                   </figure>
                   <figure>
                     <Image
-                      src="/images/construction.svg"
+                      src="/images/Construction.svg"
                       alt="Construction & Real Estate"
                       width={45}
                       height={45}

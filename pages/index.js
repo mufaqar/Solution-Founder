@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 
 export default function Home({ posts }) {
-  console.log('index', posts);
+  
   return (
     <>
       <Header />

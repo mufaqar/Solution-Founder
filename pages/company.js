@@ -1,5 +1,4 @@
 import Banner from './components/banner';
-import Cardnew from './components/card-new';
 import Footer from './components/footer';
 import Header from './components/header';
 import Team from './components/team';
@@ -7,6 +6,7 @@ import { useState } from 'react';
 import React from 'react';
 import LatestSuccessStories from './components/Latest-success-stories';
 import Image from 'next/image';
+import Link from 'next/link';
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
 // images
@@ -15,7 +15,8 @@ import odoo from '../public/images/odoo (1).png';
 import microsoft from '../public/images/micro-dark.png';
 
 
-export default function Company({ team }) {
+export default function Company({ team, posts }) {
+  
     const [tab, setTab] = React.useState(1);
 
 
@@ -30,7 +31,7 @@ export default function Company({ team }) {
             />
 
             <section className="py-14">
-                <div className=" lg:w-2/3 mx-auto p-3 mb-8">
+                <div className="p-3 mx-auto mb-8 lg:w-2/3">
                     <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
                         ABOUT US
                     </h2>
@@ -113,7 +114,7 @@ export default function Company({ team }) {
                         alt="f-large.png"
                         className="absolute top-[120px] left-0"
                         width={250}
-                        height={230}
+                        height={210}
                     />
                 </figure>
                 <div className="flex md:flex-row flex-col items-center max-w-[1200px] mx-auto md:px-6 px-3 py-28">
@@ -166,7 +167,7 @@ export default function Company({ team }) {
                 </div>
             </section>
 
-            <section className="py-14 px-7 bg-[#eff1f4] ">
+            <section className="py-14 px-7 bg-[#eff1f4]">
                 <div className="max-w-[1200px] mx-auto">
                     <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
                         OUR TEAM
@@ -187,7 +188,7 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 hidden lg:block  text-sm w-28 whitespace-nowrap"> All</h3>
+                                    <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap"> All</h3>
                                 </div>
                                 <figure className={`w-12 lg:w-full h-2 ${tab === 1 ? 'block' : 'hidden'}`}>
                                     <Image
@@ -201,7 +202,7 @@ export default function Company({ team }) {
                         </li>
                         <li>
                             <a onClick={() => setTab(2)}>
-                                <div className="flex items-center w-full  px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                                <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
                                     <figure>
                                         <Image
                                             src="/images/setting.png"
@@ -211,7 +212,7 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 hidden lg:block text-sm w-28 whitespace-nowrap"> Management Team</h3>
+                                    <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap"> Management Team</h3>
                                 </div>
                                 <figure className={`w-12 lg:w-full h-2 ${tab === 2 ? 'block' : 'hidden'}`}>
                                     <Image
@@ -235,7 +236,7 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 hidden lg:block text-sm w-28 whitespace-nowrap"> Functional Team</h3>
+                                    <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap"> Functional Team</h3>
                                 </div>
                                 <figure className={`w-12 lg:w-full h-2 ${tab === 3 ? 'block' : 'hidden'}`}>
                                     <Image
@@ -259,7 +260,7 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 text-sm hidden lg:block w-28 whitespace-nowrap"> Technical Team</h3>
+                                    <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap"> Technical Team</h3>
                                 </div>
                                 <figure className={`w-12 lg:w-full h-2 ${tab === 4 ? 'block' : 'hidden'}`}>
                                     <Image
@@ -283,7 +284,7 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 text-sm hidden lg:block w-28 whitespace-nowrap"> Board of Directors</h3>
+                                    <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap"> Board of Directors</h3>
                                 </div>
                                 <figure className={`w-12 lg:w-full h-2 ${tab === 5 ? 'block' : 'hidden'}`}>
                                     <Image
@@ -397,7 +398,47 @@ export default function Company({ team }) {
                 </div>
             </section>
 
-            <LatestSuccessStories />
+            <section className="py-28 px-7">
+        <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
+          OUR SUCCESS STORIES
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
+            {
+              posts.map((item, index) => (
+                <div key={index} className='flex flex-col'>
+                  <Image
+                    src={item.node.featuredImage.node.mediaItemUrl}
+                    alt={item.node.title}
+                    width={500}
+                    height={350}
+                  />
+                  <div className='relative p-1 shadow-sm'>
+                    <div className="p-5 space-y-1">
+                      <h3 className="box-title">
+                        <Link href={item.node.uri}>{item.node.title}</Link>
+                      </h3>
+                      <p className="text-base font-medium text-[#535353]">
+                        {item.node.successStoryExtra.shortInfo}
+                      </p>
+                    </div>
+                    <div className="absolute bottom-0 right-0 flex justify-end">
+                      <figure className="max-h-[18px]">
+                        <Image
+                          src="/images/color-bar-light.jpg"
+                          alt="images/color-bar-light.jpg"
+                          className="w-[55%] h-[10px]"
+                          width={155}
+                          height={8}
+                        />
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+      </section>
 
             <Footer />
         </>
@@ -431,15 +472,33 @@ export async function getStaticProps() {
             }
           }
         }
+        allSuccessStories(first: 4) {
+        edges {
+          node {
+            title
+            uri
+            featuredImage {
+              node {
+                mediaItemUrl
+              }
+            }
+            successStoryExtra {
+              shortInfo
+            }
+          }
+        }
       }
+    }
     `;
     const response = await client.query({
         query: GET_POSTS,
     });
     const team = response.data.allTeam.edges;
+    const posts = response.data.allSuccessStories.edges;
     return {
         props: {
             team,
+            posts,
         },
     };
 }

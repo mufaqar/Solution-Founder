@@ -40,7 +40,7 @@ export default function Company({ team, posts }) {
                         through many years of engagement in the industry. We are among the
                         contributors who shape tomorrow’s technology standards on global
                         stage. From our head office in Jeddah ~ Saudi Arabia, and branch
-                        offices in Pakistan & India, the dedicated team of experienced
+                        offices in Pakistan and India, the dedicated team of experienced
                         Information Technology professionals provide our services to an
                         extensive portfolio of corporate, public sector as well as
                         non-profit organization clients throughout the globe. We have a

@@ -152,9 +152,6 @@ export default function Mega_Menu() {
           </div>
         </div>
       </div>
-
-
-
       <div className="w-[22%] py-12 px-5 bg-megaBg bg-cover bg-center items-center lg:flex hidden flex-wrap justify-center">
         <div className="grid items-center w-full gap-5 p-2 ">
           <h2 className="flex items-center text-base font-bold text-white">

@@ -18,7 +18,7 @@ import microsoft from '../public/images/micro-dark.png';
 export default function Company({ team }) {
     const [tab, setTab] = React.useState(1);
 
-    
+
     return (
         <>
             <Header />
@@ -30,7 +30,7 @@ export default function Company({ team }) {
             />
 
             <section className="py-14">
-                <div className="md:w-[930px] mx-auto p-3 mb-8">
+                <div className=" lg:w-2/3 mx-auto p-3 mb-8">
                     <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
                         ABOUT US
                     </h2>
@@ -49,9 +49,60 @@ export default function Company({ team }) {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-7 max-w-[1200px] mx-auto mb-8 px-7">
-                    <Cardnew icon={ibm} />
-                    <Cardnew icon={odoo} />
-                    <Cardnew icon={microsoft} />
+                    <div className="relative flex flex-col items-center px-6 space-y-4 bg-white rounded-md new_card_wrapper justify-items-center py-11 shadow-sh hover:shadow-shl">
+                        <figure className='bg_wrapper'>
+                            <Image
+                                src="/images/F.png"
+                                alt="F.png"
+                                // className="absolute top-0 left-0 rounded-md"
+                                width={45}
+                                height={40}
+                            />
+                        </figure>
+                        <Image
+                            src={ibm}
+                            alt={ibm}
+                            className="w-[32%] h-[48%] mb-4"
+                            width={155}
+                            height={60}
+                        />
+                    </div>
+                    <div className="relative flex flex-col items-center px-6 space-y-4 bg-white rounded-md new_card_wrapper justify-items-center py-11 shadow-sh hover:shadow-shl">
+                        <figure className='bg_wrapper'>
+                            <Image
+                                src="/images/F.png"
+                                alt="F.png"
+                                // className="absolute top-0 left-0 rounded-md"
+                                width={45}
+                                height={40}
+                            />
+                        </figure>
+                        <Image
+                            src={odoo}
+                            alt={odoo}
+                            className="w-[32%] h-[48%] mb-4"
+                            width={155}
+                            height={60}
+                        />
+                    </div>
+                    <div className="relative flex flex-col items-center px-6 space-y-4 bg-white rounded-md new_card_wrapper justify-items-center py-11 shadow-sh hover:shadow-shl">
+                        <figure className='bg_wrapper'>
+                            <Image
+                                src="/images/F.png"
+                                alt="F.png"
+                                // className="absolute top-0 left-0 rounded-md"
+                                width={45}
+                                height={40}
+                            />
+                        </figure>
+                        <Image
+                            src={microsoft}
+                            alt={microsoft}
+                            className="w-[32%] h-[48%] mb-4"
+                            width={155}
+                            height={60}
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -136,9 +187,9 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 text-sm w-28 whitespace-nowrap"> All</h3>
+                                    <h3 className="ml-2 hidden lg:block  text-sm w-28 whitespace-nowrap"> All</h3>
                                 </div>
-                                <figure className={`w-full h-2 ${tab === 1 ? 'block' : 'hidden'}`}>
+                                <figure className={`w-12 lg:w-full h-2 ${tab === 1 ? 'block' : 'hidden'}`}>
                                     <Image
                                         src="/images/color-bar.jpg"
                                         alt='icon'
@@ -150,7 +201,7 @@ export default function Company({ team }) {
                         </li>
                         <li>
                             <a onClick={() => setTab(2)}>
-                                <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                                <div className="flex items-center w-full  px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
                                     <figure>
                                         <Image
                                             src="/images/setting.png"
@@ -160,9 +211,9 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 text-sm w-28 whitespace-nowrap"> Management Team</h3>
+                                    <h3 className="ml-2 hidden lg:block text-sm w-28 whitespace-nowrap"> Management Team</h3>
                                 </div>
-                                <figure className={`w-full h-2 ${tab === 2 ? 'block' : 'hidden'}`}>
+                                <figure className={`w-12 lg:w-full h-2 ${tab === 2 ? 'block' : 'hidden'}`}>
                                     <Image
                                         src="/images/color-bar.jpg"
                                         alt='icon'
@@ -184,9 +235,9 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 text-sm w-28 whitespace-nowrap"> Functional Team</h3>
+                                    <h3 className="ml-2 hidden lg:block text-sm w-28 whitespace-nowrap"> Functional Team</h3>
                                 </div>
-                                <figure className={`w-full h-2 ${tab === 3 ? 'block' : 'hidden'}`}>
+                                <figure className={`w-12 lg:w-full h-2 ${tab === 3 ? 'block' : 'hidden'}`}>
                                     <Image
                                         src="/images/color-bar.jpg"
                                         alt='icon'
@@ -208,9 +259,9 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 text-sm w-28 whitespace-nowrap"> Technical Team</h3>
+                                    <h3 className="ml-2 text-sm hidden lg:block w-28 whitespace-nowrap"> Technical Team</h3>
                                 </div>
-                                <figure className={`w-full h-2 ${tab === 4 ? 'block' : 'hidden'}`}>
+                                <figure className={`w-12 lg:w-full h-2 ${tab === 4 ? 'block' : 'hidden'}`}>
                                     <Image
                                         src="/images/color-bar.jpg"
                                         alt='icon'
@@ -232,9 +283,9 @@ export default function Company({ team }) {
                                             height={45}
                                         />
                                     </figure>
-                                    <h3 className="ml-2 text-sm w-28 whitespace-nowrap"> Board of Directors</h3>
+                                    <h3 className="ml-2 text-sm hidden lg:block w-28 whitespace-nowrap"> Board of Directors</h3>
                                 </div>
-                                <figure className={`w-full h-2 ${tab === 5 ? 'block' : 'hidden'}`}>
+                                <figure className={`w-12 lg:w-full h-2 ${tab === 5 ? 'block' : 'hidden'}`}>
                                     <Image
                                         src="/images/color-bar.jpg"
                                         alt='icon'
@@ -273,7 +324,7 @@ export default function Company({ team }) {
                         >
                             <div className="grid gap-5 md:grid-cols-4">
                                 {
-                                    team.filter(department => department.node.teamExtraInfo.managementTeam===('Yes')).map(dpt =>(
+                                    team.filter(department => department.node.teamExtraInfo.managementTeam === ('Yes')).map(dpt => (
                                         <div key={dpt.node.title}>
                                             <Team
                                                 name={dpt.node.title}
@@ -292,7 +343,7 @@ export default function Company({ team }) {
                         >
                             <div className="grid gap-5 md:grid-cols-4">
                                 {
-                                    team.filter(department => department.node.teamExtraInfo.functionalTeam === 'Yes' ).map(dpt =>(
+                                    team.filter(department => department.node.teamExtraInfo.functionalTeam === 'Yes').map(dpt => (
                                         <div key={dpt.node.title}>
                                             <Team
                                                 name={dpt.node.title}
@@ -311,7 +362,7 @@ export default function Company({ team }) {
                         >
                             <div className="grid gap-5 md:grid-cols-4">
                                 {
-                                    team.filter(department => department.node.teamExtraInfo.technicalTeam === 'Yes' ).map(dpt =>(
+                                    team.filter(department => department.node.teamExtraInfo.technicalTeam === 'Yes').map(dpt => (
                                         <div key={dpt.node.title}>
                                             <Team
                                                 name={dpt.node.title}
@@ -330,7 +381,7 @@ export default function Company({ team }) {
                         >
                             <div className="grid gap-5 md:grid-cols-4">
                                 {
-                                    team.filter(department => department.node.teamExtraInfo.boardOfDirectors === 'Yes' ).map(dpt =>(
+                                    team.filter(department => department.node.teamExtraInfo.boardOfDirectors === 'Yes').map(dpt => (
                                         <div key={dpt.node.title}>
                                             <Team
                                                 name={dpt.node.title}

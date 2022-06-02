@@ -48,27 +48,27 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="transportation">
+                <Link passHref href="product/transportation">
                   ERP Solutions
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="inventory-warehouse-management">
+                <Link passHref href="/product/inventory-warehouse-management">
                   Material Management
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="financial-management">
+                <Link passHref href="product/financial-management">
                   Finance Management
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="sales">
+                <Link passHref href="/product/sales">
                   Customer Experience
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="hrm-and-payroll">
+                <Link passHref href="/product/hrm-and-payroll">
                   Human Capital Management
                 </Link>
               </li>

@@ -4,6 +4,7 @@ import { gql } from '@apollo/client';
 import Header from '../components/header';
 import Banner from '../components/banner';
 import Cardnew from '../components/card-new';
+import Footer from '../components/footer';
 
 
 export default function SlugPage({ post }) {
@@ -21,26 +22,27 @@ export default function SlugPage({ post }) {
         bannerURL={post.successStoryExtra.bannerImage.mediaItemUrl}
       />
 
-      <div className="grid justify-center grid-cols-2 gap-2 p-4 mx-auto md:mt-16 md:gap-8 md:w-1/2">
+      <div className="grid justify-center grid-cols-2 gap-2 px-4 mx-auto md:mt-16 md:gap-8 md:w-1/2">
         <Cardnew post={post.successStoryExtra.appFeatures} />
       </div>
 
       <div
-        className="mx-auto mt-10 md:w-1/2 inner-text"
+        className="mx-auto mt-10 md:w-1/2 inner-text px-4"
         dangerouslySetInnerHTML={{
           __html: post.successStoryExtra.detailContent,
         }}
       ></div>
 
-      <h2 className="my-8 font-sans text-4xl font-bold text-center md:mt-16">
+      <h2 className="my-8 font-sans p-4 text-4xl font-bold text-center md:mt-16">
         Solution Founder Custom Apps for <br /> {post.title}
       </h2>
       <div className="grid justify-center grid-cols-2 gap-2 px-4 mx-auto mt-8 mb-10 lg:grid-cols-4 lg:px-48 lg:container md:mt-16 md:gap-8 md:w-1/2">
         <Cardnew post={post.successStoryExtra.appIndustry} />
       </div>
-
       
+     <Footer/> 
     </div>
+    
   );
 }
 const GET_POST = gql`

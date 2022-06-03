@@ -4,7 +4,6 @@ import Header from './components/header';
 import Team from './components/team';
 import { useState } from 'react';
 import React from 'react';
-import LatestSuccessStories from './components/Latest-success-stories';
 import Image from 'next/image';
 import Link from 'next/link';
 import { gql } from '@apollo/client';
@@ -12,7 +11,12 @@ import { client } from '../lib/apollo';
 // images
 import ibm from '../public/images/ibm-dark.png';
 import odoo from '../public/images/odoo (1).png';
-import microsoft from '../public/images/micro-dark.png';
+import microsoft from '../public/images/micro-dark.png'
+import all from '../public/images/all.svg'
+import managementTeam from '../public/images/management-Team.svg'
+import functionalTeam from '../public/images/functional-Team.svg'
+import technicalTeam from '../public/images/technical-Team.svg'
+import meeting from '../public/images/meeting.svg'
 
 export default function Company({ team, posts }) {
   const [tab, setTab] = React.useState(1);
@@ -120,7 +124,7 @@ export default function Company({ team, posts }) {
               Our Mission
             </h2>
             <p className="text-base font-medium tracking-normal text-white">
-              Our mission is to provide the best technology solution that will{' '}
+              Our mission is to provide the best technology solution that will
               <br></br>contribute in our customer’s success and growth.
             </p>
             <h2 className="text-3xl font-bold leading-8 text-white md:text-4xl">
@@ -177,7 +181,7 @@ export default function Company({ team, posts }) {
                 <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src="/images/setting.png"
+                      src={all}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -185,7 +189,7 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    {' '}
+                    
                     All
                   </h3>
                 </div>
@@ -208,7 +212,7 @@ export default function Company({ team, posts }) {
                 <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src="/images/setting.png"
+                      src={managementTeam}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -216,7 +220,7 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    {' '}
+                    
                     Management Team
                   </h3>
                 </div>
@@ -239,7 +243,7 @@ export default function Company({ team, posts }) {
                 <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src="/images/setting.png"
+                      src={functionalTeam}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -247,7 +251,7 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    {' '}
+                    
                     Functional Team
                   </h3>
                 </div>
@@ -270,7 +274,7 @@ export default function Company({ team, posts }) {
                 <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src="/images/setting.png"
+                      src={technicalTeam}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -278,7 +282,7 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    {' '}
+                    
                     Technical Team
                   </h3>
                 </div>
@@ -301,7 +305,7 @@ export default function Company({ team, posts }) {
                 <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src="/images/setting.png"
+                      src={meeting}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -309,7 +313,7 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    {' '}
+                    
                     Board of Directors
                   </h3>
                 </div>

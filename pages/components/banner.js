@@ -8,9 +8,9 @@ export default function Banner(props) {
   const [formPopup, setFormPopup] = useState(false);
 
   if (typeof window !== 'undefined') {
-    formPopup ?  document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'scroll'
+    formPopup ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'scroll'
   }
- 
+
   return (
     <>
       <section className="bg-bottom bg-cover bg-page-banner">
@@ -23,7 +23,7 @@ export default function Banner(props) {
             {props.bannerURL ? (
               ''
             ) : (
-              <button className="main-button hover:bg-[#302E2E] items-center" onClick={()=>setFormPopup(!formPopup)}>
+              <button className="main-button hover:bg-[#302E2E] items-center" onClick={() => setFormPopup(!formPopup)}>
                 Get in Touch
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,16 +52,16 @@ export default function Banner(props) {
             />
           </div>
         </div>
-        
+
       </section>
       {
         formPopup && <div className='fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-80' >
-            <div className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
-              <Form/>
+          <div className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
+            <Form />
+            <div className='fixed inline-block cursor-pointer right-1 top-1 close bg-opacity-80' onClick={() => setFormPopup(false)} >
+              <AiOutlineClose size={20} />
             </div>
-            <div className='fixed inline-block bg-white cursor-pointer right-6 top-6 close bg-opacity-80' onClick={()=>setFormPopup(false)} >
-              <AiOutlineClose size={30}/>
-            </div>
+          </div>
         </div>
       }
     </>

@@ -4,11 +4,10 @@ const nextConfig = {
   images: {
     domains: ['solutionfounder.com'],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
 
 {
-  swcMinify: false // it should be false by default 
+  swcMinify: false; // it should be false by default
 }
-

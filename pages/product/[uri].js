@@ -16,7 +16,7 @@ export default function SlugPage({ post, successStories }) {
     <div>
       <Head>
         <title>Products - Solution Founder</title>
-        {/* <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/> */}
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
       </Head>
 
       <Header />

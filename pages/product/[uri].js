@@ -9,7 +9,6 @@ import Footer from '../components/footer';
 import Link from 'next/link';
 import Image from 'next/image';
 
-
 export default function SlugPage({ post, successStories }) {
   // console.log('story Banner', successStories);
 
@@ -33,14 +32,11 @@ export default function SlugPage({ post, successStories }) {
           FEATURES
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-7 max-w-[1200px] mx-auto mb-8">
-          {
-            post.productsFields.features.map((item, index) => (
-              <div key={index}>
-                <Cardnew title={item.title} icon={item.icon.mediaItemUrl} />
-              </div>
-            ))
-          }
-
+          {post.productsFields.features.map((item, index) => (
+            <div key={index}>
+              <Cardnew title={item.title} icon={item.icon.mediaItemUrl} />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -52,55 +48,44 @@ export default function SlugPage({ post, successStories }) {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
-          {
-            successStories.map((item, index) => (
-              <div key={index} className='flex flex-col'>
-                <Image
-                  src={item.node.featuredImage.node.mediaItemUrl}
-                  alt={item.node.title}
-                  width={500}
-                  height={350}
-                />
-                <div className='relative p-1 shadow-sm'>
-                  <div className="p-5 space-y-1">
-                    <h3 className="box-title">
-                      <Link href={item.node.uri}>{item.node.title}</Link>
-                    </h3>
-                    <p className="text-base font-medium text-[#535353]">
-                      {item.node.successStoryExtra.shortInfo}
-                    </p>
-                  </div>
-                  <div className="absolute bottom-0 right-0 flex justify-end">
-                    <figure className="max-h-[18px]">
-                      <Image
-                        src="/images/color-bar-light.jpg"
-                        alt="images/color-bar-light.jpg"
-                        className="w-[55%] h-[10px]"
-                        width={155}
-                        height={8}
-                      />
-                    </figure>
-                  </div>
+          {successStories.map((item, index) => (
+            <div key={index} className="flex flex-col">
+              <Image
+                src={item.node.featuredImage.node.mediaItemUrl}
+                alt={item.node.title}
+                width={500}
+                height={350}
+              />
+              <div className="relative p-1 shadow-sm">
+                <div className="p-5 space-y-1">
+                  <h3 className="box-title">
+                    <Link href={item.node.uri}>{item.node.title}</Link>
+                  </h3>
+                  <p className="text-base font-medium text-[#535353]">
+                    {item.node.successStoryExtra.shortInfo}
+                  </p>
+                </div>
+                <div className="absolute bottom-0 right-0 flex justify-end">
+                  <figure className="max-h-[18px]">
+                    <Image
+                      src="/images/color-bar-light.jpg"
+                      alt="images/color-bar-light.jpg"
+                      className="w-[55%] h-[10px]"
+                      width={155}
+                      height={8}
+                    />
+                  </figure>
                 </div>
               </div>
-            ))
-          }
+            </div>
+          ))}
         </div>
       </section>
 
-
-
       <Footer />
-
     </div>
   );
 }
-
-
-
-
-
-
 
 const GET_POST = gql`
   query GetProduct($id: ID!) {
@@ -126,22 +111,21 @@ const GET_POST = gql`
       }
     }
     allSuccessStories(first: 4) {
-        edges {
-          node {
-            title
-            uri
-            featuredImage {
-              node {
-                mediaItemUrl
-              }
+      edges {
+        node {
+          title
+          uri
+          featuredImage {
+            node {
+              mediaItemUrl
             }
-            successStoryExtra {
-              shortInfo
-            }
+          }
+          successStoryExtra {
+            shortInfo
           }
         }
       }
-
+    }
   }
 `;
 

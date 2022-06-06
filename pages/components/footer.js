@@ -48,17 +48,15 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="product/transportation">
-                  ERP Solutions
-                </Link>
+                <Link href="/product/transportation">ERP Solutions</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/product/inventory-warehouse-management">
+                <Link href="/product/inventory-warehouse-management">
                   Material Management
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="product/financial-management">
+                <Link href="/product/financial-management">
                   Finance Management
                 </Link>
               </li>
@@ -83,24 +81,16 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/about-us">
-                  About us
-                </Link>
+                <Link href="/about-us">About us</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/career">
-                  Career
-                </Link>
+                <Link href="/career">Career</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/success-stories">
-                  Success Stories
-                </Link>
+                <Link href="/success-stories">Success Stories</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/news-updates">
-                  News & Updates
-                </Link>
+                <Link href="/news-updates">News & Updates</Link>
               </li>
             </ul>
           </div>
@@ -113,29 +103,21 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/retail">
-                  Retail
-                </Link>
+                <Link href="/retail">Retail</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/manufacturing">
-                  Manufacturing
-                </Link>
+                <Link href="/manufacturing">Manufacturing</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/trading-distribution">
-                  Trading Distribution
-                </Link>
+                <Link href="/trading-distribution">Trading Distribution</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/custom-clearance-and-freight-forwarding">
+                <Link href="/custom-clearance-and-freight-forwarding">
                   Freight Forwarding
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/transportation">
-                  Logistics & Transportation
-                </Link>
+                <Link href="/transportation">Logistics & Transportation</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
                 <Link passHref href="/construction-and-contracting">

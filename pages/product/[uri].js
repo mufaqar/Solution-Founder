@@ -15,6 +15,10 @@ export default function SlugPage({ post, successStories }) {
 
   return (
     <div>
+      <Head>
+        <title>Products - Solution Founder</title>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+      </Head>
 
       <Header />
 

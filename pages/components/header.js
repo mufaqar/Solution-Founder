@@ -61,8 +61,8 @@ export default function Header() {
           <div className="w-1/2 md:w-1/4">
             <Link href="/" passHref>
               <Image
-                src="/images/SF-White.png"
-                alt="SF-White.png"
+                src="/images/SF-White.svg"
+                alt="logo"
                 className="max-w-[80%] cursor-pointer"
                 width={225}
                 height={40}

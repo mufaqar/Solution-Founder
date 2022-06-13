@@ -103,24 +103,24 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/retail">Retail</Link>
+                <Link href="/product/retail">Retail</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/manufacturing">Manufacturing</Link>
+                <Link href="/product/manufacturing">Manufacturing</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/trading-distribution">Trading Distribution</Link>
+                <Link href="/product/trading-distribution">Trading Distribution</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/custom-clearance-and-freight-forwarding">
+                <Link href="/product/custom-clearance-and-freight-forwarding">
                   Freight Forwarding
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/transportation">Logistics & Transportation</Link>
+                <Link href="/product/transportation">Logistics & Transportation</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="/construction-and-contracting">
+                <Link passHref href="/product/construction-and-contracting">
                   Construction & Real Estate
                 </Link>
               </li>

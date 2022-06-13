@@ -112,7 +112,7 @@ export default function Footer() {
                 <Link href="/product/trading-distribution">Trading Distribution</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/product/custom-clearance-and-freight-forwarding">
+                <Link href="/product/custom-clearance-and-freight">
                   Freight Forwarding
                 </Link>
               </li>

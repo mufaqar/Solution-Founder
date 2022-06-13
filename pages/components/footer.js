@@ -130,7 +130,7 @@ export default function Footer() {
             <h2 className="text-lg font-bold text-white">Help and Support</h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link passHref href="contact-us">
+                <Link passHref href="/contact-us">
                   Contact Us
                 </Link>
               </li>

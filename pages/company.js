@@ -18,7 +18,7 @@ import functionalTeam from "../public/images/functional-Team.svg";
 import technicalTeam from "../public/images/technical-Team.svg";
 import meeting from "../public/images/meeting.svg";
 
-export default function Company({ team, posts, allType }) {
+export default function Company({ posts, allType }) {
   const [tab, setTab] = React.useState(1);
   
   const allTeam = allType[0].node.team.edges;
@@ -482,25 +482,6 @@ export default function Company({ team, posts, allType }) {
 export async function getStaticProps() {
   const GET_POSTS = gql`
     query GetAllTeam {
-      allTeam(first: 40) {
-        edges {
-          node {
-            title
-            uri
-            teamExtraInfo {
-              functionalTeam
-              managementTeam
-              technicalTeam
-              boardOfDirectors
-            }
-            featuredImage {
-              node {
-                mediaItemUrl
-              }
-            }
-          }
-        }
-      }
       allSuccessStories(first: 4) {
         edges {
           node {
@@ -543,12 +524,10 @@ export async function getStaticProps() {
   const response = await client.query({
     query: GET_POSTS,
   });
-  const team = response.data.allTeam.edges;
   const posts = response.data.allSuccessStories.edges;
   const allType = response.data.allType.edges;
   return {
     props: {
-      team,
       posts,
       allType,
     },

@@ -2,7 +2,6 @@ import Banner from './components/banner';
 import Contact_form from './components/contact-form';
 import Footer from './components/footer';
 import Header from './components/header';
-import LatestSuccessStories from './components/Latest-success-stories';
 import Locations from './components/locations';
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
@@ -13,6 +12,8 @@ import Image from 'next/image';
 
 
 export default function Contact_us({posts}) {
+
+
   return (
     <>
       <Header />

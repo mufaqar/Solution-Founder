@@ -1,19 +1,79 @@
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 export default function Contact_form(props) {
+
+  const [fieldData, setFieldData] = useState({
+    FirstName :  "",
+    LastName : '',
+    Email : '',
+    Phone : '',
+    Website : '',
+    Company : '',
+    Designation : '',
+    Message : '',
+  });
+  const [term, setTerm] = useState(false);
+  const [Message, setmessage] = useState('');
+
+  const CheckedHandle = event => {
+    if (event.target.checked) {
+      console.log('✅ Checkbox is checked');
+      setmessage('');
+    } else {
+      console.log('⛔️ Checkbox is NOT checked');
+      setmessage('Please Checked Terms')
+    }
+    setTerm(current => !current);
+  };
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setFieldData({ ...fieldData, [name]: value });
+  }
+
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_gvt30vq',
+        'template_c7nv8ra',
+        e.target,
+        'pzMV1U0WIjGl0M4ye'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert('Message Successfully Transfer');
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  
+
   return (
     <>
       <form
         method="post"
         name="Contact Form"
         className="grid grid-cols-1 gap-5"
+        onSubmit={sendEmail}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <input
             type="text"
-            name="first-name"
+            name="FirstName"
             id="first-name"
             placeholder="First Name"
             autoComplete=""
-            required
+            value={fieldData.FirstName}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -21,17 +81,19 @@ export default function Contact_form(props) {
             name="last-name"
             id="last-name"
             placeholder="Last Name"
-            autoComplete=""
+            value={fieldData.LastName}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Email"
-            autoComplete="email"
+            value={fieldData.Email}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -40,16 +102,20 @@ export default function Contact_form(props) {
             id="phone"
             placeholder="Phone"
             autoComplete="phone"
+            value={fieldData.Phone}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <input
             type="url"
             name="website"
             id="website"
             placeholder="Website"
             autoComplete=""
+            value={fieldData.Website}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -58,6 +124,8 @@ export default function Contact_form(props) {
             id="company"
             placeholder="Company"
             autoComplete=""
+            value={fieldData.Company}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -66,27 +134,34 @@ export default function Contact_form(props) {
             id="designation"
             placeholder="Designation"
             autoComplete=""
+            value={fieldData.Designation}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
         <div className="grid grid-cols-1 gap-5">
           <textarea
             type="text"
-            name="mesignation"
+            name="message"
             id="message"
             placeholder="Message"
             autoComplete=""
             rows={5}
+            value={fieldData.Message}
+            onChange = {handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           ></textarea>
+          <p className='text-red-500'>{Message}</p>
           <label className="inline-flex items-center">
             <input
               type="checkbox"
               name="acceptance-field"
               id="acceptance-field"
               className=""
+              value={term}
+              onChange={CheckedHandle}
             />
-            <span className="text-lg text-white font-medium ml-2">
+            <span className="ml-2 text-lg font-medium text-white">
               I’m not a robot
             </span>
           </label>

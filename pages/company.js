@@ -1,25 +1,31 @@
-import Banner from './components/banner';
-import Footer from './components/footer';
-import Header from './components/header';
-import Team from './components/team';
-import { useState } from 'react';
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { gql } from '@apollo/client';
-import { client } from '../lib/apollo';
+import Banner from "./components/banner";
+import Footer from "./components/footer";
+import Header from "./components/header";
+import Team from "./components/team";
+import { useState } from "react";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { gql } from "@apollo/client";
+import { client } from "../lib/apollo";
 // images
-import ibm from '../public/images/ibm-dark.png';
-import odoo from '../public/images/odoo (1).png';
-import microsoft from '../public/images/micro-dark.png'
-import all from '../public/images/all.svg'
-import managementTeam from '../public/images/management-Team.svg'
-import functionalTeam from '../public/images/functional-Team.svg'
-import technicalTeam from '../public/images/technical-Team.svg'
-import meeting from '../public/images/meeting.svg'
+import ibm from "../public/images/ibm-dark.png";
+import odoo from "../public/images/odoo (1).png";
+import microsoft from "../public/images/micro-dark.png";
+import all from "../public/images/all.svg";
+import managementTeam from "../public/images/management-Team.svg";
+import functionalTeam from "../public/images/functional-Team.svg";
+import technicalTeam from "../public/images/technical-Team.svg";
+import meeting from "../public/images/meeting.svg";
 
-export default function Company({ team, posts }) {
+export default function Company({ team, posts, allType }) {
   const [tab, setTab] = React.useState(1);
+  
+  const allTeam = allType[0].node.team.edges;
+  const BOD = allType[1].node.team.edges;
+  const FunctionalTeam = allType[2].node.team.edges;
+  const ManagementTeam = allType[3].node.team.edges;
+  const TechnicalTeam = allType[4].node.team.edges;
 
   return (
     <>
@@ -189,13 +195,12 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    
                     All
                   </h3>
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 1 ? 'block' : 'hidden'
+                    tab === 1 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -220,13 +225,12 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    
                     Management Team
                   </h3>
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 2 ? 'block' : 'hidden'
+                    tab === 2 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -251,13 +255,12 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    
                     Functional Team
                   </h3>
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 3 ? 'block' : 'hidden'
+                    tab === 3 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -282,13 +285,12 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    
                     Technical Team
                   </h3>
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 4 ? 'block' : 'hidden'
+                    tab === 4 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -313,13 +315,12 @@ export default function Company({ team, posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    
                     Board of Directors
                   </h3>
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 5 ? 'block' : 'hidden'
+                    tab === 5 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -336,11 +337,11 @@ export default function Company({ team, posts }) {
             <div
               id="first"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 1 ? 'block' : 'hidden'
+                tab === 1 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {team.map((singleteam, index) => (
+                {allTeam.map((singleteam, index) => (
                   <div key={index}>
                     <Team
                       name={singleteam.node.title}
@@ -356,16 +357,12 @@ export default function Company({ team, posts }) {
             <div
               id="second"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 2 ? 'block' : 'hidden'
+                tab === 2 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {team
-                  .filter(
-                    (department) =>
-                      department.node.teamExtraInfo.managementTeam === 'Yes'
-                  )
-                  .map((dpt) => (
+                {
+                  ManagementTeam.map((dpt) => (
                     <div key={dpt.node.title}>
                       <Team
                         name={dpt.node.title}
@@ -379,16 +376,12 @@ export default function Company({ team, posts }) {
             <div
               id="third"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 3 ? 'block' : 'hidden'
+                tab === 3 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {team
-                  .filter(
-                    (department) =>
-                      department.node.teamExtraInfo.functionalTeam === 'Yes'
-                  )
-                  .map((dpt) => (
+                {
+                  FunctionalTeam.map((dpt) => (
                     <div key={dpt.node.title}>
                       <Team
                         name={dpt.node.title}
@@ -402,16 +395,12 @@ export default function Company({ team, posts }) {
             <div
               id="fourth"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 4 ? 'block' : 'hidden'
+                tab === 4 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {team
-                  .filter(
-                    (department) =>
-                      department.node.teamExtraInfo.technicalTeam === 'Yes'
-                  )
-                  .map((dpt) => (
+                {
+                  TechnicalTeam.map((dpt) => (
                     <div key={dpt.node.title}>
                       <Team
                         name={dpt.node.title}
@@ -425,16 +414,12 @@ export default function Company({ team, posts }) {
             <div
               id="fifth"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 5 ? 'block' : 'hidden'
+                tab === 5 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {team
-                  .filter(
-                    (department) =>
-                      department.node.teamExtraInfo.boardOfDirectors === 'Yes'
-                  )
-                  .map((dpt) => (
+                {
+                  BOD.map((dpt) => (
                     <div key={dpt.node.title}>
                       <Team
                         name={dpt.node.title}
@@ -532,6 +517,27 @@ export async function getStaticProps() {
           }
         }
       }
+      allType {
+        edges {
+          node {
+            team(first: 50) {
+              edges {
+                node {
+                  title
+                  featuredImage {
+                    node {
+                      mediaItemUrl
+                    }
+                  }
+                  teamExtraInfo {
+                    teamDesignation
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   `;
   const response = await client.query({
@@ -539,10 +545,12 @@ export async function getStaticProps() {
   });
   const team = response.data.allTeam.edges;
   const posts = response.data.allSuccessStories.edges;
+  const allType = response.data.allType.edges;
   return {
     props: {
       team,
       posts,
+      allType,
     },
   };
 }

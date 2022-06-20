@@ -59,7 +59,7 @@ export default function Career({ jobs }) {
                     dangerouslySetInnerHTML={{ __html: job.node.content }}
                   ></div>
                   <p
-                    className="text-xl font-bold text-[#133C6D] cursor-pointer"
+                    className="text-xl mt-4 font-bold text-[#133C6D] cursor-pointer"
                     onClick={() => setPopUp(true)}
                   >
                     Apply Now

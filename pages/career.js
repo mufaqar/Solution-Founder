@@ -165,9 +165,7 @@ export default function career({ jobs }) {
               <div className="w-1/2 p-2">
                 <div className="relative">
                   <select
-                    class="form-select appearance-none
-                        block w-full px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat  border border-solid border-gray-300 rounded
-                        transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    className="block w-full px-3 py-2 m-0 text-base font-normal text-gray-700 transition ease-in-out bg-white bg-no-repeat border border-gray-300 border-solid rounded appearance-none form-select bg-clip-padding focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     aria-label="Default select example"
                     name="selectJob"
                     onChange={handleChange}

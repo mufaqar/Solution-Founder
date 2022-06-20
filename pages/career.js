@@ -17,6 +17,7 @@ export default function Career({ jobs }) {
     skypeID: '',
     selectJob: '',
     cv: '',
+    
   });
 
   const handleChange = (e) => {

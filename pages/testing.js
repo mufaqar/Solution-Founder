@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export default function testing() {
-  return (
-    <div>testing</div>
-  )
+  return <div>testing 123</div>;
 }

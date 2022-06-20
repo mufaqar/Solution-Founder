@@ -6,17 +6,17 @@ import { gql } from "@apollo/client";
 import { client } from "../lib/apollo";
 import { useState } from "react";
 
-export default function career({ jobs }) {
+export default function Career({ jobs }) {
   const [poupUp, setPopUp] = useState(false);
   const [formField, setFormField] = useState({
-    firstName: "",
-    LastName: "",
-    email: "",
-    Phone: "",
-    linkedinURL: "",
-    skypeID: "",
-    selectJob: "",
-    cv: "",
+    firstName: '',
+    LastName: '',
+    email: '',
+    Phone: '',
+    linkedinURL: '',
+    skypeID: '',
+    selectJob: '',
+    cv: '',
   });
 
   const handleChange = (e) => {

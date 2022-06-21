@@ -10,13 +10,15 @@ export default function Footer() {
     <>
       <section className="relative bg-right-top bg-no-repeat bg-cover bg-footerBg md:bg-center py-14">
         <figure className="absolute left-2">
-          <Image
-            src="/images/footer-F.png"
-            alt="footer-F.png"
-            className="absolute top-[55px] left-0 object-cover "
-            width={250}
-            height={210}
-          />
+          <Link passHref href="/career">
+            <Image
+              src="/images/footer-F.png"
+              alt="footer-F.png"
+              className="absolute top-[55px] left-0 object-cover "
+              width={250}
+              height={210}
+            />
+          </Link>
         </figure>
         <div className="max-w-[1200px] mx-auto py-10 md:px-6 px-3">
           <div className="inline-flex items-center w-1/2 md:w-1/4">
@@ -81,7 +83,7 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/about-us">About us</Link>
+                <Link href="/company">About us</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
                 <Link href="/career">Career</Link>
@@ -109,7 +111,9 @@ export default function Footer() {
                 <Link href="/product/manufacturing">Manufacturing</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/product/trading-distribution">Trading Distribution</Link>
+                <Link href="/product/trading-distribution">
+                  Trading Distribution
+                </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
                 <Link href="/product/custom-clearance-and-freight">
@@ -117,7 +121,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/product/transportation">Logistics & Transportation</Link>
+                <Link href="/product/transportation">
+                  Logistics & Transportation
+                </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
                 <Link passHref href="/product/construction-and-contracting">

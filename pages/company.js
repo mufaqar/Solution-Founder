@@ -1,26 +1,26 @@
-import Banner from "./components/banner";
-import Footer from "./components/footer";
-import Header from "./components/header";
-import Team from "./components/team";
-import { useState } from "react";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { gql } from "@apollo/client";
-import { client } from "../lib/apollo";
+import Banner from './components/banner';
+import Footer from './components/footer';
+import Header from './components/header';
+import Team from './components/team';
+import { useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { gql } from '@apollo/client';
+import { client } from '../lib/apollo';
 // images
-import ibm from "../public/images/ibm-dark.png";
-import odoo from "../public/images/odoo (1).png";
-import microsoft from "../public/images/micro-dark.png";
-import all from "../public/images/all.svg";
-import managementTeam from "../public/images/management-Team.svg";
-import functionalTeam from "../public/images/functional-Team.svg";
-import technicalTeam from "../public/images/technical-Team.svg";
-import meeting from "../public/images/meeting.svg";
+import ibm from '../public/images/ibm-dark.png';
+import odoo from '../public/images/odoo (1).png';
+import microsoft from '../public/images/micro-dark.png';
+import all from '../public/images/all.svg';
+import managementTeam from '../public/images/management-Team.svg';
+import functionalTeam from '../public/images/functional-Team.svg';
+import technicalTeam from '../public/images/technical-Team.svg';
+import meeting from '../public/images/meeting.svg';
 
 export default function Company({ posts, allType }) {
   const [tab, setTab] = React.useState(1);
-  
+
   const allTeam = allType[0].node.team.edges;
   const BOD = allType[1].node.team.edges;
   const FunctionalTeam = allType[2].node.team.edges;
@@ -200,7 +200,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 1 ? "block" : "hidden"
+                    tab === 1 ? 'block' : 'hidden'
                   }`}
                 >
                   <Image
@@ -230,7 +230,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 2 ? "block" : "hidden"
+                    tab === 2 ? 'block' : 'hidden'
                   }`}
                 >
                   <Image
@@ -260,7 +260,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 3 ? "block" : "hidden"
+                    tab === 3 ? 'block' : 'hidden'
                   }`}
                 >
                   <Image
@@ -290,7 +290,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 4 ? "block" : "hidden"
+                    tab === 4 ? 'block' : 'hidden'
                   }`}
                 >
                   <Image
@@ -320,7 +320,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 5 ? "block" : "hidden"
+                    tab === 5 ? 'block' : 'hidden'
                   }`}
                 >
                   <Image
@@ -337,7 +337,7 @@ export default function Company({ posts, allType }) {
             <div
               id="first"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 1 ? "block" : "hidden"
+                tab === 1 ? 'block' : 'hidden'
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
@@ -357,77 +357,73 @@ export default function Company({ posts, allType }) {
             <div
               id="second"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 2 ? "block" : "hidden"
+                tab === 2 ? 'block' : 'hidden'
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {
-                  ManagementTeam.map((dpt) => (
-                    <div key={dpt.node.title}>
-                      <Team
-                        name={dpt.node.title}
-                        designation={dpt.node.teamExtraInfo.teamDesignation}
-                        icon={dpt.node.featuredImage.node.mediaItemUrl}
-                      />
-                    </div>
-                  ))}
+                {ManagementTeam.map((dpt) => (
+                  <div key={dpt.node.title}>
+                    <Team
+                      name={dpt.node.title}
+                      designation={dpt.node.teamExtraInfo.teamDesignation}
+                      icon={dpt.node.featuredImage.node.mediaItemUrl}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
             <div
               id="third"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 3 ? "block" : "hidden"
+                tab === 3 ? 'block' : 'hidden'
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {
-                  FunctionalTeam.map((dpt) => (
-                    <div key={dpt.node.title}>
-                      <Team
-                        name={dpt.node.title}
-                        designation={dpt.node.teamExtraInfo.teamDesignation}
-                        icon={dpt.node.featuredImage.node.mediaItemUrl}
-                      />
-                    </div>
-                  ))}
+                {FunctionalTeam.map((dpt) => (
+                  <div key={dpt.node.title}>
+                    <Team
+                      name={dpt.node.title}
+                      designation={dpt.node.teamExtraInfo.teamDesignation}
+                      icon={dpt.node.featuredImage.node.mediaItemUrl}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
             <div
               id="fourth"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 4 ? "block" : "hidden"
+                tab === 4 ? 'block' : 'hidden'
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {
-                  TechnicalTeam.map((dpt) => (
-                    <div key={dpt.node.title}>
-                      <Team
-                        name={dpt.node.title}
-                        designation={dpt.node.teamExtraInfo.teamDesignation}
-                        icon={dpt.node.featuredImage.node.mediaItemUrl}
-                      />
-                    </div>
-                  ))}
+                {TechnicalTeam.map((dpt) => (
+                  <div key={dpt.node.title}>
+                    <Team
+                      name={dpt.node.title}
+                      designation={dpt.node.teamExtraInfo.teamDesignation}
+                      icon={dpt.node.featuredImage.node.mediaItemUrl}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
             <div
               id="fifth"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 5 ? "block" : "hidden"
+                tab === 5 ? 'block' : 'hidden'
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {
-                  BOD.map((dpt) => (
-                    <div key={dpt.node.title}>
-                      <Team
-                        name={dpt.node.title}
-                        designation={dpt.node.teamExtraInfo.teamDesignation}
-                        icon={dpt.node.featuredImage.node.mediaItemUrl}
-                      />
-                    </div>
-                  ))}
+                {BOD.map((dpt) => (
+                  <div key={dpt.node.title}>
+                    <Team
+                      name={dpt.node.title}
+                      designation={dpt.node.teamExtraInfo.teamDesignation}
+                      icon={dpt.node.featuredImage.node.mediaItemUrl}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -501,7 +497,7 @@ export async function getStaticProps() {
       allType {
         edges {
           node {
-            team(first: 50) {
+            team(where: { orderby: { field: DATE, order: ASC } }, first: 50) {
               edges {
                 node {
                   title

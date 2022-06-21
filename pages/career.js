@@ -1,10 +1,11 @@
-import Banner from "./components/banner";
-import Footer from "./components/footer";
-import Header from "./components/header";
-import { GrClose } from "react-icons/gr";
-import { gql } from "@apollo/client";
-import { client } from "../lib/apollo";
-import { useState } from "react";
+import Banner from './components/banner';
+import Footer from './components/footer';
+import Header from './components/header';
+import { GrClose } from 'react-icons/gr';
+import { gql } from '@apollo/client';
+import { client } from '../lib/apollo';
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Career({ jobs }) {
   const [poupUp, setPopUp] = useState(false);
@@ -17,7 +18,6 @@ export default function Career({ jobs }) {
     skypeID: '',
     selectJob: '',
     cv: '',
-    
   });
 
   const handleChange = (e) => {
@@ -26,7 +26,27 @@ export default function Career({ jobs }) {
     setFormField({ ...formField, [name]: value });
   };
 
- 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'service_gvt30vq',
+        'template_es5tmhh',
+        e.target,
+        'pzMV1U0WIjGl0M4ye'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert('Message Successfully Transfer');
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   let counter = 1;
   return (
     <div className="relative">
@@ -74,13 +94,13 @@ export default function Career({ jobs }) {
       {/* Apply for job Popup */}
       <section
         className={`fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-700 bg-opacity-60 ${
-          poupUp ? "block" : "hidden"
+          poupUp ? 'block' : 'hidden'
         }`}
       >
         <div className="fixed p-10 transform bg-white translate-x-1/2 -translate-y-1/2 top-1/2 right-1/2 w-[700px]">
           <h2 className="text-4xl text-[#302E2E] font-bold">APPLY FOR Job</h2>
           <h3 className="mt-2">SUBMIT YOUR APPLICATION</h3>
-          <form className="mt-5">
+          <form className="mt-5" onSubmit={sendEmail}>
             <div className="flex flex-wrap -m-2">
               <div className="w-1/2 p-2">
                 <div className="relative">

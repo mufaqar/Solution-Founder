@@ -22,10 +22,10 @@ export default function Footer() {
         </figure>
         <div className="max-w-[1200px] mx-auto py-10 md:px-6 px-3">
           <div className="inline-flex items-center w-1/2 md:w-1/4">
-            <Link passHref href="/">
+            <Link passHref href="/career">
               <Image
                 src="/images/SF-White.png"
-                alt="SF-White.png"
+                alt="Logo Solution Founder "
                 width={800}
                 height={130}
               />

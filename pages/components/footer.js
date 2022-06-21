@@ -50,7 +50,9 @@ export default function Footer() {
             </h2>
             <ul className="space-y-4">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="/product/transportation">ERP Solutions</Link>
+                <Link href="/product/transportation">
+                  Transportation Solution
+                </Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
                 <Link href="/product/inventory-warehouse-management">

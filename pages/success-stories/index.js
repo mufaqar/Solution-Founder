@@ -27,13 +27,15 @@ export default function Success_stories({ posts }) {
                 key={index}
                 className="relative flex flex-col w-full bg-white rounded-md shadow-sh hover:shadow-shl"
               >
-                <Image
-                  src={story.node.featuredImage.node.mediaItemUrl}
-                  alt="img"
-                  className=""
-                  width={400}
-                  height={300}
-                />
+                <Link href={story.node.uri}>
+                  <Image
+                    src={story.node.featuredImage.node.mediaItemUrl}
+                    alt="img"
+                    className=""
+                    width={400}
+                    height={300}
+                  />
+                </Link>
                 <div className="p-5 space-y-1">
                   <h3 className="box-title">
                     <Link href={story.node.uri}>{story.node.title}</Link>

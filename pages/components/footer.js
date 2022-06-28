@@ -154,12 +154,17 @@ export default function Footer() {
                 <a
                   href="https://www.linkedin.com/company/solution-founder"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <FaLinkedinIn />
                 </a>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-2xl font-semibold">
-                <a href="https://twitter.com/solutionfounder" target="_blank">
+                <a
+                  href="https://twitter.com/solutionfounder"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <BsTwitter />
                 </a>
               </li>

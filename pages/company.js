@@ -438,7 +438,7 @@ export default function Company({ posts, allType }) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
           {posts.map((item, index) => (
             <div key={index} className="flex flex-col">
-              <Link href={item.node.uri}>
+              <Link passHref href={item.node.uri}>
                 <Image
                   src={item.node.featuredImage.node.mediaItemUrl}
                   alt={item.node.title}
@@ -449,7 +449,9 @@ export default function Company({ posts, allType }) {
               <div className="relative p-1 shadow-sm">
                 <div className="p-5 space-y-1">
                   <h3 className="box-title">
-                    <Link href={item.node.uri}>{item.node.title}</Link>
+                    <Link passHref href={item.node.uri}>
+                      {item.node.title}
+                    </Link>
                   </h3>
                   <p className="text-base font-medium text-[#535353]">
                     {item.node.successStoryExtra.shortInfo}

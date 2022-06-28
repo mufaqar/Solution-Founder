@@ -152,7 +152,7 @@ export default function Footer() {
             <ul className="flex space-x-6">
               <li className="text-white hover:text-[#8DC63F] text-2xl font-semibold">
                 <a
-                  href="https://www.linkedin.com/company/solution-founder/"
+                  href="https://www.linkedin.com/company/solution-founder"
                   target="_blank"
                 >
                   <FaLinkedinIn />

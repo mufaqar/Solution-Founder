@@ -1,24 +1,25 @@
-import Banner from './components/banner';
-import Footer from './components/footer';
-import Header from './components/header';
-import Team from './components/team';
-import { useState } from 'react';
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { gql } from '@apollo/client';
-import { client } from '../lib/apollo';
+import Banner from "./components/banner";
+import Footer from "./components/footer";
+import Header from "./components/header";
+// import Team from "./components/team";
+import { useState } from "react";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { gql } from "@apollo/client";
+import { client } from "../lib/apollo";
 // images
-import ibm from '../public/images/ibm-dark.png';
-import odoo from '../public/images/odoo (1).png';
-import microsoft from '../public/images/micro-dark.png';
-import all from '../public/images/all.svg';
-import managementTeam from '../public/images/management-Team.svg';
-import functionalTeam from '../public/images/functional-Team.svg';
-import technicalTeam from '../public/images/technical-Team.svg';
-import meeting from '../public/images/meeting.svg';
+import ibm from "../public/images/ibm-dark.png";
+import odoo from "../public/images/odoo (1).png";
+import microsoft from "../public/images/micro-dark.png";
+import all from "../public/images/all.svg";
+import managementTeam from "../public/images/management-Team.svg";
+import functionalTeam from "../public/images/functional-Team.svg";
+import technicalTeam from "../public/images/technical-Team.svg";
+import meeting from "../public/images/meeting.svg";
 
 export default function Company({ posts, allType }) {
+
   const [tab, setTab] = React.useState(1);
 
   const allTeam = allType[0].node.team.edges;
@@ -26,6 +27,57 @@ export default function Company({ posts, allType }) {
   const FunctionalTeam = allType[2].node.team.edges;
   const ManagementTeam = allType[3].node.team.edges;
   const TechnicalTeam = allType[4].node.team.edges;
+
+
+
+
+  function Team({name, designation, icon}) {
+    
+    return (
+      <>
+        <div className="p-3 bg-white team shadow-teamShadow ">
+          <div className="relative flex items-center justify-center">
+            <Image
+              src={icon}
+              alt={name}
+              className="object-cover object-center"
+              width={500}
+              height={500}
+            />
+            <figure className='absolute -bottom-2'>
+              <Image
+                src="/images/img-curve-dark.png"
+                alt="img-curve-dark.png"
+                className="absolute bottom-0 center first"
+                width={40}
+                height={30}
+              />
+            </figure>
+            <figure className='absolute -bottom-2'>
+              <Image
+                src="/images/img-curve.png"
+                alt="img-curve.png"
+                className="absolute bottom-0 center"
+                width={40}
+                height={30}
+              />
+            </figure>
+          </div>
+          <div className="flex flex-col items-center justify-center p-4">
+            <h2 className="text-[#0261A3] text-xl font-bold flex items-center">
+              {name}
+            </h2>
+            <p className="text-[#8DC63F] text-sm font-normal">
+              {designation}
+            </p>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+
+
 
   return (
     <>
@@ -200,7 +252,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 1 ? 'block' : 'hidden'
+                    tab === 1 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -230,7 +282,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 2 ? 'block' : 'hidden'
+                    tab === 2 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -260,7 +312,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 3 ? 'block' : 'hidden'
+                    tab === 3 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -290,7 +342,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 4 ? 'block' : 'hidden'
+                    tab === 4 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -320,7 +372,7 @@ export default function Company({ posts, allType }) {
                 </div>
                 <figure
                   className={`w-12 lg:w-full h-2 ${
-                    tab === 5 ? 'block' : 'hidden'
+                    tab === 5 ? "block" : "hidden"
                   }`}
                 >
                   <Image
@@ -337,7 +389,7 @@ export default function Company({ posts, allType }) {
             <div
               id="first"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 1 ? 'block' : 'hidden'
+                tab === 1 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
@@ -357,7 +409,7 @@ export default function Company({ posts, allType }) {
             <div
               id="second"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 2 ? 'block' : 'hidden'
+                tab === 2 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
@@ -375,7 +427,7 @@ export default function Company({ posts, allType }) {
             <div
               id="third"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 3 ? 'block' : 'hidden'
+                tab === 3 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
@@ -393,7 +445,7 @@ export default function Company({ posts, allType }) {
             <div
               id="fourth"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 4 ? 'block' : 'hidden'
+                tab === 4 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
@@ -411,7 +463,7 @@ export default function Company({ posts, allType }) {
             <div
               id="fifth"
               className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 5 ? 'block' : 'hidden'
+                tab === 5 ? "block" : "hidden"
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
@@ -519,6 +571,7 @@ export async function getStaticProps() {
           }
         }
       }
+      
     }
   `;
   const response = await client.query({
@@ -526,10 +579,12 @@ export async function getStaticProps() {
   });
   const posts = response.data.allSuccessStories.edges;
   const allType = response.data.allType.edges;
+
   return {
     props: {
       posts,
       allType,
+    
     },
   };
 }

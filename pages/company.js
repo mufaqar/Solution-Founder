@@ -47,7 +47,6 @@ const GET_POSTSS = gql`
 export default function Company({ posts }) {
   
   const {data} = useQuery(GET_POSTSS);
-  console.log("🚀 ~ file: company.js ~ line 50 ~ Company ~ data", data)
   
   const [tab, setTab] = React.useState(1);
   

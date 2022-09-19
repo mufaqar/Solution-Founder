@@ -2,11 +2,11 @@ import Banner from "./components/banner";
 import Footer from "./components/footer";
 import Header from "./components/header";
 // import Team from "./components/team";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { gql } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 import { client } from "../lib/apollo";
 // images
 import ibm from "../public/images/ibm-dark.png";
@@ -18,18 +18,45 @@ import functionalTeam from "../public/images/functional-Team.svg";
 import technicalTeam from "../public/images/technical-Team.svg";
 import meeting from "../public/images/meeting.svg";
 
-export default function Company({ posts, allType }) {
+const GET_POSTSS = gql`
+    query GetAllTeam {
+      allType {
+        edges {
+          node {
+            team(where: {orderby: {field: DATE, order: ASC}}, first: 50) {
+              edges {
+                node {
+                  title
+                  featuredImage {
+                    node {
+                      mediaItemUrl
+                    }
+                  }
+                  teamExtraInfo {
+                    teamDesignation
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
 
+export default function Company({ posts }) {
+  
+  const {data} = useQuery(GET_POSTSS);
+  console.log("🚀 ~ file: company.js ~ line 50 ~ Company ~ data", data)
+  
   const [tab, setTab] = React.useState(1);
-
-  const allTeam = allType[0].node.team.edges;
-  const BOD = allType[1].node.team.edges;
-  const FunctionalTeam = allType[2].node.team.edges;
-  const ManagementTeam = allType[3].node.team.edges;
-  const TechnicalTeam = allType[4].node.team.edges;
-
-
-
+  
+  const allTeam = data?.allType.edges[0].node.team.edges;
+  const BOD = data?.allType.edges[1].node.team.edges;
+  const FunctionalTeam = data?.allType.edges[2].node.team.edges;
+  const ManagementTeam = data?.allType.edges[3].node.team.edges;
+  const TechnicalTeam = data?.allType.edges[4].node.team.edges;
+  
 
   function Team({name, designation, icon}) {
     
@@ -393,7 +420,7 @@ export default function Company({ posts, allType }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {allTeam.map((singleteam, index) => (
+                {allTeam?.map((singleteam, index) => (
                   <div key={index}>
                     <Team
                       name={singleteam.node.title}
@@ -413,7 +440,7 @@ export default function Company({ posts, allType }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {ManagementTeam.map((dpt) => (
+                {ManagementTeam?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}
@@ -431,7 +458,7 @@ export default function Company({ posts, allType }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {FunctionalTeam.map((dpt) => (
+                {FunctionalTeam?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}
@@ -449,7 +476,7 @@ export default function Company({ posts, allType }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {TechnicalTeam.map((dpt) => (
+                {TechnicalTeam?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}
@@ -467,7 +494,7 @@ export default function Company({ posts, allType }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {BOD.map((dpt) => (
+                {BOD?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}
@@ -531,7 +558,7 @@ export default function Company({ posts, allType }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const GET_POSTS = gql`
     query GetAllTeam {
       allSuccessStories(first: 4) {
@@ -550,41 +577,17 @@ export async function getStaticProps() {
           }
         }
       }
-      allType {
-        edges {
-          node {
-            team(where: { orderby: { field: DATE, order: ASC } }, first: 50) {
-              edges {
-                node {
-                  title
-                  featuredImage {
-                    node {
-                      mediaItemUrl
-                    }
-                  }
-                  teamExtraInfo {
-                    teamDesignation
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      
+         
     }
   `;
   const response = await client.query({
     query: GET_POSTS,
   });
   const posts = response.data.allSuccessStories.edges;
-  const allType = response.data.allType.edges;
 
   return {
     props: {
       posts,
-      allType,
-    
     },
   };
 }

@@ -249,6 +249,11 @@
     position: absolute;
     top: 100px;
 }
+.custom-shape-divider-bottom-1651145428 .shape-fill{
+    fill: transparent !important
+}
+
+
 input[type = radio]{
     margin-right: 6px !important;
 }

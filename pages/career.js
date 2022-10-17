@@ -6,6 +6,8 @@ import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
+
 
 export default function Career({ jobs }) {
   const [poupUp, setPopUp] = useState(false);
@@ -93,9 +95,9 @@ export default function Career({ jobs }) {
 
       {/* Apply for job Popup */}
       <section
-        className={`fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-700 bg-opacity-60 ${
-          poupUp ? 'block' : 'hidden'
-        }`}
+        className={`fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-700 bg-opacity-60 ${poupUp ? 'block' : 'hidden'
+      }`}
+
       >
         <div className="fixed p-10 transform bg-white translate-x-1/2 -translate-y-1/2 top-1/2 right-1/2 w-[700px]">
           <h2 className="text-4xl text-[#302E2E] font-bold">APPLY FOR Job</h2>

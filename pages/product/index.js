@@ -5,6 +5,9 @@ import { gql } from "@apollo/client";
 import { client } from "../../lib/apollo";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from 'framer-motion';
+import { SlideUp } from '../../animation';
+
 
 export default function Products({ products }) {
   // console.log('product single', products)
@@ -21,8 +24,9 @@ export default function Products({ products }) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5 max-w-[1200px] mx-auto mb-8">
           {products.map((story, index) => (
             <>
-              <div
+              <motion.div
                 key={index}
+                variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}
                 className="relative flex flex-col w-full bg-white rounded-md shadow-sh hover:shadow-shl"
               >
                 {/* <Image
@@ -49,7 +53,7 @@ export default function Products({ products }) {
                     height={8}
                   />
                 </div>
-              </div>
+              </motion.div>
             </>
           ))}
         </div>

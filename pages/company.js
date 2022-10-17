@@ -17,6 +17,8 @@ import managementTeam from "../public/images/management-Team.svg";
 import functionalTeam from "../public/images/functional-Team.svg";
 import technicalTeam from "../public/images/technical-Team.svg";
 import meeting from "../public/images/meeting.svg";
+import { SlideUp } from "../animation";
+import {motion} from "framer-motion"
 
 const GET_POSTSS = gql`
     query GetAllTeam {
@@ -61,7 +63,8 @@ export default function Company({ posts }) {
     
     return (
       <>
-        <div className="p-3 bg-white team shadow-teamShadow ">
+        <motion.div className="p-3 bg-white team shadow-teamShadow "
+        variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}>
           <div className="relative flex items-center justify-center">
             <Image
               src={icon}
@@ -97,7 +100,7 @@ export default function Company({ posts }) {
               {designation}
             </p>
           </div>
-        </div>
+        </motion.div>
       </>
     );
   }
@@ -515,7 +518,8 @@ export default function Company({ posts }) {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
           {posts.map((item, index) => (
-            <div key={index} className="flex flex-col">
+            <motion.div key={index} className="flex flex-col"
+            variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}>
               <Link passHref href={item.node.uri}>
                 <Image
                   src={item.node.featuredImage.node.mediaItemUrl}
@@ -547,7 +551,7 @@ export default function Company({ posts }) {
                   </figure>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

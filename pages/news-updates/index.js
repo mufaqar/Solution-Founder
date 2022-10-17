@@ -5,6 +5,8 @@ import { client } from '../../lib/apollo';
 import { gql } from '@apollo/client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SlideUp } from '../../animation';
+import {motion} from 'framer-motion'
 
 export default function News_updates({ posts }) {
   return (
@@ -18,7 +20,7 @@ export default function News_updates({ posts }) {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-[1200px] mx-auto mb-8">
           {posts?.map((data, index) => (
-            <div key={index}>
+            <motion.div key={index} variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}>
               <div className="relative flex flex-col w-full bg-white rounded-md shadow-sh hover:shadow-shl">
                 <Image
                   src={data.featuredImage.node.mediaItemUrl}
@@ -45,7 +47,7 @@ export default function News_updates({ posts }) {
                   </figure>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

@@ -7,6 +7,9 @@ import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SlideUp } from "../animation";
+import {motion} from "framer-motion"
+
 
 export default function Contact_us({ posts }) {
   return (
@@ -62,7 +65,8 @@ export default function Contact_us({ posts }) {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
           {posts.map((item, index) => (
-            <div key={index} className="flex flex-col">
+            <motion.div key={index} className="flex flex-col"
+              variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}>
               <Link href={item.node.uri}>
                 <Image
                   src={item.node.featuredImage.node.mediaItemUrl}
@@ -92,7 +96,7 @@ export default function Contact_us({ posts }) {
                   </figure>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

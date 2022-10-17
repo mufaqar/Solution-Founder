@@ -17,6 +17,9 @@ module.exports = {
         inpShadow: 'inset 0 0 0 1px rgb(0 0 0 / 10%)',
         teamShadow: '0px 0px 20px -5px rgb(0 0 0 / 10%) ',
       },
+      rotate: {
+        '360': '360deg',
+      }
     },
   },
   plugins: [],

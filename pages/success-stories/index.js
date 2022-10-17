@@ -5,6 +5,10 @@ import { gql } from '@apollo/client';
 import { client } from '../../lib/apollo';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { SlideUp } from '../../animation';
+
+
 
 export default function Success_stories({ posts }) {
   return (
@@ -23,9 +27,10 @@ export default function Success_stories({ posts }) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5 max-w-[1200px] mx-auto mb-8">
           {posts.map((story, index) => (
             <>
-              <div
+              <motion.div
                 key={index}
                 className="relative flex flex-col w-full bg-white rounded-md shadow-sh hover:shadow-shl"
+                variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}
               >
                 <Link href={story.node.uri}>
                   <Image
@@ -53,7 +58,7 @@ export default function Success_stories({ posts }) {
                     height={8}
                   />
                 </div>
-              </div>
+              </motion.div>
             </>
           ))}
         </div>

@@ -1,10 +1,12 @@
 import Image from 'next/image';
-
+import {motion} from 'framer-motion'
+import { SlideUp } from '../../animation';
 
 export default function Locations(props) {
   return (
     <>
-      <div className="w-full relative md:py-10 md:px-16 p-5 space-y-8 border-4 border-[#133C6D]">
+      <motion.div className="w-full relative md:py-10 md:px-16 p-5 space-y-8 border-4 border-[#133C6D]"
+      variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}>
         <h3 className="text-[26px] text-[#302E2E] font-bold uppercase">
           {props.country}
         </h3>
@@ -42,7 +44,7 @@ export default function Locations(props) {
             height={8}
           />
         </figure>
-      </div>
+      </motion.div>
     </>
   );
 }

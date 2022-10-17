@@ -13,8 +13,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 import GlobalReach from '../public/images/Global-Reach.svg';
 import TrustedSecurity from '../public/images/Trusted-Security.svg';
+import { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-hook-inview' // use current active screen Area
+
+
 
 export default function Home({ posts }) {
+  const [ref, inView] = useInView();
+    const animation = useAnimation();
+
+    useEffect(() => {
+        if(inView){
+            animation.start({
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  delay: .6
+                }
+            })
+        }else{
+            animation.start({
+                opacity: 0,
+                scale: 0.7
+            })
+        }
+    }, [inView]);
+
+    
   return (
     <>
       <Header />
@@ -86,9 +112,9 @@ export default function Home({ posts }) {
           OUR SUCCESS STORIES
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
           {posts.map((item, index) => (
-            <div key={index} className="flex flex-col">
+            <motion.div key={index} className="flex flex-col" animate={animation}>
               <Link href={item.node.uri}>
                 <Image
                   src={item.node.featuredImage.node.mediaItemUrl}
@@ -118,7 +144,7 @@ export default function Home({ posts }) {
                   </figure>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

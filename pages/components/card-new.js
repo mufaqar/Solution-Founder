@@ -10,7 +10,7 @@ export default function Cardnew(props) {
           <>
             <div
               key={index}
-              className="relative flex flex-col items-center px-6 space-y-4 bg-white rounded-md justify-items-center py-11 shadow-sh hover:shadow-shl"
+              className="relative flex flex-col items-center px-6 space-y-4 bg-white rounded-md cursor-pointer hover:horder group justify-items-center py-11 shadow-sh hover:shadow-shl"
             >
               <figure className="absolute left-0 top-1">
                 <Image
@@ -24,7 +24,7 @@ export default function Cardnew(props) {
               <Image
                 src={feature.icon.mediaItemUrl ? feature.icon.mediaItemUrl : ''}
                 alt={feature.title}
-                className="w-[32%] h-[48%] mb-4"
+                className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200"
                 width={155}
                 height={55}
               />
@@ -33,8 +33,8 @@ export default function Cardnew(props) {
           </>
         ))
       ) : (
-        <div className="relative flex flex-col items-center px-6 space-y-4 bg-white rounded-md new_card_wrapper justify-items-center py-11 shadow-sh hover:shadow-shl">
-          <figure className="bg_wrapper">
+        <div className="relative flex flex-col items-center px-6 space-y-4 bg-white border border-gray-100 rounded-md cursor-pointer group new_card_wrapper justify-items-center py-11 shadow-sh hover:shadow-shl">
+          <figure className="bg_wrapper ">
             <Image
               src="/images/F.png"
               alt="F.png"
@@ -46,7 +46,7 @@ export default function Cardnew(props) {
           <Image
             src={props.icon}
             alt={props.title}
-            className="w-[32%] h-[48%] mb-4"
+            className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200"
             width={55}
             height={50}
           />

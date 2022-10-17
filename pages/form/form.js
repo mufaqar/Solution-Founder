@@ -51,7 +51,7 @@ export default function Form() {
   const handleStepOneNext = () => {
     if (formFiels.firstName === '') {
       alert('Your Name is Missing');
-      setFormPopup(false);
+      // setFormPopup(false);
     } else {
       setStep1(false);
       setStep2(true);

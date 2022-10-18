@@ -191,7 +191,7 @@ export default function Form() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    formClose(false)
+    formClose(false);
 
     emailjs
       .sendForm(

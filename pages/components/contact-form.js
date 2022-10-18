@@ -2,45 +2,43 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 export default function Contact_form(props) {
-
   const [fieldData, setFieldData] = useState({
-    FirstName :  "",
-    LastName : '',
-    Email : '',
-    Phone : '',
-    Website : '',
-    Company : '',
-    Designation : '',
-    Message : '',
+    FirstName: '',
+    LastName: '',
+    Email: '',
+    Phone: '',
+    Website: '',
+    Company: '',
+    Designation: '',
+    Message: '',
   });
   const [term, setTerm] = useState(false);
   const [Message, setmessage] = useState('');
 
-  const CheckedHandle = event => {
+  const CheckedHandle = (event) => {
     if (event.target.checked) {
       console.log('✅ Checkbox is checked');
       setmessage('');
     } else {
       console.log('⛔️ Checkbox is NOT checked');
-      setmessage('Please Checked Terms')
+      setmessage('Please Checked Terms');
     }
-    setTerm(current => !current);
+    setTerm((current) => !current);
   };
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setFieldData({ ...fieldData, [name]: value });
-  }
-
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        'service_gvt30vq',
-        'template_c7nv8ra',
+        'service_o3eiv0o',
+        'service_o3eiv0o',
         e.target,
         'pzMV1U0WIjGl0M4ye'
       )
@@ -49,23 +47,21 @@ export default function Contact_form(props) {
           console.log(result.text);
           alert('Message Successfully Transfer');
           setFieldData({
-            FirstName :  "",
-            LastName : '',
-            Email : '',
-            Phone : '',
-            Website : '',
-            Company : '',
-            Designation : '',
-            Message : '',
-          })
+            FirstName: '',
+            LastName: '',
+            Email: '',
+            Phone: '',
+            Website: '',
+            Company: '',
+            Designation: '',
+            Message: '',
+          });
         },
         (error) => {
           console.log(error.text);
         }
       );
   };
-
-  
 
   return (
     <>
@@ -83,7 +79,7 @@ export default function Contact_form(props) {
             placeholder="First Name"
             autoComplete=""
             value={fieldData.FirstName}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -92,7 +88,7 @@ export default function Contact_form(props) {
             id="last-name"
             placeholder="Last Name"
             value={fieldData.LastName}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
@@ -103,7 +99,7 @@ export default function Contact_form(props) {
             id="email"
             placeholder="Email"
             value={fieldData.Email}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -113,7 +109,7 @@ export default function Contact_form(props) {
             placeholder="Phone"
             autoComplete="phone"
             value={fieldData.Phone}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
@@ -125,7 +121,7 @@ export default function Contact_form(props) {
             placeholder="Website"
             autoComplete=""
             value={fieldData.Website}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -135,7 +131,7 @@ export default function Contact_form(props) {
             placeholder="Company"
             autoComplete=""
             value={fieldData.Company}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -145,7 +141,7 @@ export default function Contact_form(props) {
             placeholder="Designation"
             autoComplete=""
             value={fieldData.Designation}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
@@ -158,10 +154,10 @@ export default function Contact_form(props) {
             autoComplete=""
             rows={5}
             value={fieldData.Message}
-            onChange = {handleChange}
+            onChange={handleChange}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           ></textarea>
-          <p className='text-red-500'>{Message}</p>
+          <p className="text-red-500">{Message}</p>
           <label className="inline-flex items-center">
             <input
               type="checkbox"

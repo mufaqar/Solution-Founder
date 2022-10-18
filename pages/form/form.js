@@ -23,9 +23,10 @@ export default function Form() {
   const [step8, setStep8] = useState(false);
   const [step9, setStep9] = useState(false);
   const [step10, setStep10] = useState(false);
+  
 
   const [progress, setProgress] = useState('11%');
-
+  const [messageTransfer, setMessageTransfer] = useState(false);
   const [formFiels, setFormField] = useState({
     firstName: '',
     phone: '',
@@ -203,7 +204,8 @@ export default function Form() {
       .then(
         (result) => {
           console.log(result.text);
-          alert('Message Successfully Transfer');
+          // alert('Message Successfully Transfer');
+          setMessageTransfer(true)
         },
         (error) => {
           console.log(error.text);
@@ -211,10 +213,20 @@ export default function Form() {
       );
   };
 
+  const TransferMessage =()=>{
+    return(
+      <>
+        <h2 className='p-10 text-2xl font-bold text-center'>Message Successfully Transfer</h2>
+      </>
+    )
+  }
+
   return (
     <>
       <div className="lg:w-[760px] mx-auto w-full bg-white shadow-lg p-[2%]">
-        <div className="signup_form">
+        
+        {
+          messageTransfer ? <TransferMessage/> : <div className="signup_form">
           <div className="p-2">
             <ul className="flex items-center justify-center mb-8 progressbar">
               <li className="flex flex-col items-center justify-center w-[10%] text-gray-200">
@@ -1090,6 +1102,7 @@ export default function Form() {
             </form>
           </div>
         </div>
+        }
       </div>
     </>
   );

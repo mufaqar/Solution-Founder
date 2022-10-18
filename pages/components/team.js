@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
 export default function Team(props) {
-  console.log("🚀 ~ file: team.js ~ line 4 ~ Team ~ props", props.title)
+  
   return (
     <>
       <div className="p-3 bg-white team shadow-teamShadow ">

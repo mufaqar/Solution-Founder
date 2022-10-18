@@ -48,6 +48,16 @@ export default function Contact_form(props) {
         (result) => {
           console.log(result.text);
           alert('Message Successfully Transfer');
+          setFieldData({
+            FirstName :  "",
+            LastName : '',
+            Email : '',
+            Phone : '',
+            Website : '',
+            Company : '',
+            Designation : '',
+            Message : '',
+          })
         },
         (error) => {
           console.log(error.text);
@@ -78,7 +88,7 @@ export default function Contact_form(props) {
           />
           <input
             type="text"
-            name="last-name"
+            name="LastName"
             id="last-name"
             placeholder="Last Name"
             value={fieldData.LastName}
@@ -89,7 +99,7 @@ export default function Contact_form(props) {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           <input
             type="email"
-            name="email"
+            name="Email"
             id="email"
             placeholder="Email"
             value={fieldData.Email}
@@ -98,7 +108,7 @@ export default function Contact_form(props) {
           />
           <input
             type="tel"
-            name="phone"
+            name="Phone"
             id="phone"
             placeholder="Phone"
             autoComplete="phone"
@@ -109,8 +119,8 @@ export default function Contact_form(props) {
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <input
-            type="url"
-            name="website"
+            type="text"
+            name="Website"
             id="website"
             placeholder="Website"
             autoComplete=""
@@ -120,7 +130,7 @@ export default function Contact_form(props) {
           />
           <input
             type="text"
-            name="company"
+            name="Company"
             id="company"
             placeholder="Company"
             autoComplete=""
@@ -130,7 +140,7 @@ export default function Contact_form(props) {
           />
           <input
             type="text"
-            name="designation"
+            name="Designation"
             id="designation"
             placeholder="Designation"
             autoComplete=""
@@ -142,7 +152,7 @@ export default function Contact_form(props) {
         <div className="grid grid-cols-1 gap-5">
           <textarea
             type="text"
-            name="message"
+            name="Message"
             id="message"
             placeholder="Message"
             autoComplete=""

@@ -357,6 +357,7 @@ export default function Form() {
                       value={formFiels.firstName}
                       onChange={handleChange}
                       className="py-2 px-4 border border-[#ccc] focus:outline-none focus:border-[#8DC63F] bg-[#eceff1] text-lg font-semibold text-[#302E2E]"
+                      required
                     ></input>
                   </div>
                   <div className="flex justify-end space-x-1">

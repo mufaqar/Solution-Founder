@@ -453,7 +453,7 @@ export default function Form() {
                         Website
                       </label>
                       <input
-                        type="url"
+                        type="text"
                         id="website"
                         name="website"
                         placeholder="https://company.com "

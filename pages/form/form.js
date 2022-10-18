@@ -11,7 +11,7 @@ import { BsCheckLg } from 'react-icons/bs';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-export default function Form() {
+export default function Form({formClose}) {
   
   const [step1, setStep1] = useState(true);
   const [step2, setStep2] = useState(false);
@@ -193,6 +193,7 @@ export default function Form() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    formClose(false)
 
     emailjs
       .sendForm(
@@ -205,6 +206,7 @@ export default function Form() {
         (result) => {
           console.log(result.text);
           // alert('Message Successfully Transfer');
+          
           setMessageTransfer(true)
         },
         (error) => {
@@ -451,7 +453,7 @@ export default function Form() {
                       Website
                     </label>
                     <input
-                      type="url"
+                      type="text"
                       id="website"
                       name="website"
                       placeholder="https://company.com "

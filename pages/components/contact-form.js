@@ -38,7 +38,7 @@ export default function Contact_form(props) {
     emailjs
       .sendForm(
         'service_o3eiv0o',
-        'service_o3eiv0o',
+        'template_bmeqmt8',
         e.target,
         'pzMV1U0WIjGl0M4ye'
       )

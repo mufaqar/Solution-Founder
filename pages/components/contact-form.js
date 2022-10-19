@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { useForm } from "react-hook-form";
-
+import { useForm } from 'react-hook-form';
 
 export default function Contact_form(props) {
   const form = useRef();
@@ -11,29 +10,25 @@ export default function Contact_form(props) {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     console.log(e);
     emailjs
-    .sendForm(
-      'service_g051vgf',
-      'template_tqepuqs',
-      form.current,
-      'jkkvmNtffF78Bsse7'
-    )
-    .then(
-      (result) => {
-        console.log(result.text);
-        alert('Message Successfully Transfer');
-      },
-      (error) => {
-        console.log(error.text);
-      }
-    );
-  }
-
-
- 
-
+      .sendForm(
+        'service_5zya9zm',
+        'template_bmeqmt8',
+        form.current,
+        'S5LLZeQloy7_1AQCX'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert('Message Successfully Transfer');
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <>
@@ -45,14 +40,14 @@ export default function Contact_form(props) {
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          <div className='flex flex-col' >
+          <div className="flex flex-col">
             <input
               type="text"
               name="FirstName"
               id="first-name"
               placeholder="First Name"
               autoComplete=""
-              {...register("FirstName", { required: true })}
+              {...register('FirstName', { required: true })}
               className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
             />
             {errors.FirstName && (
@@ -62,13 +57,13 @@ export default function Contact_form(props) {
             )}
           </div>
 
-          <div className='flex flex-col'>
+          <div className="flex flex-col">
             <input
               type="text"
               name="LastName"
               id="last-name"
               placeholder="Last Name"
-              {...register("LastName", { required: true })}
+              {...register('LastName', { required: true })}
               className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
             />
             {errors.LastName && (
@@ -77,16 +72,15 @@ export default function Contact_form(props) {
               </span>
             )}
           </div>
-
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          <div className='flex flex-col'>
+          <div className="flex flex-col">
             <input
               type="email"
               name="Email"
               id="email"
               placeholder="Email"
-              {...register("Email", { required: true })}
+              {...register('Email', { required: true })}
               className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
             />
             {errors.LastName && (
@@ -96,14 +90,14 @@ export default function Contact_form(props) {
             )}
           </div>
 
-          <div className='flex flex-col'>
+          <div className="flex flex-col">
             <input
               type="tel"
               name="Phone"
               id="phone"
               placeholder="Phone"
               autoComplete="phone"
-              {...register("Phone", { required: true })}
+              {...register('Phone', { required: true })}
               className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
             />
             {errors.LastName && (
@@ -112,9 +106,6 @@ export default function Contact_form(props) {
               </span>
             )}
           </div>
-
-
-
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <input
@@ -123,7 +114,7 @@ export default function Contact_form(props) {
             id="website"
             placeholder="Website"
             autoComplete=""
-            {...register("Website")}
+            {...register('Website')}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -132,7 +123,7 @@ export default function Contact_form(props) {
             id="company"
             placeholder="Company"
             autoComplete=""
-            {...register("Company")}
+            {...register('Company')}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -141,7 +132,7 @@ export default function Contact_form(props) {
             id="designation"
             placeholder="Designation"
             autoComplete=""
-            {...register("Designation")}
+            {...register('Designation')}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
@@ -153,7 +144,7 @@ export default function Contact_form(props) {
             placeholder="Message"
             autoComplete=""
             rows={5}
-            {...register("Message", { required: true })}
+            {...register('Message', { required: true })}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           ></textarea>
           {errors.Message && (
@@ -162,8 +153,7 @@ export default function Contact_form(props) {
             </span>
           )}
 
-          
-        {errors.Robort && (
+          {errors.Robort && (
             <span className="block mt-1 text-red-400">
               Varify you are not a robort<sup>*</sup>
             </span>
@@ -174,7 +164,7 @@ export default function Contact_form(props) {
               name="Robort"
               id="acceptance-field"
               className=""
-              {...register("Robort", { required: true })}
+              {...register('Robort', { required: true })}
             />
             <span className="ml-2 text-lg font-medium text-white">
               I’m not a robot

@@ -1,67 +1,39 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useForm } from "react-hook-form";
+
 
 export default function Contact_form(props) {
-  const [fieldData, setFieldData] = useState({
-    FirstName: '',
-    LastName: '',
-    Email: '',
-    Phone: '',
-    Website: '',
-    Company: '',
-    Designation: '',
-    Message: '',
-  });
-  const [term, setTerm] = useState(false);
-  const [Message, setmessage] = useState('');
+  const form = useRef();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const CheckedHandle = (event) => {
-    if (event.target.checked) {
-      console.log('✅ Checkbox is checked');
-      setmessage('');
-    } else {
-      console.log('⛔️ Checkbox is NOT checked');
-      setmessage('Please Checked Terms');
-    }
-    setTerm((current) => !current);
-  };
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setFieldData({ ...fieldData, [name]: value });
-  };
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
+  const onSubmit = e => {
+    console.log(e);
     emailjs
-      .sendForm(
-        'service_o3eiv0o',
-        'template_bmeqmt8',
-        e.target,
-        'pzMV1U0WIjGl0M4ye'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert('Message Successfully Transfer');
-          setFieldData({
-            FirstName: '',
-            LastName: '',
-            Email: '',
-            Phone: '',
-            Website: '',
-            Company: '',
-            Designation: '',
-            Message: '',
-          });
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
-  };
+    .sendForm(
+      'service_g051vgf',
+      'template_tqepuqs',
+      form.current,
+      'jkkvmNtffF78Bsse7'
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+        alert('Message Successfully Transfer');
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  }
+
+
+ 
+
 
   return (
     <>
@@ -69,49 +41,80 @@ export default function Contact_form(props) {
         method="post"
         name="Contact Form"
         className="grid grid-cols-1 gap-5"
-        onSubmit={sendEmail}
+        ref={form}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          <input
-            type="text"
-            name="FirstName"
-            id="first-name"
-            placeholder="First Name"
-            autoComplete=""
-            value={fieldData.FirstName}
-            onChange={handleChange}
-            className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
-          />
-          <input
-            type="text"
-            name="LastName"
-            id="last-name"
-            placeholder="Last Name"
-            value={fieldData.LastName}
-            onChange={handleChange}
-            className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
-          />
+          <div className='flex flex-col' >
+            <input
+              type="text"
+              name="FirstName"
+              id="first-name"
+              placeholder="First Name"
+              autoComplete=""
+              {...register("FirstName", { required: true })}
+              className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
+            />
+            {errors.FirstName && (
+              <span className="block mt-1 text-red-400">
+                Name field is required<sup>*</sup>
+              </span>
+            )}
+          </div>
+
+          <div className='flex flex-col'>
+            <input
+              type="text"
+              name="LastName"
+              id="last-name"
+              placeholder="Last Name"
+              {...register("LastName", { required: true })}
+              className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
+            />
+            {errors.LastName && (
+              <span className="block mt-1 text-red-400">
+                Name field is required<sup>*</sup>
+              </span>
+            )}
+          </div>
+
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-          <input
-            type="email"
-            name="Email"
-            id="email"
-            placeholder="Email"
-            value={fieldData.Email}
-            onChange={handleChange}
-            className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
-          />
-          <input
-            type="tel"
-            name="Phone"
-            id="phone"
-            placeholder="Phone"
-            autoComplete="phone"
-            value={fieldData.Phone}
-            onChange={handleChange}
-            className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
-          />
+          <div className='flex flex-col'>
+            <input
+              type="email"
+              name="Email"
+              id="email"
+              placeholder="Email"
+              {...register("Email", { required: true })}
+              className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
+            />
+            {errors.LastName && (
+              <span className="block mt-1 text-red-400">
+                Name field is required<sup>*</sup>
+              </span>
+            )}
+          </div>
+
+          <div className='flex flex-col'>
+            <input
+              type="tel"
+              name="Phone"
+              id="phone"
+              placeholder="Phone"
+              autoComplete="phone"
+              {...register("Phone", { required: true })}
+              className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
+            />
+            {errors.LastName && (
+              <span className="block mt-1 text-red-400">
+                Name field is required<sup>*</sup>
+              </span>
+            )}
+          </div>
+
+
+
         </div>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <input
@@ -120,8 +123,7 @@ export default function Contact_form(props) {
             id="website"
             placeholder="Website"
             autoComplete=""
-            value={fieldData.Website}
-            onChange={handleChange}
+            {...register("Website")}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -130,8 +132,7 @@ export default function Contact_form(props) {
             id="company"
             placeholder="Company"
             autoComplete=""
-            value={fieldData.Company}
-            onChange={handleChange}
+            {...register("Company")}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
           <input
@@ -140,8 +141,7 @@ export default function Contact_form(props) {
             id="designation"
             placeholder="Designation"
             autoComplete=""
-            value={fieldData.Designation}
-            onChange={handleChange}
+            {...register("Designation")}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           />
         </div>
@@ -153,19 +153,28 @@ export default function Contact_form(props) {
             placeholder="Message"
             autoComplete=""
             rows={5}
-            value={fieldData.Message}
-            onChange={handleChange}
+            {...register("Message", { required: true })}
             className="text-lg font-medium py-2 px-4 border-b border-[#818a91] text-[#FFFFFF] bg-transparent focus:outline-none focus:shadow-inpShadow"
           ></textarea>
-          <p className="text-red-500">{Message}</p>
+          {errors.Message && (
+            <span className="block mt-1 text-red-400">
+              Name field is required<sup>*</sup>
+            </span>
+          )}
+
+          
+        {errors.Robort && (
+            <span className="block mt-1 text-red-400">
+              Varify you are not a robort<sup>*</sup>
+            </span>
+          )}
           <label className="inline-flex items-center">
             <input
               type="checkbox"
-              name="acceptance-field"
+              name="Robort"
               id="acceptance-field"
               className=""
-              value={term}
-              onChange={CheckedHandle}
+              {...register("Robort", { required: true })}
             />
             <span className="ml-2 text-lg font-medium text-white">
               I’m not a robot

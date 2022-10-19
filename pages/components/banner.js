@@ -12,9 +12,7 @@ export default function Banner(props) {
     formPopup ? document.body.style.overflowY = 'hidden' : document.body.style.overflowY = 'scroll'
   }
 
-  const FormClose=(props)=>{
-    // setFormPopup(props)
-  }
+
 
   return (
     <>
@@ -82,8 +80,8 @@ export default function Banner(props) {
         <div className='fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-80' >
           <motion.div initial={{ opacity: 0, y: '-20vh' }} animate={{ type:'spring', opacity:1, y:'50vh' }}>
             <div className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'>
-              <Form formClose={FormClose}/>
-              <div className='fixed inline-block cursor-pointer right-1 top-1 close bg-opacity-80' onClick={() => setFormPopup(false)} >
+              <Form />
+              <div className='fixed right-0 inline-block p-2 bg-white rounded-full cursor-pointer -top-12 close bg-opacity-80' onClick={() => setFormPopup(false)} >
                 <AiOutlineClose size={20} />
               </div>
             </div>

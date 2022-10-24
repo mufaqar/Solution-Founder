@@ -25,7 +25,7 @@ const GET_POSTSS = gql`
       allType {
         edges {
           node {
-            team(where: {orderby: {field: DATE, order: ASC}}, first: 50) {
+            team(where: {orderby: {field: DATE, order: ASC}}, first: 100) {
               edges {
                 node {
                   title
@@ -52,11 +52,12 @@ export default function Company({ posts }) {
   
   const [tab, setTab] = React.useState(1);
   
-  const allTeam = data?.allType.edges[0].node.team.edges;
-  const BOD = data?.allType.edges[1].node.team.edges;
-  const FunctionalTeam = data?.allType.edges[2].node.team.edges;
-  const ManagementTeam = data?.allType.edges[3].node.team.edges;
-  const TechnicalTeam = data?.allType.edges[4].node.team.edges;
+  const Admin = data?.allType.edges[0].node.team.edges;
+  const allTeam = data?.allType.edges[1].node.team.edges;
+  const BOD = data?.allType.edges[2].node.team.edges;
+  const FunctionalTeam = data?.allType.edges[3].node.team.edges;
+  const ManagementTeam = data?.allType.edges[4].node.team.edges;
+  const TechnicalTeam = data?.allType.edges[5].node.team.edges;
   
 
   function Team({name, designation, icon}) {
@@ -263,12 +264,14 @@ export default function Company({ posts }) {
             OUR TEAM
           </h2>
           <ul id="tabs" className="flex justify-between">
+            
+            {/* Management Team */}
             <li>
               <a onClick={() => setTab(1)}>
-                <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src={all}
+                      src={managementTeam}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -276,7 +279,7 @@ export default function Company({ posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    All
+                    Management Team
                   </h3>
                 </div>
                 <figure
@@ -293,12 +296,13 @@ export default function Company({ posts }) {
                 </figure>
               </a>
             </li>
+            {/* Functional Team */}
             <li>
               <a onClick={() => setTab(2)}>
-                <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src={managementTeam}
+                      src={functionalTeam}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -306,7 +310,7 @@ export default function Company({ posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Management Team
+                    Functional Team
                   </h3>
                 </div>
                 <figure
@@ -323,12 +327,13 @@ export default function Company({ posts }) {
                 </figure>
               </a>
             </li>
+            {/* Technical Team */}
             <li>
               <a onClick={() => setTab(3)}>
-                <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
-                      src={functionalTeam}
+                      src={technicalTeam}
                       alt="setting.png"
                       className=""
                       width={45}
@@ -336,7 +341,7 @@ export default function Company({ posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Functional Team
+                    Technical Team
                   </h3>
                 </div>
                 <figure
@@ -353,9 +358,10 @@ export default function Company({ posts }) {
                 </figure>
               </a>
             </li>
+            {/* Admin */}
             <li>
               <a onClick={() => setTab(4)}>
-                <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
                       src={technicalTeam}
@@ -366,7 +372,7 @@ export default function Company({ posts }) {
                     />
                   </figure>
                   <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Technical Team
+                    Admin
                   </h3>
                 </div>
                 <figure
@@ -383,9 +389,10 @@ export default function Company({ posts }) {
                 </figure>
               </a>
             </li>
+            {/* Board of Directors */}
             <li>
               <a onClick={() => setTab(5)}>
-                <div className="flex items-center w-full px-6 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
                   <figure>
                     <Image
                       src={meeting}
@@ -413,6 +420,37 @@ export default function Company({ posts }) {
                 </figure>
               </a>
             </li>
+            {/* all team  */}
+            <li>
+              <a onClick={() => setTab(6)}>
+                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
+                  <figure>
+                    <Image
+                      src={all}
+                      alt="setting.png"
+                      className=""
+                      width={45}
+                      height={45}
+                    />
+                  </figure>
+                  <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
+                    All
+                  </h3>
+                </div>
+                <figure
+                  className={`w-12 lg:w-full h-2 ${
+                    tab === 6 ? "block" : "hidden"
+                  }`}
+                >
+                  <Image
+                    src="/images/color-bar.jpg"
+                    alt="icon"
+                    width={212}
+                    height={8}
+                  ></Image>
+                </figure>
+              </a>
+            </li>
           </ul>
           <div id="tab-contents">
             <div
@@ -422,7 +460,7 @@ export default function Company({ posts }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {allTeam?.map((singleteam, index) => (
+                {ManagementTeam?.map((singleteam, index) => (
                   <div key={index}>
                     <Team
                       name={singleteam.node.title}
@@ -442,7 +480,7 @@ export default function Company({ posts }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {ManagementTeam?.map((dpt) => (
+                {FunctionalTeam?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}
@@ -460,7 +498,7 @@ export default function Company({ posts }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {FunctionalTeam?.map((dpt) => (
+                {TechnicalTeam?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}
@@ -478,7 +516,7 @@ export default function Company({ posts }) {
               }`}
             >
               <div className="grid gap-5 md:grid-cols-4">
-                {TechnicalTeam?.map((dpt) => (
+                {Admin?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}
@@ -497,6 +535,24 @@ export default function Company({ posts }) {
             >
               <div className="grid gap-5 md:grid-cols-4">
                 {BOD?.map((dpt) => (
+                  <div key={dpt.node.title}>
+                    <Team
+                      name={dpt.node.title}
+                      designation={dpt.node.teamExtraInfo.teamDesignation}
+                      icon={dpt.node.featuredImage.node.mediaItemUrl}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div
+              id="fifth"
+              className={`border-t mt-[10px] border-black pt-14 ${
+                tab === 6 ? "block" : "hidden"
+              }`}
+            >
+              <div className="grid gap-5 md:grid-cols-4">
+                {allTeam?.map((dpt) => (
                   <div key={dpt.node.title}>
                     <Team
                       name={dpt.node.title}

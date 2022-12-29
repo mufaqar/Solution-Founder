@@ -25,7 +25,8 @@ export default function SlugPage({ job,jobs, successStories }) {
   const [formStatus, setFormStatus] = useState(false);
 
   const sendEmail = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    console.log(e)
     setLoding(true);
     emailjs
       .sendForm(
@@ -212,7 +213,7 @@ export default function SlugPage({ job,jobs, successStories }) {
                     <input
                       type="file"
                       name="cv"
-                      {...register("selectJob")}
+                      {...register("cv")}
                       placeholder="Skype ID"
                       className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
                     />

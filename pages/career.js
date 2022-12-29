@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import ConfermationMessage from './components/confermationMessage';
 import Loader from './components/Loader';
+import Link from 'next/link';
 
 export default function Career({ jobs }) {
   console.log(jobs);
@@ -83,6 +84,12 @@ export default function Career({ jobs }) {
                   >
                     Apply Now
                   </p>
+                  <Link
+                    className="text-xl mt-4 font-bold text-[#133C6D] cursor-pointer"
+                    href={job.node.uri}
+                  >
+                    View Detail
+                  </Link>
                 </div>
               </div>
             </div>

@@ -57,7 +57,7 @@ export default function TeamSection() {
                   scale: 1.1,
                 }}
               >
-                Meat The Team
+                Meet The Team
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="inline-block w-4 h-4 ml-2"

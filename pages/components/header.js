@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { AiOutlineDown } from 'react-icons/ai';
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from 'react-icons/ai';
 import Link from 'next/link';
 import Mega_Menu from './mega-menu';
 import { useState } from 'react';
@@ -29,7 +29,7 @@ export default function Header() {
           name="description"
           content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
         />
-        <link rel="canonical" href="http://solutionfounder.com/" />
+        <link rel="canonical" href="https://solutionfounder.com/" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Home - Solution Founder" />
@@ -37,7 +37,7 @@ export default function Header() {
           property="og:description"
           content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
         />
-        <meta property="og:url" content="http://solutionfounder.com/" />
+        <meta property="og:url" content="https://solutionfounder.com/" />
         <meta property="og:site_name" content="Solution Founder" />
         <meta
           property="article:modified_time"
@@ -45,7 +45,7 @@ export default function Header() {
         />
         <meta
           property="og:image"
-          content="http://solutionfounder.com/wp-content/uploads/2020/07/home-banner-img.png"
+          content="https://solutionfounder.com/wp-content/uploads/2020/07/home-banner-img.png"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@odoo_solutions" />
@@ -69,7 +69,11 @@ export default function Header() {
               />
             </Link>
           </div>
-          <div className={`fixed lg:w-auto md:block lg:relative bg-[#133C6D] lg:bg-transparent left-0 transition-all duration-300 right-0 lg:top-0 lg:right-0 ${ismobile ? 'top-[85px]' : '-top-full'}`}>
+          <div
+            className={`fixed lg:w-auto md:block lg:relative bg-[#133C6D] lg:bg-transparent left-0 transition-all duration-300 right-0 lg:top-0 lg:right-0 ${
+              ismobile ? 'top-[85px]' : '-top-full'
+            }`}
+          >
             <ul className="flex flex-col items-start justify-center bg-[#133C6D] pt-0 pb-10 space-x-12 space-y-6 lg:pb-0 lg:-mt-8 lg:items-baseline lg:flex-row">
               <li className="inline pl-12 mt-10 text-xl font-semibold text-white ml:mt-0 lg:text-base lg:pl-0">
                 <Link href="/">Home</Link>
@@ -89,8 +93,11 @@ export default function Header() {
                     }`}
                   >
                     <Mega_Menu />
-                    <div className='absolute bg-[#8DC63F] block lg:hidden top-4 right-4' onClick={()=>setMegaMenu(false)}>
-                      <AiOutlineClose size={25}/>
+                    <div
+                      className="absolute bg-[#8DC63F] block lg:hidden top-4 right-4"
+                      onClick={() => setMegaMenu(false)}
+                    >
+                      <AiOutlineClose size={25} />
                     </div>
                   </ul>
                 </span>
@@ -125,15 +132,17 @@ export default function Header() {
             </ul>
           </div>
           <div className="items-center block w-auto md:hidden">
-            <button className="px-2 py-2 bg-[#8DC63F] rounded-sm  shadow-md" onClick={()=> setisMobile(!ismobile)}>
-            
-            <svg
+            <button
+              className="px-2 py-2 bg-[#8DC63F] rounded-sm  shadow-md"
+              onClick={() => setisMobile(!ismobile)}
+            >
+              <svg
                 className="text-white fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
-              > 
+              >
                 <title>menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
               </svg>

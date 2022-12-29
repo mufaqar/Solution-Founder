@@ -50,7 +50,7 @@ export default function SlugPage({ post, successStories }) {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
           {successStories.map((item, index) => (
             <div key={index} className="flex flex-col">
-              <Link href={item.node.uri}>
+              <Link href={item.node.uri} passHref>
                 <Image
                   src={item.node.featuredImage.node.mediaItemUrl}
                   alt={item.node.title}

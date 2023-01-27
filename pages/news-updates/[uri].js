@@ -10,13 +10,14 @@ import parse from 'html-react-parser';
 
 
 export default function SlugPage({ post, posts }) {
+
   const {seo} = post
-  const yoastHead = parse(seo.fullHead)
+  const yoastHead = parse(seo?.fullHead)
 
   return (
     <div>
     <Head>
-    { yoastHead }
+    {yoastHead}
   </Head>
       <Header />
       <Banner
@@ -86,6 +87,11 @@ const GET_POST = gql`
       id
       uri
       content
+      seo {
+        fullHead
+        title
+        metaDesc
+      }
       featuredImage {
         node {
           mediaItemUrl
@@ -119,9 +125,6 @@ const GET_POST = gql`
 `;
 
 export async function getStaticProps({ params }) {
-  //  the params argument for this function corresponds to the dynamic URL segments
-  //  we included in our page-based route. So, in this case, the `params` object will have
-  //  a property named `uri` that contains that route segment when a user hits the page
   const response = await client.query({
     query: GET_POST,
     variables: {

@@ -182,13 +182,13 @@ export default function Footer() {
           <div className="flex justify-center w-full md:w-1/2 md:justify-end">
             <ul className="inline-flex space-x-5">
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="privacy-policy">Privacy Policy</Link>
+                <Link href="/privacy-policy">Privacy Policy</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="terms-of-use">Terms Of Use</Link>
+                <Link href="/terms-of-use">Terms Of Use</Link>
               </li>
               <li className="text-white hover:text-[#8DC63F] text-base font-semibold">
-                <Link href="cookie-policy">Cookie Policy</Link>
+                <Link href="/cookie-policy">Cookie Policy</Link>
               </li>
             </ul>
           </div>

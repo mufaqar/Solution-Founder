@@ -6,16 +6,18 @@ import Banner from "../components/banner";
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from "../components/footer";
-
+import parse from 'html-react-parser';
 
 
 export default function SlugPage({ post, posts }) {
-  console.log("banner", post);
+  const {seo} = post
+  const yoastHead = parse(seo.fullHead)
+
   return (
     <div>
-      <Head>
-        <link rel="icon" href="favicon.ico"></link>
-      </Head>
+    <Head>
+    { yoastHead }
+  </Head>
       <Header />
       <Banner
         heading={post.postExtra.subHeading}

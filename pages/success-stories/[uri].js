@@ -5,14 +5,16 @@ import Header from '../components/header';
 import Banner from '../components/banner';
 import Cardnew from '../components/card-new';
 import Footer from '../components/footer';
-
+import parse from 'html-react-parser';
 
 export default function SlugPage({ post }) {
+  const {seo} = post
+  const yoastHead = parse(seo.fullHead)
+
   return (
     <div>
       <Head>
-        {/* <title>{post.title}</title> */}
-        <link rel="icon" href="favicon.ico"></link>
+      {yoastHead}
       </Head>
       <Header />
 
@@ -51,6 +53,10 @@ const GET_POST = gql`
       uri
       title
       id
+      seo {
+        fullHead
+        metaDesc
+      }
       successStoryExtra {
         shortInfo
         detailContent

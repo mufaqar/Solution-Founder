@@ -8,15 +8,17 @@ import IntrustedDepartment from '../components/intrusted-department';
 import Footer from '../components/footer';
 import Link from 'next/link';
 import Image from 'next/image';
+import parse from 'html-react-parser';
+
 
 export default function SlugPage({ post, successStories }) {
-  // console.log('story Banner', successStories);
+  const {seo} = post
+  const yoastHead = parse(seo.fullHead)
 
   return (
     <div>
       <Head>
-        <title>Products - Solution Founder</title>
-        {/* <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests"/> */}
+        { yoastHead }
       </Head>
 
       <Header />
@@ -96,6 +98,11 @@ const GET_POST = gql`
       id
       uri
       content
+      seo {
+        fullHead
+        title
+        metaDesc
+      }
       featuredImage {
         node {
           mediaItemUrl

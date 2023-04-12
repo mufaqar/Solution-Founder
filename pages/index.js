@@ -147,16 +147,16 @@ export default function Home({ posts }) {
           ref={ref}
           className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8"
         >
-          {posts.map((item, index) => (
+          {posts?.map((item, index) => (
             <motion.div
               key={index}
               className="flex flex-col"
               animate={animation}
             >
-              <Link href={item.node.uri}>
+              <Link href={item?.node?.uri}>
                 <Image
-                  src={item.node.featuredImage.node.mediaItemUrl}
-                  alt={item.node.title}
+                  src={item?.node?.featuredImage?.node.mediaItemUrl}
+                  alt={item?.node?.title}
                   width={500}
                   height={350}
                 />

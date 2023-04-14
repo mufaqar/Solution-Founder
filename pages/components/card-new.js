@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import GlobalReach from '../../public/images/products.png';
+
 
 export default function Cardnew(props) {
   const features = props.post;
@@ -23,8 +23,8 @@ export default function Cardnew(props) {
                 />
               </figure>
               <Image
-                // src={feature.icon.mediaItemUrl ? feature.icon.mediaItemUrl : ''}
-                src = {GlobalReach}
+                src={feature.icon.mediaItemUrl ? feature.icon.mediaItemUrl : ''}
+       
                 alt={feature.title}
                 className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200"
                 width={155}
@@ -46,8 +46,7 @@ export default function Cardnew(props) {
             />
           </figure>
           <Image
-            // src={props.icon}
-            src = {GlobalReach}
+            src={props.icon}      
             alt={props.title}
             className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200"
             width={55}

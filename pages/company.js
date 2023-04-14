@@ -47,22 +47,16 @@ const GET_POSTSS = gql`
     }
   `
 
-export default function Company({ posts }) {
-  
-  const {data} = useQuery(GET_POSTSS);
-  
-  const [tab, setTab] = React.useState(1);
-  
+export default function Company({ posts }) {  
+  const {data} = useQuery(GET_POSTSS);  
+  const [tab, setTab] = React.useState(1);  
   const Admin = data?.allType.edges[0]?.node.team.edges;
   const allTeam = data?.allType.edges[1]?.node.team.edges;
   const BOD = data?.allType.edges[2]?.node.team.edges;
   const FunctionalTeam = data?.allType.edges[3]?.node.team.edges;
   const ManagementTeam = data?.allType.edges[4]?.node.team.edges;
-  const TechnicalTeam = data?.allType.edges[5]?.node.team.edges;
-  
-
-  function Team({name, designation, icon}) {
-    
+  const TechnicalTeam = data?.allType.edges[5]?.node.team.edges;  
+  function Team({name, designation, icon}) {    
     return (
       <>
       <Head>

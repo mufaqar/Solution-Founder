@@ -110,12 +110,12 @@ export default function Home({ posts }) {
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />
           <ImageBox
-            icon="/images/Award-winner.png"
+            icon="/images/Global-Reach.svg"
             title="Global Reach"
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />
           <ImageBox
-            icon="/images/Award-winner.png"
+            icon="/images/Trusted-Security.svg"
             title="Trusted Security"
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />

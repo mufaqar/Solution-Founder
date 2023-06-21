@@ -293,7 +293,6 @@ export default function Company({ posts }) {
         <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
           OUR SUCCESS STORIES
         </h2>
-
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
           {posts.map((item, index) => (
             <motion.div
@@ -347,7 +346,7 @@ export default function Company({ posts }) {
 
 export async function getServerSideProps() {
   const GET_POSTS = gql`
-    query GetAllTeam {
+    query GetAllStories {
       allSuccessStories(first: 4) {
         edges {
           node {

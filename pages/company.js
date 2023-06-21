@@ -1,43 +1,42 @@
-import Banner from "./components/banner";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import Banner from './components/banner';
+import Footer from './components/footer';
+import Header from './components/header';
 // import Team from "./components/team";
-import { useEffect, useState } from "react";
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { gql, useQuery } from "@apollo/client";
-import { client } from "../lib/apollo";
+import { useEffect, useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { gql, useQuery } from '@apollo/client';
+import { client } from '../lib/apollo';
 // images
-import ibm from "../public/images/ibm-dark.png";
-import odoo from "../public/images/odoo (1).png";
-import microsoft from "../public/images/micro-dark.png";
-import all from "../public/images/all.svg";
-import managementTeam from "../public/images/management-Team.svg";
-import functionalTeam from "../public/images/functional-Team.svg";
-import technicalTeam from "../public/images/technical-Team.svg";
-import meeting from "../public/images/meeting.svg";
-import { SlideUp } from "../animation";
-import {motion} from "framer-motion"
-import Head from "next/head";
+import ibm from '../public/images/ibm-dark.png';
+import odoo from '../public/images/odoo (1).png';
+import microsoft from '../public/images/micro-dark.png';
+import all from '../public/images/all.svg';
+import managementTeam from '../public/images/management-Team.svg';
+import functionalTeam from '../public/images/functional-Team.svg';
+import technicalTeam from '../public/images/technical-Team.svg';
+import meeting from '../public/images/meeting.svg';
+import { SlideUp } from '../animation';
+import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 const GET_POSTSS = gql`
-    query GetAllTeam {
-      allType {
-        edges {
-          node {
-            team(where: {orderby: {field: DATE, order: ASC}}, first: 100) {
-              edges {
-                node {
-                  title
-                  featuredImage {
-                    node {
-                      mediaItemUrl
-                    }
+  query GetAllTeam {
+    allType {
+      edges {
+        node {
+          team(where: { orderby: { field: DATE, order: ASC } }, first: 100) {
+            edges {
+              node {
+                title
+                featuredImage {
+                  node {
+                    mediaItemUrl
                   }
-                  teamExtraInfo {
-                    teamDesignation
-                  }
+                }
+                teamExtraInfo {
+                  teamDesignation
                 }
               }
             }
@@ -45,55 +44,64 @@ const GET_POSTSS = gql`
         }
       }
     }
-  `
+  }
+`;
 
-export default function Company({ posts }) {  
-  const {data} = useQuery(GET_POSTSS);  
-  const [tab, setTab] = React.useState(1);  
+export default function Company({ posts }) {
+  const { data } = useQuery(GET_POSTSS);
+  const [tab, setTab] = React.useState(1);
   const Admin = data?.allType.edges[0]?.node.team.edges;
   const allTeam = data?.allType.edges[1]?.node.team.edges;
   const BOD = data?.allType.edges[2]?.node.team.edges;
   const FunctionalTeam = data?.allType.edges[3]?.node.team.edges;
   const ManagementTeam = data?.allType.edges[4]?.node.team.edges;
-  const TechnicalTeam = data?.allType.edges[5]?.node.team.edges;  
-  function Team({name, designation, icon}) {    
+  const TechnicalTeam = data?.allType.edges[5]?.node.team.edges;
+  function Team({ name, designation, icon }) {
     return (
       <>
-      <Head>
-    <title>About us - Solution Founder</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <meta
-      name="description"
-      content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
-    />
-    <link rel="canonical" href="https://solutionfounder.com/" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Home - Solution Founder" />
-    <meta
-      property="og:description"
-      content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
-    />
-    <meta property="og:url" content="https://solutionfounder.com/" />
-    <meta property="og:site_name" content="Solution Founder" />
-    <meta
-      property="article:modified_time"
-      content="2022-03-10T07:09:44+00:00"
-    />
-    <meta
-      property="og:image"
-      content="https://solutionfounder.com/wp-content/uploads/2020/07/home-banner-img.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@odoo_solutions" />
-    <link
-      rel="icon"
-      href="https://solutionfounder.com/wp-content/uploads/2020/07/SF-White-F.svg"
-      sizes="32x32"
-    />
-  </Head>
-        <motion.div className="p-3 bg-white team shadow-teamShadow "
-        variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}>
+        <Head>
+          <title>About us - Solution Founder</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <meta
+            name="description"
+            content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
+          />
+          <link rel="canonical" href="https://solutionfounder.com/" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content="Home - Solution Founder" />
+          <meta
+            property="og:description"
+            content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
+          />
+          <meta property="og:url" content="https://solutionfounder.com/" />
+          <meta property="og:site_name" content="Solution Founder" />
+          <meta
+            property="article:modified_time"
+            content="2022-03-10T07:09:44+00:00"
+          />
+          <meta
+            property="og:image"
+            content="https://solutionfounder.com/wp-content/uploads/2020/07/home-banner-img.png"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@odoo_solutions" />
+          <link
+            rel="icon"
+            href="https://solutionfounder.com/wp-content/uploads/2020/07/SF-White-F.svg"
+            sizes="32x32"
+          />
+        </Head>
+        <motion.div
+          className="p-3 bg-white team shadow-teamShadow "
+          variants={SlideUp}
+          initial="offScreen"
+          whileInView="onScreen"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <div className="relative flex items-center justify-center">
             <Image
               src={icon}
@@ -102,7 +110,7 @@ export default function Company({ posts }) {
               width={500}
               height={500}
             />
-            <figure className='absolute -bottom-2'>
+            <figure className="absolute -bottom-2">
               <Image
                 src="/images/img-curve-dark.png"
                 alt="img-curve-dark.png"
@@ -111,7 +119,7 @@ export default function Company({ posts }) {
                 height={30}
               />
             </figure>
-            <figure className='absolute -bottom-2'>
+            <figure className="absolute -bottom-2">
               <Image
                 src="/images/img-curve.png"
                 alt="img-curve.png"
@@ -125,17 +133,12 @@ export default function Company({ posts }) {
             <h2 className="text-[#0261A3] text-xl font-bold flex items-center">
               {name}
             </h2>
-            <p className="text-[#8DC63F] text-sm font-normal">
-              {designation}
-            </p>
+            <p className="text-[#8DC63F] text-sm font-normal">{designation}</p>
           </div>
         </motion.div>
       </>
     );
   }
-
-
-
 
   return (
     <>
@@ -286,315 +289,6 @@ export default function Company({ posts }) {
         </div>
       </section>
 
-      <section id="team" className="py-14 pt-32 -mt-16 px-7 bg-[#eff1f4]">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
-            OUR TEAM
-          </h2>
-          <ul id="tabs" className="flex justify-between">
-            
-            {/* Management Team */}
-            <li>
-              <a onClick={() => setTab(1)}>
-                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
-                  <figure>
-                    <Image
-                      src={managementTeam}
-                      alt="setting.png"
-                      className=""
-                      width={45}
-                      height={45}
-                    />
-                  </figure>
-                  <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Management Team
-                  </h3>
-                </div>
-                <figure
-                  className={`w-12 lg:w-full h-2 ${
-                    tab === 1 ? "block" : "hidden"
-                  }`}
-                >
-                  <Image
-                    src="/images/color-bar.jpg"
-                    alt="icon"
-                    width={212}
-                    height={8}
-                  ></Image>
-                </figure>
-              </a>
-            </li>
-            {/* Functional Team */}
-            <li>
-              <a onClick={() => setTab(2)}>
-                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
-                  <figure>
-                    <Image
-                      src={functionalTeam}
-                      alt="setting.png"
-                      className=""
-                      width={45}
-                      height={45}
-                    />
-                  </figure>
-                  <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Functional Team
-                  </h3>
-                </div>
-                <figure
-                  className={`w-12 lg:w-full h-2 ${
-                    tab === 2 ? "block" : "hidden"
-                  }`}
-                >
-                  <Image
-                    src="/images/color-bar.jpg"
-                    alt="icon"
-                    width={212}
-                    height={8}
-                  ></Image>
-                </figure>
-              </a>
-            </li>
-            {/* Technical Team */}
-            <li>
-              <a onClick={() => setTab(3)}>
-                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
-                  <figure>
-                    <Image
-                      src={technicalTeam}
-                      alt="setting.png"
-                      className=""
-                      width={45}
-                      height={45}
-                    />
-                  </figure>
-                  <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Technical Team
-                  </h3>
-                </div>
-                <figure
-                  className={`w-12 lg:w-full h-2 ${
-                    tab === 3 ? "block" : "hidden"
-                  }`}
-                >
-                  <Image
-                    src="/images/color-bar.jpg"
-                    alt="icon"
-                    width={212}
-                    height={8}
-                  ></Image>
-                </figure>
-              </a>
-            </li>
-            {/* Admin */}
-            <li>
-              <a onClick={() => setTab(4)}>
-                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
-                  <figure>
-                    <Image
-                      src={technicalTeam}
-                      alt="setting.png"
-                      className=""
-                      width={45}
-                      height={45}
-                    />
-                  </figure>
-                  <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Admin
-                  </h3>
-                </div>
-                <figure
-                  className={`w-12 lg:w-full h-2 ${
-                    tab === 4 ? "block" : "hidden"
-                  }`}
-                >
-                  <Image
-                    src="/images/color-bar.jpg"
-                    alt="icon"
-                    width={212}
-                    height={8}
-                  ></Image>
-                </figure>
-              </a>
-            </li>
-            {/* Board of Directors */}
-            <li>
-              <a onClick={() => setTab(5)}>
-                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
-                  <figure>
-                    <Image
-                      src={meeting}
-                      alt="setting.png"
-                      className=""
-                      width={45}
-                      height={45}
-                    />
-                  </figure>
-                  <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    Board of Directors
-                  </h3>
-                </div>
-                <figure
-                  className={`w-12 lg:w-full h-2 ${
-                    tab === 5 ? "block" : "hidden"
-                  }`}
-                >
-                  <Image
-                    src="/images/color-bar.jpg"
-                    alt="icon"
-                    width={212}
-                    height={8}
-                  ></Image>
-                </figure>
-              </a>
-            </li>
-            {/* all team  */}
-            <li>
-              <a onClick={() => setTab(6)}>
-                <div className="flex items-center w-full px-3 py-3 bg-white rounded-md justify-items-center shadow-sh">
-                  <figure>
-                    <Image
-                      src={all}
-                      alt="setting.png"
-                      className=""
-                      width={45}
-                      height={45}
-                    />
-                  </figure>
-                  <h3 className="hidden ml-2 text-sm lg:block w-28 whitespace-nowrap">
-                    All
-                  </h3>
-                </div>
-                <figure
-                  className={`w-12 lg:w-full h-2 ${
-                    tab === 6 ? "block" : "hidden"
-                  }`}
-                >
-                  <Image
-                    src="/images/color-bar.jpg"
-                    alt="icon"
-                    width={212}
-                    height={8}
-                  ></Image>
-                </figure>
-              </a>
-            </li>
-          </ul>
-          <div id="tab-contents">
-            <div
-              id="first"
-              className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 1 ? "block" : "hidden"
-              }`}
-            >
-              <div className="grid gap-5 md:grid-cols-4">
-                {ManagementTeam?.map((singleteam, index) => (
-                  <div key={index}>
-                    <Team
-                      name={singleteam.node.title}
-                      designation={
-                        singleteam.node.teamExtraInfo.teamDesignation
-                      }
-                      icon={singleteam.node.featuredImage.node.mediaItemUrl}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              id="second"
-              className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 2 ? "block" : "hidden"
-              }`}
-            >
-              <div className="grid gap-5 md:grid-cols-4">
-                {FunctionalTeam?.map((dpt) => (
-                  <div key={dpt.node.title}>
-                    <Team
-                      name={dpt.node.title}
-                      designation={dpt.node.teamExtraInfo.teamDesignation}
-                      icon={dpt.node.featuredImage.node.mediaItemUrl}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              id="third"
-              className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 3 ? "block" : "hidden"
-              }`}
-            >
-              <div className="grid gap-5 md:grid-cols-4">
-                {TechnicalTeam?.map((dpt) => (
-                  <div key={dpt.node.title}>
-                    <Team
-                      name={dpt.node.title}
-                      designation={dpt.node.teamExtraInfo.teamDesignation}
-                      icon={dpt.node.featuredImage.node.mediaItemUrl}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              id="fourth"
-              className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 4 ? "block" : "hidden"
-              }`}
-            >
-              <div className="grid gap-5 md:grid-cols-4">
-                {Admin?.map((dpt) => (
-                  <div key={dpt.node.title}>
-                    <Team
-                      name={dpt.node.title}
-                      designation={dpt.node.teamExtraInfo.teamDesignation}
-                      icon={dpt.node.featuredImage.node.mediaItemUrl}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              id="fifth"
-              className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 5 ? "block" : "hidden"
-              }`}
-            >
-              <div className="grid gap-5 md:grid-cols-4">
-                {BOD?.map((dpt) => (
-                  <div key={dpt.node.title}>
-                    <Team
-                      name={dpt.node.title}
-                      designation={dpt.node.teamExtraInfo.teamDesignation}
-                      icon={dpt.node.featuredImage.node.mediaItemUrl}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              id="fifth"
-              className={`border-t mt-[10px] border-black pt-14 ${
-                tab === 6 ? "block" : "hidden"
-              }`}
-            >
-              <div className="grid gap-5 md:grid-cols-4">
-                {allTeam?.map((dpt) => (
-                  <div key={dpt.node.title}>
-                    <Team
-                      name={dpt.node.title}
-                      designation={dpt.node.teamExtraInfo.teamDesignation}
-                      icon={dpt.node.featuredImage.node.mediaItemUrl}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="py-28 px-7">
         <h2 className="md:text-4xl text-3xl leading-8 uppercase font-bold text-[#302E2E] text-center mb-8">
           OUR SUCCESS STORIES
@@ -602,8 +296,14 @@ export default function Company({ posts }) {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-[1200px] mx-auto mb-8">
           {posts.map((item, index) => (
-            <motion.div key={index} className="flex flex-col"
-            variants={SlideUp} initial="offScreen" whileInView="onScreen" viewport={{ once: true, amount: 0.1 }}>
+            <motion.div
+              key={index}
+              className="flex flex-col"
+              variants={SlideUp}
+              initial="offScreen"
+              whileInView="onScreen"
+              viewport={{ once: true, amount: 0.1 }}
+            >
               <Link passHref href={item.node.uri}>
                 <Image
                   src={item.node.featuredImage.node.mediaItemUrl}
@@ -664,7 +364,6 @@ export async function getServerSideProps() {
           }
         }
       }
-         
     }
   `;
   const response = await client.query({

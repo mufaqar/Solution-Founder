@@ -49,7 +49,11 @@ export default function TeamSection() {
               Our team draws on board vast industry experience to make best
               outcomes for our clients
             </p>
-            <Link href="/company/#team" className="items-center main-button">
+            <Link
+              href="/company/#team"
+              passHref
+              className="items-center main-button"
+            >
               <motion.a
                 className="border-[1px] border-[rgb(19,60,109)] hover:bg-[rgb(19,60,109)] hover:text-white px-5 font-bold inline-block py-4 rounded-md text-[rgb(19,60,109)]"
                 whileHover={{

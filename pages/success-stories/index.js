@@ -12,7 +12,7 @@ import Head from 'next/head';
 export default function Success_stories({ posts }) {
   return (
     <>
-    <Head>
+      <Head>
         <title>Success stories - Solution Founder</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta

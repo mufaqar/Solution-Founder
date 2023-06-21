@@ -7,9 +7,7 @@ import Link from 'next/link';
 import { gql, useQuery } from '@apollo/client';
 import { client } from '../lib/apollo';
 // images
-import ibm from '../public/images/ibm-dark.png';
-import odoo from '../public/images/odoo (1).png';
-import microsoft from '../public/images/micro-dark.png';
+
 import { SlideUp } from '../animation';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
@@ -56,8 +54,8 @@ export default function Company({ posts }) {
               />
             </figure>
             <Image
-              src={ibm}
-              alt={ibm}
+              src="/images/ibm-dark.png"
+              alt="IBN"
               className="w-[32%] h-[48%] mb-4"
               width={155}
               height={60}
@@ -74,8 +72,8 @@ export default function Company({ posts }) {
               />
             </figure>
             <Image
-              src={odoo}
-              alt={odoo}
+              src="/images/odoo (1).png"
+              alt="Odoo"
               className="w-[32%] h-[48%] mb-4"
               width={155}
               height={60}
@@ -92,8 +90,8 @@ export default function Company({ posts }) {
               />
             </figure>
             <Image
-              src={microsoft}
-              alt={microsoft}
+              src="/images/micro-dark.png"
+              alt="{microsoft}"
               className="w-[32%] h-[48%] mb-4"
               width={155}
               height={60}

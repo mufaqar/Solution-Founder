@@ -6,7 +6,7 @@ import Mega_Menu from './mega-menu';
 import { useState } from 'react';
 import Company_Menu from './company-menu';
 import Image from 'next/image';
-import fav from '../../public/fav.png'
+import fav from '../../public/fav.png';
 
 export default function Header() {
   const [megaMenu, setMegaMenu] = useState(true);
@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <>
       <Head>
-        <link rel="icon" type="image/x-icon" href="https://miniodoo.com/wp-content/uploads/2020/07/SF-White-F.svg"/>
+        <link rel="icon" type="image/x-icon" href={fav} />
       </Head>
 
       <header className="bg-[#133c6d] border-[#284D78] border-b fixed w-full z-50">
@@ -47,7 +47,9 @@ export default function Header() {
           >
             <ul className="flex flex-col items-start justify-center bg-[#133C6D] pt-0 pb-10 space-x-12 space-y-6 lg:pb-0 lg:-mt-8 lg:items-baseline lg:flex-row">
               <li className="inline pl-12 mt-10 text-xl font-semibold text-white ml:mt-0 lg:text-base lg:pl-0">
-                <Link href="/">Home</Link>
+                <Link href="/" passHref>
+                  Home
+                </Link>
               </li>
               <li
                 className="inline text-xl font-semibold text-white cursor-pointer lg:text-base"

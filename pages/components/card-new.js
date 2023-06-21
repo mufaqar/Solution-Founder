@@ -21,16 +21,16 @@ export default function Cardnew(props) {
                   height={50}
                 />
               </figure>
-              <img
+              <Image
                 src={
                   feature?.icon?.mediaItemUrl
                     ? feature?.icon?.mediaItemUrl
                     : '/images/default.svg'
                 }
                 alt={feature.title}
-                className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200 new"
-                width={`155`}
-                height={`55`}
+                className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200"
+                width={155}
+                height={55}
               />
               <h3 className="mt-4 text-center box-title">{feature.title}</h3>
             </div>
@@ -47,12 +47,12 @@ export default function Cardnew(props) {
               height={40}
             />
           </figure>
-          <img
+          <Image
             src={props.icon}
             alt={props.title}
             className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200"
-            width={`55`}
-            height={`50`}
+            width={55}
+            height={50}
           />
           <h3 className="text-center box-title">{props.title}</h3>
         </div>

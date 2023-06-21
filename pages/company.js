@@ -1,7 +1,7 @@
 import Banner from './components/banner';
 import Footer from './components/footer';
 import Header from './components/header';
-// import Team from "./components/team";
+
 import { useEffect, useState } from 'react';
 import React from 'react';
 import Image from 'next/image';
@@ -12,134 +12,11 @@ import { client } from '../lib/apollo';
 import ibm from '../public/images/ibm-dark.png';
 import odoo from '../public/images/odoo (1).png';
 import microsoft from '../public/images/micro-dark.png';
-import all from '../public/images/all.svg';
-import managementTeam from '../public/images/management-Team.svg';
-import functionalTeam from '../public/images/functional-Team.svg';
-import technicalTeam from '../public/images/technical-Team.svg';
-import meeting from '../public/images/meeting.svg';
 import { SlideUp } from '../animation';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 
-const GET_POSTSS = gql`
-  query GetAllTeam {
-    allType {
-      edges {
-        node {
-          team(where: { orderby: { field: DATE, order: ASC } }, first: 100) {
-            edges {
-              node {
-                title
-                featuredImage {
-                  node {
-                    mediaItemUrl
-                  }
-                }
-                teamExtraInfo {
-                  teamDesignation
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
 export default function Company({ posts }) {
-  const { data } = useQuery(GET_POSTSS);
-  const [tab, setTab] = React.useState(1);
-  const Admin = data?.allType.edges[0]?.node.team.edges;
-  const allTeam = data?.allType.edges[1]?.node.team.edges;
-  const BOD = data?.allType.edges[2]?.node.team.edges;
-  const FunctionalTeam = data?.allType.edges[3]?.node.team.edges;
-  const ManagementTeam = data?.allType.edges[4]?.node.team.edges;
-  const TechnicalTeam = data?.allType.edges[5]?.node.team.edges;
-  function Team({ name, designation, icon }) {
-    return (
-      <>
-        <Head>
-          <title>About us - Solution Founder</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-          <meta
-            name="description"
-            content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
-          />
-          <link rel="canonical" href="https://solutionfounder.com/" />
-          <meta property="og:locale" content="en_US" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Home - Solution Founder" />
-          <meta
-            property="og:description"
-            content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
-          />
-          <meta property="og:url" content="https://solutionfounder.com/" />
-          <meta property="og:site_name" content="Solution Founder" />
-          <meta
-            property="article:modified_time"
-            content="2022-03-10T07:09:44+00:00"
-          />
-          <meta
-            property="og:image"
-            content="https://solutionfounder.com/wp-content/uploads/2020/07/home-banner-img.png"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@odoo_solutions" />
-          <link
-            rel="icon"
-            href="https://solutionfounder.com/wp-content/uploads/2020/07/SF-White-F.svg"
-            sizes="32x32"
-          />
-        </Head>
-        <motion.div
-          className="p-3 bg-white team shadow-teamShadow "
-          variants={SlideUp}
-          initial="offScreen"
-          whileInView="onScreen"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          <div className="relative flex items-center justify-center">
-            <Image
-              src={icon}
-              alt={name}
-              className="object-cover object-center"
-              width={500}
-              height={500}
-            />
-            <figure className="absolute -bottom-2">
-              <Image
-                src="/images/img-curve-dark.png"
-                alt="img-curve-dark.png"
-                className="absolute bottom-0 center first"
-                width={40}
-                height={30}
-              />
-            </figure>
-            <figure className="absolute -bottom-2">
-              <Image
-                src="/images/img-curve.png"
-                alt="img-curve.png"
-                className="absolute bottom-0 center"
-                width={40}
-                height={30}
-              />
-            </figure>
-          </div>
-          <div className="flex flex-col items-center justify-center p-4">
-            <h2 className="text-[#0261A3] text-xl font-bold flex items-center">
-              {name}
-            </h2>
-            <p className="text-[#8DC63F] text-sm font-normal">{designation}</p>
-          </div>
-        </motion.div>
-      </>
-    );
-  }
-
   return (
     <>
       <Header />

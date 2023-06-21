@@ -6,13 +6,14 @@ import ImageBox from './components/image-box';
 import TeamSection from './components/team_section';
 import CTA from './components/cta';
 // importing images
-import AwardWinner from '../public/images/Award-winner.png';
+//import AwardWinner from '../public/images/Award-winner.png';
+
 import { gql } from '@apollo/client';
 import { client } from '../lib/apollo';
 import Link from 'next/link';
 import Image from 'next/image';
-import GlobalReach from '../public/images/Global-Reach.svg';
-import TrustedSecurity from '../public/images/Trusted-Security.svg';
+// import GlobalReach from '../public/images/Global-Reach.svg';
+// import TrustedSecurity from '../public/images/Trusted-Security.svg';
 import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-hook-inview'; // use current active screen Area
@@ -41,39 +42,39 @@ export default function Home({ posts }) {
 
   return (
     <>
-    <Head>
-    <title>Home - Solution Founder</title>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <meta
-      name="description"
-      content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
-    />
-    <link rel="canonical" href="https://solutionfounder.com/" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Home - Solution Founder" />
-    <meta
-      property="og:description"
-      content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
-    />
-    <meta property="og:url" content="https://solutionfounder.com/" />
-    <meta property="og:site_name" content="Solution Founder" />
-    <meta
-      property="article:modified_time"
-      content="2022-03-10T07:09:44+00:00"
-    />
-    <meta
-      property="og:image"
-      content="https://solutionfounder.com/wp-content/uploads/2020/07/home-banner-img.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@odoo_solutions" />
-    <link
-      rel="icon"
-      href="https://solutionfounder.com/wp-content/uploads/2020/07/SF-White-F.svg"
-      sizes="32x32"
-    />
-  </Head>
+      <Head>
+        <title>Home - Solution Founder</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
+        />
+        <link rel="canonical" href="https://solutionfounder.com/" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Home - Solution Founder" />
+        <meta
+          property="og:description"
+          content="PROFESSIONAL ENTERPRISE AND BUSINESS SOLUTIONS"
+        />
+        <meta property="og:url" content="https://solutionfounder.com/" />
+        <meta property="og:site_name" content="Solution Founder" />
+        <meta
+          property="article:modified_time"
+          content="2022-03-10T07:09:44+00:00"
+        />
+        <meta
+          property="og:image"
+          content="https://solutionfounder.com/wp-content/uploads/2020/07/home-banner-img.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@odoo_solutions" />
+        <link
+          rel="icon"
+          href="https://solutionfounder.com/wp-content/uploads/2020/07/SF-White-F.svg"
+          sizes="32x32"
+        />
+      </Head>
       <Header />
 
       <Banner
@@ -104,17 +105,17 @@ export default function Home({ posts }) {
         <div className="flex md:flex-row flex-col md:space-x-10 md:space-y-0 space-x-0 space-y-8 max-w-[1200px] mx-auto">
           <ImageBox
             className="bg-amber-200"
-            icon={AwardWinner}
+            icon="/images/Award-winner.png"
             title="Award Winner"
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />
           <ImageBox
-            icon={GlobalReach}
+            icon="/images/Award-winner.png"
             title="Global Reach"
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />
           <ImageBox
-            icon={TrustedSecurity}
+            icon="/images/Award-winner.png"
             title="Trusted Security"
             description="Teamwork makes dream works. Our efforts to make all projects successful is recognized by odoo and we have won the award of best tech startup company of mena 2019."
           />

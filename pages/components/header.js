@@ -6,7 +6,7 @@ import Mega_Menu from './mega-menu';
 import { useState } from 'react';
 import Company_Menu from './company-menu';
 import Image from 'next/image';
-import fav from '../../public/fav.png';
+//import fav from '../../public/fav.png';
 
 export default function Header() {
   const [megaMenu, setMegaMenu] = useState(true);
@@ -23,9 +23,7 @@ export default function Header() {
   };
   return (
     <>
-      <Head>
-        <link rel="icon" type="image/x-icon" href={fav} />
-      </Head>
+      <Head>{/* <link rel="icon" type="image/x-icon" href={fav} /> */}</Head>
 
       <header className="bg-[#133c6d] border-[#284D78] border-b fixed w-full z-50">
         <div className="bg-[#133c6d] flex flex-row items-center justify-between  p-6 max-w-[1200px] mx-auto">

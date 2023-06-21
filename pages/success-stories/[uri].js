@@ -8,14 +8,12 @@ import Footer from '../components/footer';
 import parse from 'html-react-parser';
 
 export default function SlugPage({ post }) {
-  const {seo} = post
-  const yoastHead = parse(seo.fullHead)
+  const { seo } = post;
+  const yoastHead = parse(seo.fullHead);
 
   return (
     <div>
-      <Head>
-      {yoastHead}
-      </Head>
+      <Head>{yoastHead}</Head>
       <Header />
 
       <Banner
@@ -41,10 +39,9 @@ export default function SlugPage({ post }) {
       <div className="grid justify-center grid-cols-2 gap-2 px-4 mx-auto mt-8 mb-10 lg:grid-cols-4 lg:px-48 lg:container md:mt-16 md:gap-8 md:w-1/2">
         <Cardnew post={post.successStoryExtra.appIndustry} />
       </div>
-      
-     <Footer/> 
+
+      <Footer />
     </div>
-    
   );
 }
 const GET_POST = gql`

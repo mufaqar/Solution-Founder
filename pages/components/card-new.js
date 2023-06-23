@@ -28,9 +28,9 @@ export default function Cardnew(props) {
                     : '/images/default.svg'
                 }
                 alt={feature.title}
-                className="w-[32%] h-[48%] mb-4 group-hover:rotate-360 transition-all duration-200"
-                width={155}
-                height={55}
+                className=" mb-4 group-hover:rotate-360 transition-all duration-200"
+                width={55}
+                height={50}
               />
               <h3 className="mt-4 text-center box-title">{feature.title}</h3>
             </div>

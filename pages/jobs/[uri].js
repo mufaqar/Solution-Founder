@@ -13,7 +13,6 @@ import { GrClose } from 'react-icons/gr';
 
 
 export default function SlugPage({ job,jobs, successStories }) {
-  console.log("story Banner", job);
   const [poupUp, setPopUp] = useState(false);
   const form = useRef();
   const {
@@ -25,28 +24,27 @@ export default function SlugPage({ job,jobs, successStories }) {
   const [formStatus, setFormStatus] = useState(false);
 
   const sendEmail = (e) => {
-    // e.preventDefault();
-    console.log(e)
     setLoding(true);
-    emailjs
-      .sendForm(
-        "service_gvt30vq",
-        "template_es5tmhh",
-        e.target,
-        "pzMV1U0WIjGl0M4ye"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          if (result.text === "OK") {
-            setFormStatus(true);
-          }
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    fetch('/api/sendmail', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(e)
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+        setFormStatus(true);
+  }
+    })
   };
+
+
+
+
+
 
   return (
     <div>
@@ -75,9 +73,10 @@ export default function SlugPage({ job,jobs, successStories }) {
 
       {/* Apply for job Popup */}
       <section
-        className={`fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-700 bg-opacity-60 ${
-          poupUp ? "block" : "hidden"
-        }`}
+        className={`fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-700 bg-opacity-60 flex-col justify-center ${
+          poupUp ? "block" : "hidden"    
+        }`
+      }
       >
         {formStatus ? (
           <ConfermationMessage />
@@ -101,7 +100,7 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="firstName"
                       {...register("firstName", { required: true })}
                       placeholder="First Name"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-500"
                     />
                     {errors.FirstName && (
                       <span className="block mt-1 text-red-400">

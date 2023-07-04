@@ -73,7 +73,7 @@ export default function SlugPage({ job,jobs, successStories }) {
 
       {/* Apply for job Popup */}
       <section
-        className={`fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-700 bg-opacity-60 flex-col justify-center ${
+        className={`fixed top-0 bottom-0 left-0 right-0 z-50 bg-gray-700 bg-opacity-60 flex-col justify-center flex  ${
           poupUp ? "block" : "hidden"    
         }`
       }

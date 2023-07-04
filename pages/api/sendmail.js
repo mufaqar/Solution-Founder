@@ -14,8 +14,8 @@ export default async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: 'info@solutionfounder.com',
-      to: "info@solutionfounder.com",
+      from: 'hi@solutionfounder.com',
+      to: "hi@solutionfounder.com",
       subject: `Contact form submission from ${firstName} ${LastName}`,
       html: `<p>You have a contact form submission</p>
         <p><strong>Name: </strong> ${firstName} ${LastName}</p>

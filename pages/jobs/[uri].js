@@ -100,9 +100,9 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="firstName"
                       {...register("firstName", { required: true })}
                       placeholder="First Name"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-500"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-300"
                     />
-                    {errors.FirstName && (
+                    {errors.firstName && (
                       <span className="block mt-1 text-red-400">
                         First Name field is required<sup>*</sup>
                       </span>
@@ -116,9 +116,9 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="LastName"
                       {...register("LastName", { required: true })}
                       placeholder="Last Name"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-300"
                     />
-                    {errors.FirstName && (
+                    {errors.LastName && (
                       <span className="block mt-1 text-red-400">
                         field is required<sup>*</sup>
                       </span>
@@ -135,9 +135,9 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="email"
                       {...register("email", { required: true })}
                       placeholder="Email"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-300"
                     />
-                    {errors.FirstName && (
+                    {errors.email && (
                       <span className="block mt-1 text-red-400">
                         field is required<sup>*</sup>
                       </span>
@@ -151,9 +151,9 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="Phone"
                       {...register("Phone", { required: true })}
                       placeholder="Phone"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-300"
                     />
-                    {errors.FirstName && (
+                    {errors.Phone && (
                       <span className="block mt-1 text-red-400">
                         field is required<sup>*</sup>
                       </span>
@@ -170,7 +170,7 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="linkedinURL"
                       {...register("linkedinURL")}
                       placeholder="Linkedin URL"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-300"
                     />
                   </div>
                 </div>
@@ -181,7 +181,7 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="skypeID"
                       {...register("skypeID")}
                       placeholder="Skype ID"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-300"
                     />
                   </div>
                 </div>
@@ -200,7 +200,7 @@ export default function SlugPage({ job,jobs, successStories }) {
                         <option key={job.node.id}>{job.node.title}</option>
                       ))}
                     </select>
-                    {errors.FirstName && (
+                    {errors.selectJob && (
                       <span className="block mt-1 text-red-400">
                         field is required<sup>*</sup>
                       </span>
@@ -214,7 +214,7 @@ export default function SlugPage({ job,jobs, successStories }) {
                       name="cv"
                       {...register("cv")}
                       placeholder="Skype ID"
-                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"
+                      className="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 outline-none focus:border-red-800 focus:bg-white focus:ring-2 focus:ring-red-300"
                     />
                   </div>
                 </div>

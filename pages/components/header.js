@@ -79,9 +79,6 @@ export default function Header() {
               <li className="inline text-xl font-semibold text-white lg:text-base">
                 <Link href="/success-stories">Success Stories</Link>
               </li>
-              <li className="inline text-xl font-semibold text-white lg:text-base">
-                <Link href="/news-updates">News & Updates</Link>
-              </li>
               <li
                 className="inline text-xl font-semibold text-white cursor-pointer lg:text-base"
                 onClick={HandleComp_MegaMenu}

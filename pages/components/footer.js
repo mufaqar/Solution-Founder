@@ -20,26 +20,29 @@ export default function Footer() {
             />
           </Link>
         </figure>
-        <div className="max-w-[1200px] mx-auto py-10 md:px-6 px-3">
+        <div className="max-w-[1200px] mx-auto py-10 md:px-6 px-3 flex items-center space-x-3">
           <div className="inline-flex items-center w-1/2 md:w-1/4">
-            <Link passHref href="/career">
+            <Link passHref href="/">
               <Image
-                src="/images/SF-White.png"
+                src="/images/SF-White.svg"
                 alt="Logo Solution Founder "
+                className='cursor-pointer'
                 width={800}
                 height={130}
               />
             </Link>
-            <Link passHref href="/" className="w-full ml-2">
-              <Image
+            
+          </div>
+        
+          <Link passHref href="/career" className="w-20 ml-2">
+              <img
                 src="/images/hirring.png"
-                alt="hirring.png"
-                width={500}
-                height={140}
+                alt="Career"
+                className=' cursor-pointer '               
               />
             </Link>
           </div>
-        </div>
+      
         <div className="flex md:flex-row flex-col max-w-[1200px] md:space-y-0 space-y-8 mx-auto md:px-6 px-3">
           <div className="z-10 items-center w-full space-y-3 md:w-1/5">
             <h2 className="flex items-center text-lg font-bold text-white">

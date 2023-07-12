@@ -28,13 +28,14 @@ export default function Header() {
       <header className="bg-[#133c6d] border-[#284D78] border-b fixed w-full z-50">
         <div className="bg-[#133c6d] flex flex-row items-center justify-between  p-6 max-w-[1200px] mx-auto">
           <div className="w-1/2 md:w-1/4">
-            <Link href="/" passHref>
+        
+            <Link href="/" passHref>           
               <Image
                 src="/images/SF-White.svg"
                 alt="logo"
                 className="max-w-[80%] cursor-pointer"
-                width={225}
-                height={40}
+                width={288}
+                height={47}
               />
             </Link>
           </div>

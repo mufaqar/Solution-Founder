@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 import {
   hrmAndPayroll,
   transportation,
@@ -18,8 +18,7 @@ import {
   qualityManagement,
   purchaseManagement,
   hospitalManagement,
-} from "../../public/megaMenuLinks";
-
+} from '../../public/megaMenuLinks';
 
 export default function Mega_Menu() {
   return (
@@ -66,7 +65,7 @@ export default function Mega_Menu() {
           </div>
           <div className="items-center w-full space-y-3">
             <Image
-              src="/images/products.png"
+              src="/images/human.svg"
               alt="products.png"
               width={40}
               height={40}
@@ -88,7 +87,7 @@ export default function Mega_Menu() {
           </div>
           <div className="items-center w-full space-y-3">
             <Image
-              src="/images/products.png"
+              src="/images/Material-Management.svg"
               alt="products.png"
               width={40}
               height={40}
@@ -114,7 +113,7 @@ export default function Mega_Menu() {
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-3">
           <div className="items-center w-full space-y-3">
             <Image
-              src="/images/products.png"
+              src="/images/Finance-Management.svg"
               alt="products.png"
               width={40}
               height={40}
@@ -133,7 +132,7 @@ export default function Mega_Menu() {
           </div>
           <div className="items-center w-full space-y-3">
             <Image
-              src="/images/products.png"
+              src="/images/Customer-Experience.svg"
               alt="products.png"
               width={40}
               height={40}

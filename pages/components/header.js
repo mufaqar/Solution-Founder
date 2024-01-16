@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { AiOutlineDown } from 'react-icons/ai';
 import { AiOutlineClose } from 'react-icons/ai';
 import Link from 'next/link';
@@ -23,8 +22,6 @@ export default function Header() {
   };
   return (
     <>
-      <Head>{/* <link rel="icon" type="image/x-icon" href={fav} /> */}</Head>
-
       <header className="bg-[#133c6d] border-[#284D78] border-b fixed w-full z-50">
         <div className="bg-[#133c6d] flex flex-row items-center justify-between  p-6 max-w-[1200px] mx-auto">
           <div className="w-1/2 md:w-1/4">

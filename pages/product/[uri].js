@@ -9,17 +9,21 @@ import Footer from '../components/footer';
 import Link from 'next/link';
 import Image from 'next/image';
 import parse from 'html-react-parser';
+import SeoMeta from '../components/seo';
 
-
-export default function SlugPage({ post, successStories }) {
-  const {seo} = post
-  const yoastHead = parse(seo.fullHead)
+export default function SlugPage({ post, successStories}) {
+  const { seo } = post;
+  const yoastHead = parse(seo.fullHead);
 
   return (
-    <div>
-      <Head>
-        { yoastHead }
-      </Head>
+    <>
+      <SeoMeta
+        title={post.title}
+        description={post.productsFields.bannerContent}
+        url={`/product/${post.slug}`}
+      />
+
+
 
       <Header />
 
@@ -87,7 +91,7 @@ export default function SlugPage({ post, successStories }) {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 }
 
@@ -97,6 +101,7 @@ const GET_POST = gql`
       title
       id
       uri
+      slug
       content
       seo {
         fullHead
@@ -154,7 +159,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post,
-      successStories,
+      successStories
     },
   };
 }

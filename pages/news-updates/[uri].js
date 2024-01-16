@@ -1,35 +1,37 @@
-import Head from "next/head";
-import { client } from "../../lib/apollo";
-import { gql } from "@apollo/client";
-import Header from "../components/header";
-import Banner from "../components/banner";
+import { client } from '../../lib/apollo';
+import { gql } from '@apollo/client';
+import Header from '../components/header';
+import Banner from '../components/banner';
 import Link from 'next/link';
 import Image from 'next/image';
-import Footer from "../components/footer";
-import parse from 'html-react-parser';
-
+import Footer from '../components/footer';
+import SeoMeta from '../components/seo';
 
 export default function SlugPage({ post, posts }) {
-
-  const {seo} = post
-  const yoastHead = parse(seo?.fullHead)
+  const { seo } = post;
 
   return (
-    <div>
-    <Head>
-    {yoastHead}
-  </Head>
+    <>
+      <SeoMeta
+        title={post.title}
+        description={post.postExtra.subHeading}
+        url={`/news-updates/${post.slug}`}
+      />
+
       <Header />
       <Banner
         heading={post.postExtra.subHeading}
         bannerURL={post.postExtra.bannerImage.mediaItemUrl}
       />
-      <main className="container mb-20 news float-right bg-no-repeat bg-right bg-contain lg:h-[600px]" style={{backgroundImage: `url(${post.postExtra.image.mediaItemUrl})`,}}>
-          <div className="p-5 lg:ml-20 lg:mt-28 lg:w-1/2">
-              <h2 className="mb-4 text-4xl font-bold">{post.title}</h2>
-              <p className="text-xl ">{post.postExtra.shortContent}</p>
-          </div>
-          <div></div>
+      <main
+        className="container mb-20 news float-right bg-no-repeat bg-right bg-contain lg:h-[600px]"
+        style={{ backgroundImage: `url(${post.postExtra.image.mediaItemUrl})` }}
+      >
+        <div className="p-5 lg:ml-20 lg:mt-28 lg:w-1/2">
+          <h2 className="mb-4 text-4xl font-bold">{post.title}</h2>
+          <p className="text-xl ">{post.postExtra.shortContent}</p>
+        </div>
+        <div></div>
       </main>
 
       <section className="py-20 px-7">
@@ -49,7 +51,9 @@ export default function SlugPage({ post, posts }) {
                 />
                 <div className="p-5 space-y-1">
                   <h3 className="box-title">
-                    <Link href={`/news-updates/${data.uri}/`}>{data.title}</Link>
+                    <Link href={`/news-updates/${data.uri}/`}>
+                      {data.title}
+                    </Link>
                   </h3>
                 </div>
                 <div className="absolute bottom-0 right-0 flex justify-end">
@@ -68,17 +72,10 @@ export default function SlugPage({ post, posts }) {
           ))}
         </div>
       </section>
-      
-      <Footer/>
-
-    </div>
+      <Footer />
+    </>
   );
 }
-
-
-
-
-
 
 const GET_POST = gql`
   query GetPostByURI($id: ID!) {
@@ -86,6 +83,7 @@ const GET_POST = gql`
       title
       id
       uri
+      slug
       content
       seo {
         fullHead
@@ -118,7 +116,6 @@ const GET_POST = gql`
             mediaItemUrl
           }
         }
-        
       }
     }
   }
@@ -146,6 +143,6 @@ export async function getStaticPaths() {
   const paths = [];
   return {
     paths,
-    fallback: "blocking",
+    fallback: 'blocking',
   };
 }

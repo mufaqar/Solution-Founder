@@ -11,10 +11,16 @@ import { client } from '../lib/apollo';
 import { SlideUp } from '../animation';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import SeoMeta from './components/seo';
 
 export default function Company({ posts }) {
   return (
     <>
+     <SeoMeta
+        title="About Solution Founder"
+        description="Solution Founder Build Your Ideas.For Those Who Shape The World We Are The Information Technology Company"
+        url="/company"
+      />
       <Header />
 
       <Banner
